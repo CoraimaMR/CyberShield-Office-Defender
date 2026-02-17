@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://hma6q3axm4h6"]
+[gd_scene format=3 uid="uid://c8xusq6fq6vrt"]
 
-[ext_resource type="Script" uid="uid://cy5yu344tounv" path="res://scripts/Main.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="1_o5qli"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
 bg_color = Color(0, 0, 0.8235294, 1)
@@ -13,7 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_elqb8")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1354162238]
 layout_mode = 1
@@ -127,3 +126,7 @@ text = "TRUST MAIL"
 [node name="ReportButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=1116577777]
 layout_mode = 2
 text = "REPORT PHISHING"
+
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("1_o5qli")]
+offset = Vector2(880, -50)
+transform = Transform2D(1, 0, 0, 1, 880, -50)
