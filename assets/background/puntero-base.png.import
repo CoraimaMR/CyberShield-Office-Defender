@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20wm7x8nguvj"
-path="res://.godot/imported/robot.png-d916d4a7856f55276f22940cf1d977f4.ctex"
+uid="uid://bubl6jw7dutlc"
+path="res://.godot/imported/puntero-base.png-3d82d599b68fd868df332c5d990d828b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/robot.png"
-dest_files=["res://.godot/imported/robot.png-d916d4a7856f55276f22940cf1d977f4.ctex"]
+source_file="res://assets/background/puntero-base.png"
+dest_files=["res://.godot/imported/puntero-base.png-3d82d599b68fd868df332c5d990d828b.ctex"]
 
 [params]
 

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_jx1is"]
 [ext_resource type="Texture2D" uid="uid://osq38j7t6h36" path="res://assets/background/depositphotos_527863340-stock-video-binary-code-on-a-dark.jpg" id="2_jx1is"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
+
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
 anchors_preset = 0
@@ -22,9 +24,9 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 376.0
+offset_left = 386.0
 offset_top = 145.0
-offset_right = 804.0
+offset_right = 814.0
 offset_bottom = 258.0
 theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
 theme_override_constants/outline_size = 20
@@ -32,19 +34,33 @@ theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 82
 text = "YOU WIN !!"
 
-[node name="Button" type="Button" parent="." unique_id=1784545782]
+[node name="YouWin" type="AudioStreamPlayer" parent="." unique_id=1566370957]
+autoplay = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1273560605]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 401.0
-offset_right = 694.0
-offset_bottom = 492.0
+offset_left = 349.0
+offset_top = 416.0
+offset_right = 866.0
+offset_bottom = 507.0
+theme_override_constants/separation = 50
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1644944666]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 60
+text = "DESKTOP"
+icon = SubResource("CompressedTexture2D_jx1is")
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1784545782]
+layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
 theme_override_font_sizes/font_size = 60
 text = "REPLAY"
 
-[node name="YouWin" type="AudioStreamPlayer" parent="." unique_id=1566370957]
-autoplay = true
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
