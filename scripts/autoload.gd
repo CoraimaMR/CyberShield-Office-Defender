@@ -15,7 +15,7 @@ func add_points(points: int) -> void:
 	points_updated.emit(current_points) # Notify any active UI
 
 func remove_points(points: int) -> void:
-	current_points = max(0, current_points - points)
+	current_points = current_points - points
 	points_updated.emit(current_points)
 
 # ----- LIFES -----

@@ -5,10 +5,8 @@ extends Control
 @export var email_list: Array[EmailResource] = []
 
 var current_index: int = 0
-var score: int = 0
 
 # Unique Name access using the '%' symbol
-@onready var score_label = %ScoreLabel
 @onready var sender_label = %SenderLabel
 @onready var subject_label = %SubjectLabel
 @onready var body_label = %BodyLabel
@@ -27,7 +25,6 @@ func display_email():
 	
 	# We use 'text' for RichTextLabel, or 'set_bbcode' in older versions
 	body_label.text = mail.body_text
-	score_label.text = "Score: " + str(score)
 
 func _on_trust_button_pressed():
 	validate_choice(false) # User thinks it's SAFE
@@ -39,11 +36,11 @@ func validate_choice(user_said_phishing: bool):
 	var current_mail = email_list[current_index]
 	
 	if user_said_phishing == current_mail.is_phishing:
-		score += 10
 		print("Correct! +10 points")
+		Autoload.add_points(10)
 	else:
-		score -= 5
 		print("Wrong! -5 points")
+		Autoload.remove_points(5)
 	
 	# Move to the next email
 	current_index += 1
@@ -56,7 +53,6 @@ func validate_choice(user_said_phishing: bool):
 func finish_game():
 	sender_label.text = ""
 	subject_label.text = "Jornada terminada"
-	body_label.text = "[center][b]Final Score: " + str(score) + "[/b][/center]\n\nThanks for playing and staying safe!"
 	# Disable buttons at the end
 	%TrustButton.disabled = true
 	%ReportButton.disabled = true

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://m5"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_1fq5u"]
+
+[resource]
+script = ExtResource("1_1fq5u")
+sender_name = "Microsoft Account Team"
+sender_email = "account-security-noreply@accountprotection.microsoft.com"
+body_text = "Your password was recently changed. If this was you, you can safely ignore this email."
+educational_tip = "The 'microsoft.com' domain is used here with a legitimate security subdomain."
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
