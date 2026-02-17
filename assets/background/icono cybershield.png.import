@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b20wm7x8nguvj"
-path="res://.godot/imported/robot.png-d916d4a7856f55276f22940cf1d977f4.ctex"
+uid="uid://drdmbc3pmg2m1"
+path="res://.godot/imported/icono cybershield.png-49959b89a55cb90e56e1392cdb9abcde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/robot.png"
-dest_files=["res://.godot/imported/robot.png-d916d4a7856f55276f22940cf1d977f4.ctex"]
+source_file="res://assets/background/icono cybershield.png"
+dest_files=["res://.godot/imported/icono cybershield.png-49959b89a55cb90e56e1392cdb9abcde.ctex"]
 
 [params]
 
