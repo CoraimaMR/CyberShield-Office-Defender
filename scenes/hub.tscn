@@ -20,6 +20,9 @@ offset_left = 23.0
 offset_top = 61.0
 offset_right = 260.0
 offset_bottom = 165.0
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+disabled = true
+button_mask = 0
 
 [node name="points" type="Node2D" parent="Control" unique_id=693393509]
 
@@ -40,7 +43,7 @@ theme_override_fonts/font = SubResource("FontVariation_7wvbm")
 theme_override_font_sizes/font_size = 35
 text = "Puntos: "
 
-[node name="points" type="Label" parent="Control/points/HBoxContainer" unique_id=1826452555]
+[node name="counter_points" type="Label" parent="Control/points/HBoxContainer" unique_id=1826452555]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 theme_override_constants/shadow_offset_x = 20
@@ -53,7 +56,7 @@ text = "00"
 
 [node name="lifes" type="Node2D" parent="Control" unique_id=73858096]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/lifes" unique_id=35609946]
+[node name="counter_lifes" type="HBoxContainer" parent="Control/lifes" unique_id=35609946]
 offset_left = 65.00001
 offset_top = 111.99999
 offset_right = 840.0
@@ -61,14 +64,14 @@ offset_bottom = 337.0
 scale = Vector2(0.2, 0.2)
 theme_override_constants/separation = 50
 
-[node name="life1" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1362858614]
+[node name="life1" type="TextureRect" parent="Control/lifes/counter_lifes" unique_id=1362858614]
 layout_mode = 2
 texture = ExtResource("1_d1od2")
 
-[node name="life2" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1140272294]
+[node name="life2" type="TextureRect" parent="Control/lifes/counter_lifes" unique_id=1140272294]
 layout_mode = 2
 texture = ExtResource("1_d1od2")
 
-[node name="life3" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1698728281]
+[node name="life3" type="TextureRect" parent="Control/lifes/counter_lifes" unique_id=1698728281]
 layout_mode = 2
 texture = ExtResource("1_d1od2")
