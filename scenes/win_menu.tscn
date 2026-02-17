@@ -11,7 +11,7 @@ offset_bottom = 648.0
 script = ExtResource("1_jx1is")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=842736084]
-modulate = Color(0, 0.7921569, 1, 1)
+modulate = Color(1, 0.21960784, 0.3137255, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,29 +22,29 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 145.0
-offset_right = 804.0
-offset_bottom = 258.0
-theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
+offset_left = 317.0
+offset_top = 134.0
+offset_right = 853.0
+offset_bottom = 247.0
+theme_override_colors/font_outline_color = Color(0.5686275, 0.1764706, 0.24705882, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/font_size = 82
-text = "YOU WIN !!"
+text = "GAME OVER !!"
 
 [node name="Button" type="Button" parent="." unique_id=1784545782]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 401.0
-offset_right = 694.0
-offset_bottom = 492.0
+offset_left = 479.0
+offset_top = 400.0
+offset_right = 667.0
+offset_bottom = 491.0
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
 theme_override_font_sizes/font_size = 60
-text = "REPLAY"
+text = "RETRY"
 
-[node name="YouWin" type="AudioStreamPlayer" parent="." unique_id=1566370957]
+[node name="GamerOver" type="AudioStreamPlayer" parent="." unique_id=1921798997]
 autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
