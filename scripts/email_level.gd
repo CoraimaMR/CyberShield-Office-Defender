@@ -10,6 +10,8 @@ var current_index: int = 0
 @onready var sender_label = %SenderLabel
 @onready var subject_label = %SubjectLabel
 @onready var body_label = %BodyLabel
+@onready var incorrect_sound = $incorrect
+@onready var correct_sound = $correct
 
 func _ready():
 	# Update the UI with the first email if the list is not empty
@@ -38,9 +40,11 @@ func validate_choice(user_said_phishing: bool):
 	if user_said_phishing == current_mail.is_phishing:
 		print("Correct! +5 points")
 		Autoload.add_points(5)
+		correct_sound.play()
 	else:
 		print("Wrong! -10 points")
 		Autoload.remove_points(10)
+		incorrect_sound.play()
 	
 	# Move to the next email
 	current_index += 1
@@ -51,7 +55,7 @@ func validate_choice(user_said_phishing: bool):
 		finish_game()
 
 func finish_game():
-	if Autoload.current_points:
+	if Autoload.current_points >= 0:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 	else:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu

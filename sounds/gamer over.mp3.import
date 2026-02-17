@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://y2kml84ufdmi"
+path="res://.godot/imported/gamer over.mp3-1b8ac894469a473258fefa112b46c819.mp3str"
+
+[deps]
+
+source_file="res://sounds/gamer over.mp3"
+dest_files=["res://.godot/imported/gamer over.mp3-1b8ac894469a473258fefa112b46c819.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_jx1is"]
 [ext_resource type="Texture2D" uid="uid://osq38j7t6h36" path="res://assets/background/depositphotos_527863340-stock-video-binary-code-on-a-dark.jpg" id="2_jx1is"]
+[ext_resource type="AudioStream" uid="uid://dvs6w5jgwb6mg" path="res://sounds/you win.mp3" id="3_7shsi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
@@ -35,6 +36,7 @@ theme_override_font_sizes/font_size = 82
 text = "YOU WIN !!"
 
 [node name="YouWin" type="AudioStreamPlayer" parent="." unique_id=1566370957]
+stream = ExtResource("3_7shsi")
 autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1273560605]
