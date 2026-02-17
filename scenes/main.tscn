@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://hma6q3axm4h6"]
+
+[ext_resource type="Script" uid="uid://cy5yu344tounv" path="res://scripts/Main.gd" id="1_elqb8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
+bg_color = Color(0, 0, 0.8235294, 1)
+border_width_bottom = 2
+
+[node name="Control" type="Control" unique_id=844577808]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_elqb8")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1354162238]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.5647059, 1)
+
+[node name="MainLayout" type="VBoxContainer" parent="Background" unique_id=602356980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="PanelContainer" parent="Background/MainLayout" unique_id=428407387]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_elqb8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MainLayout/Header" unique_id=1880894519]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/MainLayout/Header/MarginContainer" unique_id=2085865019]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1466756413]
+layout_mode = 2
+text = "CyberShield Mail"
+
+[node name="Spacer" type="Control" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=626293565]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1201366506]
+visible = false
+layout_mode = 2
+text = "Score: 0"
+
+[node name="Body" type="HSplitContainer" parent="Background/MainLayout" unique_id=1661869193]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MailList" type="ItemList" parent="Background/MainLayout/Body" unique_id=175719187]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="MailViewer" type="VBoxContainer" parent="Background/MainLayout/Body" unique_id=759249340]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/MainLayout/Body/MailViewer" unique_id=1312436685]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1595179374]
+layout_mode = 2
+
+[node name="SenderLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/MarginContainer/VBoxContainer" unique_id=1792293955]
+layout_mode = 2
+text = "From:\"From: support@bank.com"
+
+[node name="SubjectLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/MarginContainer/VBoxContainer" unique_id=307479283]
+layout_mode = 2
+text = "Subject: Urgent!"
+
+[node name="HSeparator" type="HSeparator" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1311974168]
+layout_mode = 2
+
+[node name="BodyLabel" type="RichTextLabel" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1280129145]
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="ActionButtons" type="PanelContainer" parent="Background" unique_id=838691889]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -40.0
+offset_right = 133.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/ActionButtons" unique_id=1466268496]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/ActionButtons/MarginContainer" unique_id=1966157182]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TrustButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=415925510]
+layout_mode = 2
+text = "TRUST MAIL"
+
+[node name="ReportButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=1116577777]
+layout_mode = 2
+text = "REPORT PHISHING"
