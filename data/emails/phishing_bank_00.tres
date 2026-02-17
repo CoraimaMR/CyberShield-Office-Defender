@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://c6kbwqbw71ehb"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_1fq5u"]
+
+[resource]
+script = ExtResource("1_1fq5u")
+sender_name = "Bancoo Santander Support"
+sender_email = "security@santan-der.com"
+body_text = "We detected a suspicious login. Click here to secure your account.
+click here to resolve the problem www.nEtflex.com"
+is_phishing = true
+educational_tip = "This email is not safe because the domain is different that his official site."
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
