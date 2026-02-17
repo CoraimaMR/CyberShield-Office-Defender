@@ -15,9 +15,9 @@ run/main_scene="uid://dnlkb4lqe353n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[gui]
 
-Hub="*uid://cahvvaq0niidx"
+theme/custom_font="uid://bjlmkuhlwkxbu"
 
 [physics]
 

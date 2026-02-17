@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dnwxcf87fjqvd"]
+
+[ext_resource type="Texture2D" uid="uid://cjkvg4a8s0v0" path="res://assets/background/escritorio.png" id="1_eysme"]
+[ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="2_a1iwr"]
+[ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/background/robot.png" id="3_5mnb0"]
+
+[node name="Node2D" type="Node2D" unique_id=237963605]
+
+[node name="Escritorio" type="Sprite2D" parent="." unique_id=1565639712]
+position = Vector2(576.5, 325)
+scale = Vector2(0.89765626, 0.90756303)
+texture = ExtResource("1_eysme")
+
+[node name="Ventana" type="Sprite2D" parent="." unique_id=1820151467]
+position = Vector2(539.00006, 328.75)
+scale = Vector2(0.76865673, 0.59276736)
+texture = ExtResource("2_a1iwr")
+
+[node name="Robot" type="Sprite2D" parent="." unique_id=945214544]
+position = Vector2(888, 507)
+texture = ExtResource("3_5mnb0")
+
+[node name="Label" type="Label" parent="." unique_id=1613811461]
+modulate = Color(0, 0, 0, 1)
+offset_left = 422.0
+offset_top = 333.0
+offset_right = 662.0
+offset_bottom = 356.0
+text = "Hola! Me llamo Roby"
