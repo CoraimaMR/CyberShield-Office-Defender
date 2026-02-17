@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://d2a"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_1fq5u"]
+
+[resource]
+script = ExtResource("1_1fq5u")
+sender_name = "Dropbox Team"
+sender_email = "no-reply@dropbox-mail.net"
+body_text = "A folder named 'Confidential_Invoices' has been shared with you. View the files here: http://dropbox-viewer.pro"
+is_phishing = true
+educational_tip = "Dropbox uses 'dropbox.com'. Be wary of generic folder names designed to pique curiosity."
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://016"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_1fq5u"]
+
+[resource]
+script = ExtResource("1_1fq5u")
+sender_name = "Zoom Video"
+sender_email = "meeting@zoom-invitation.us"
+body_text = "You have missed a scheduled Zoom meeting. Click here to view the recorded session: http://zoom-recording.online"
+is_phishing = true
+educational_tip = "Check for weird top-level domains like '.online' or '.us' for global services like Zoom."
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

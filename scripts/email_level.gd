@@ -36,11 +36,11 @@ func validate_choice(user_said_phishing: bool):
 	var current_mail = email_list[current_index]
 	
 	if user_said_phishing == current_mail.is_phishing:
-		print("Correct! +10 points")
-		Autoload.add_points(10)
+		print("Correct! +5 points")
+		Autoload.add_points(5)
 	else:
-		print("Wrong! -5 points")
-		Autoload.remove_points(5)
+		print("Wrong! -10 points")
+		Autoload.remove_points(10)
 	
 	# Move to the next email
 	current_index += 1
@@ -51,8 +51,7 @@ func validate_choice(user_said_phishing: bool):
 		finish_game()
 
 func finish_game():
-	sender_label.text = ""
-	subject_label.text = "Jornada terminada"
-	# Disable buttons at the end
-	%TrustButton.disabled = true
-	%ReportButton.disabled = true
+	if Autoload.current_points:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
+	else:
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu

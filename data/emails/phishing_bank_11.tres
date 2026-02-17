@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://l11"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_1fq5u"]
+
+[resource]
+script = ExtResource("1_1fq5u")
+sender_name = "LinkedIn"
+sender_email = "messages-noreply@linkedin.com"
+body_text = "You have 3 new connection requests from people you may know."
+educational_tip = "LinkedIn uses 'linkedin.com' for all its notification services."
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

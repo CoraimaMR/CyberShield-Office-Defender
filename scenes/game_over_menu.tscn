@@ -24,10 +24,10 @@ texture = ExtResource("2_cwb3k")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 334.0
-offset_top = 120.0
-offset_right = 870.0
-offset_bottom = 233.0
+offset_left = 301.0
+offset_top = 124.0
+offset_right = 837.0
+offset_bottom = 237.0
 theme_override_colors/font_outline_color = Color(0.5686275, 0.1764706, 0.24705882, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
@@ -39,10 +39,10 @@ autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1339849198]
 layout_mode = 0
-offset_left = 349.0
-offset_top = 416.0
-offset_right = 866.0
-offset_bottom = 507.0
+offset_left = 316.0
+offset_top = 420.0
+offset_right = 833.0
+offset_bottom = 511.0
 theme_override_constants/separation = 50
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1454168133]
