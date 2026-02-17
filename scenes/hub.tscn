@@ -41,7 +41,7 @@ theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = SubResource("FontVariation_7wvbm")
 theme_override_font_sizes/font_size = 35
-text = "Puntos: "
+text = "Points: "
 
 [node name="counter_points" type="Label" parent="Control/points/HBoxContainer" unique_id=1826452555]
 layout_mode = 2
