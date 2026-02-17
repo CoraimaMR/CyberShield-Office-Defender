@@ -22,10 +22,10 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 376.0
-offset_top = 145.0
-offset_right = 804.0
-offset_bottom = 258.0
+offset_left = 276.0
+offset_top = 141.0
+offset_right = 891.0
+offset_bottom = 254.0
 theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
@@ -34,10 +34,10 @@ text = "YOU WIN !!"
 
 [node name="Button" type="Button" parent="." unique_id=1784545782]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 401.0
-offset_right = 694.0
-offset_bottom = 492.0
+offset_left = 429.0
+offset_top = 398.0
+offset_right = 752.0
+offset_bottom = 489.0
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
