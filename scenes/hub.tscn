@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="1_d1od2"]
 [ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="1_w6xti"]
-[ext_resource type="Texture2D" uid="uid://c68icrhhl1l1l" path="res://assets/hub/background.png" id="2_w6xti"]
 
 [sub_resource type="FontVariation" id="FontVariation_7wvbm"]
 
@@ -15,12 +14,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1263558082]
+[node name="Button" type="Button" parent="Control" unique_id=146697412]
 layout_mode = 0
-offset_right = 282.0
-offset_bottom = 201.0
-texture = ExtResource("2_w6xti")
-expand_mode = 1
+offset_left = 23.0
+offset_top = 61.0
+offset_right = 260.0
+offset_bottom = 165.0
 
 [node name="points" type="Node2D" parent="Control" unique_id=693393509]
 
