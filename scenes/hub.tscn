@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://01i7r32w52s4"]
+
+[ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="1_d1od2"]
+[ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="1_w6xti"]
+[ext_resource type="Texture2D" uid="uid://c68icrhhl1l1l" path="res://assets/hub/background.png" id="2_w6xti"]
+
+[sub_resource type="FontVariation" id="FontVariation_7wvbm"]
+
+[node name="hub" type="CanvasLayer" unique_id=1269073093]
+script = ExtResource("1_w6xti")
+
+[node name="Control" type="Control" parent="." unique_id=1617293582]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1263558082]
+layout_mode = 0
+offset_right = 282.0
+offset_bottom = 201.0
+texture = ExtResource("2_w6xti")
+expand_mode = 1
+
+[node name="points" type="Node2D" parent="Control" unique_id=693393509]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/points" unique_id=1334710591]
+offset_left = 44.0
+offset_top = 63.0
+offset_right = 246.0
+offset_bottom = 112.0
+
+[node name="Label" type="Label" parent="Control/points/HBoxContainer" unique_id=234742598]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = SubResource("FontVariation_7wvbm")
+theme_override_font_sizes/font_size = 35
+text = "Puntos: "
+
+[node name="points" type="Label" parent="Control/points/HBoxContainer" unique_id=1826452555]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = SubResource("FontVariation_7wvbm")
+theme_override_font_sizes/font_size = 35
+text = "00"
+
+[node name="lifes" type="Node2D" parent="Control" unique_id=73858096]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/lifes" unique_id=35609946]
+offset_left = 65.00001
+offset_top = 111.99999
+offset_right = 840.0
+offset_bottom = 337.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/separation = 50
+
+[node name="life1" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1362858614]
+layout_mode = 2
+texture = ExtResource("1_d1od2")
+
+[node name="life2" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1140272294]
+layout_mode = 2
+texture = ExtResource("1_d1od2")
+
+[node name="life3" type="TextureRect" parent="Control/lifes/HBoxContainer" unique_id=1698728281]
+layout_mode = 2
+texture = ExtResource("1_d1od2")
