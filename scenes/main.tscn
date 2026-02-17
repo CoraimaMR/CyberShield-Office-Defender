@@ -1,10 +1,18 @@
-[gd_scene format=3 uid="uid://hma6q3axm4h6"]
+[gd_scene format=3 uid="uid://c8xusq6fq6vrt"]
 
-[ext_resource type="Script" uid="uid://cy5yu344tounv" path="res://scripts/Main.gd" id="1_elqb8"]
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="2_sugp2"]
+[ext_resource type="Resource" uid="uid://d4mm5r7si1a2m" path="res://data/emails/phishing_bank_01.tres" id="3_jyhfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
 bg_color = Color(0, 0, 0.8235294, 1)
 border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 
 [node name="Control" type="Control" unique_id=844577808]
 layout_mode = 3
@@ -14,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_elqb8")
+email_list = Array[ExtResource("2_sugp2")]([ExtResource("3_jyhfs")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=1354162238]
 layout_mode = 1
@@ -57,6 +66,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ScoreLabel" type="Label" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1201366506]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "Score: 0"
@@ -69,29 +79,32 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 
-[node name="MailViewer" type="VBoxContainer" parent="Background/MainLayout/Body" unique_id=759249340]
+[node name="MailViewer" type="PanelContainer" parent="Background/MainLayout/Body" unique_id=19120048]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sugp2")
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/MainLayout/Body/MailViewer" unique_id=1312436685]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/MainLayout/Body/MailViewer" unique_id=233681076]
 layout_mode = 2
+theme_override_constants/separation = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1595179374]
-layout_mode = 2
-
-[node name="SenderLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/MarginContainer/VBoxContainer" unique_id=1792293955]
+[node name="SenderLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1792293955]
+unique_name_in_owner = true
 layout_mode = 2
 text = "From:\"From: support@bank.com"
 
-[node name="SubjectLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/MarginContainer/VBoxContainer" unique_id=307479283]
+[node name="SubjectLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=307479283]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Subject: Urgent!"
 
-[node name="HSeparator" type="HSeparator" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1311974168]
+[node name="HSeparator" type="HSeparator" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1311974168]
 layout_mode = 2
 
-[node name="BodyLabel" type="RichTextLabel" parent="Background/MainLayout/Body/MailViewer/MarginContainer" unique_id=1280129145]
+[node name="BodyLabel" type="RichTextLabel" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1280129145]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="ActionButtons" type="PanelContainer" parent="Background" unique_id=838691889]
@@ -127,3 +140,6 @@ text = "TRUST MAIL"
 [node name="ReportButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=1116577777]
 layout_mode = 2
 text = "REPORT PHISHING"
+
+[connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
+[connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
