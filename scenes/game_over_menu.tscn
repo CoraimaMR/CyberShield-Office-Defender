@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_cwb3k"]
 [ext_resource type="Texture2D" uid="uid://osq38j7t6h36" path="res://assets/background/depositphotos_527863340-stock-video-binary-code-on-a-dark.jpg" id="2_cwb3k"]
+[ext_resource type="AudioStream" uid="uid://y2kml84ufdmi" path="res://sounds/gamer over.mp3" id="3_ccgoi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwb3k"]
 
@@ -35,6 +36,7 @@ theme_override_font_sizes/font_size = 82
 text = "GAME OVER !!"
 
 [node name="GamerOver" type="AudioStreamPlayer" parent="." unique_id=1921798997]
+stream = ExtResource("3_ccgoi")
 autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1339849198]

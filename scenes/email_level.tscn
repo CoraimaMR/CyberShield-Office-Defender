@@ -23,6 +23,8 @@
 [ext_resource type="Resource" uid="uid://u17" path="res://data/emails/phishing_bank_17.tres" id="20_wpyyb"]
 [ext_resource type="Resource" uid="uid://r18" path="res://data/emails/phishing_bank_18.tres" id="21_j1tgi"]
 [ext_resource type="Resource" uid="uid://d2a" path="res://data/emails/phishing_bank_19.tres" id="22_ilc8a"]
+[ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="24_h6ctk"]
+[ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="25_havwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
 bg_color = Color(0, 0, 0.8235294, 1)
@@ -160,6 +162,12 @@ text = "TRUST MAIL"
 unique_name_in_owner = true
 layout_mode = 2
 text = "REPORT PHISHING"
+
+[node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1024679185]
+stream = ExtResource("24_h6ctk")
+
+[node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=1786726373]
+stream = ExtResource("25_havwd")
 
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
