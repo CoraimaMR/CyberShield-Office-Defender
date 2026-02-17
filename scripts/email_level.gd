@@ -20,6 +20,10 @@ func _ready():
 	else:
 		body_label.text = "Error: No emails found in the list."
 
+func _process(_delta: float) -> void:
+	if Autoload.current_lifes == 0: 
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
+
 func display_email():
 	var mail = email_list[current_index]
 	sender_label.text = "From: " + mail.sender_name + " <" + mail.sender_email + ">"
@@ -44,6 +48,7 @@ func validate_choice(user_said_phishing: bool):
 	else:
 		print("Wrong! -10 points")
 		Autoload.remove_points(10)
+		Autoload.remove_lifes(1)
 		incorrect_sound.play()
 	
 	# Move to the next email
@@ -52,10 +57,4 @@ func validate_choice(user_said_phishing: bool):
 	if current_index < email_list.size():
 		display_email()
 	else:
-		finish_game()
-
-func finish_game():
-	if Autoload.current_points >= 0:
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
-	else:
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu

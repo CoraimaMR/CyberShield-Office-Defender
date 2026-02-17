@@ -27,3 +27,9 @@ func add_lifes(lifes: int) -> void:
 func remove_lifes(lifes: int) -> void:
 	current_lifes = max(0, current_lifes - lifes)
 	lifes_updated.emit(current_lifes)
+
+# ----- RESET HUB -----
+
+func reset_hub():
+	current_points = 0
+	current_lifes  = 3
