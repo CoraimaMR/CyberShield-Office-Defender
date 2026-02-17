@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="CyberShield: Office Defender"
-run/main_scene="uid://dnwxcf87fjqvd"
+run/main_scene="uid://hma6q3axm4h6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b20wm7x8nguvj"
+
+[gui]
+
+theme/custom_font="uid://bjlmkuhlwkxbu"
 
 [physics]
 
