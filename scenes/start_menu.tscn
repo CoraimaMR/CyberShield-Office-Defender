@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dnlkb4lqe353n"]
+
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_ouf4f"]
+
+[node name="Control" type="Control" unique_id=154517804]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_ouf4f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=842736084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=2126765259]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 143.0
+offset_right = 1147.0
+offset_bottom = 256.0
+theme_override_colors/font_outline_color = Color(0.09019608, 0.3137255, 0.5254902, 1)
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/font_size = 82
+text = "CyberShield: Office Defender"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=363988233]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 368.0
+offset_right = 777.0
+offset_bottom = 459.0
+theme_override_constants/separation = 80
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1784545782]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1245833563]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/align_to_largest_stylebox = 20
+theme_override_constants/line_spacing = 20
+theme_override_font_sizes/font_size = 60
+text = "KEYS"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
