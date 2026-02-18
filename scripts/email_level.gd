@@ -19,14 +19,7 @@ var current_index: int = 0
 @onready var correct_label = $"popup window/text correct"
 @onready var incorrect_label = $"popup window/text incorrect"
 
-@onready var time_bar = %TimeBar # timebar
-var time_limit: float = 10.0      # total time
-var time_left: float = 10.0       # left time
-var timer_active: bool = false	# flag
-
 func _ready():
-	load_emails_from_folder()
-	
 	popup_window.visible = false
 	setup_mail_list()
 	# Update the UI with the first email if the list is not empty
@@ -45,60 +38,6 @@ func _process(_delta: float) -> void:
 	if Autoload.current_lifes == 0:
 		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
-	
-	if Autoload.current_level >= 2:
-		time_left -= delta
-		time_bar.value = (time_left * 100) / time_limit
-		
-		if time_left <= 0:
-			timer_active = false
-			time_exhausted()
-	
-func time_exhausted():
-	Autoload.remove_lifes(1)
-	incorrect_sound.play()
-	# next email
-	current_index += 1
-	if current_index < email_list.size():
-		display_email()
-	else:
-		Autoload.save_scene()
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
-
-func reset_timer():
-	time_left = time_limit # reset time
-	if Autoload.current_level >= 2:
-		timer_active = true
-		time_bar.visible = true
-	else:
-		timer_active = false
-		time_bar.visible = false
-
-func load_emails_from_folder():
-	email_list.clear() # clear in case we are coming from another level
-	var folder_path = "res://data/emails/level_" + str(Autoload.current_level) + "/"
-	
-	var dir = DirAccess.open(folder_path)
-	
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		
-		while file_name != "":
-			# filter to load only resource files (.tres)
-			if file_name.ends_with(".tres"):
-				var full_path = folder_path + file_name
-				var email_res = load(full_path)
-				if email_res is EmailResource:
-					email_list.append(email_res)
-			file_name = dir.get_next()
-		
-		dir.list_dir_end()
-		
-		# shuffle the list for a random order
-		email_list.shuffle()
-	else:
-		print("Critical error: Could not access the folder: ", folder_path)
 
 func setup_mail_list():
 	# clean up any leftover test nodes

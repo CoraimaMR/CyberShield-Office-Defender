@@ -1,7 +1,7 @@
 extends CanvasLayer #HUB
 
-@onready var points_label = %counter_points 
-@onready var lifes_container = %counter_lifes
+@onready var points_label: Label = $Control/points/HBoxContainer/counter_points
+@onready var lifes_container: HBoxContainer = $Control/lifes/counter_lifes
 
 func _ready() -> void:
 	# Connect to the Autoload signals
