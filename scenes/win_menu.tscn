@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://yfchh8x4esx2" path="res://assets/pixel-operator-fuente/PixelOperator8-Bold.ttf" id="3_ah3fa"]
 [ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_1xbon"]
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_1xbon"]
+[ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="6_xtbbn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
@@ -28,10 +29,10 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 237.0
-offset_top = 149.0
-offset_right = 924.0
-offset_bottom = 232.0
+offset_left = 238.0
+offset_top = 137.0
+offset_right = 925.0
+offset_bottom = 220.0
 theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
@@ -45,10 +46,10 @@ autoplay = true
 
 [node name="buttons" type="HBoxContainer" parent="." unique_id=1273560605]
 layout_mode = 0
-offset_left = 356.0
-offset_top = 409.0
-offset_right = 816.0
-offset_bottom = 500.0
+offset_left = 353.0
+offset_top = 410.0
+offset_right = 813.0
+offset_bottom = 501.0
 theme_override_constants/separation = 50
 
 [node name="Button2" type="Button" parent="buttons" unique_id=1644944666]
@@ -70,24 +71,33 @@ theme_override_fonts/font = ExtResource("5_1xbon")
 theme_override_font_sizes/font_size = 60
 text = "REPLAY"
 
-[node name="points" type="HBoxContainer" parent="." unique_id=173507556]
-layout_mode = 0
-offset_left = 402.0
-offset_top = 300.0
-offset_right = 770.0
-offset_bottom = 351.0
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("6_xtbbn")]
 
-[node name="Label" type="Label" parent="points" unique_id=1760074410]
-layout_mode = 2
+[node name="Button" parent="hub/Control" parent_id_path=PackedInt32Array(1269073093, 1617293582) index="0" unique_id=146697412]
+visible = false
+
+[node name="HBoxContainer" parent="hub/Control/points" parent_id_path=PackedInt32Array(1269073093, 693393509) index="0" unique_id=1334710591]
+offset_left = 401.0
+offset_top = 279.0
+offset_right = 759.0
+offset_bottom = 330.0
+
+[node name="Label" parent="hub/Control/points/HBoxContainer" index="0" unique_id=234742598]
 theme_override_fonts/font = ExtResource("6_1xbon")
 theme_override_font_sizes/font_size = 50
 text = "Total points: "
 
-[node name="point" type="Label" parent="points" unique_id=1836970390]
-layout_mode = 2
+[node name="counter_points" parent="hub/Control/points/HBoxContainer" index="1" unique_id=1826452555]
 theme_override_fonts/font = ExtResource("6_1xbon")
 theme_override_font_sizes/font_size = 50
-text = "00"
+
+[node name="counter_lifes" parent="hub/Control/lifes" parent_id_path=PackedInt32Array(1269073093, 73858096) index="0" unique_id=35609946]
+offset_left = 501.99997
+offset_top = 345.0
+offset_right = 1377.0002
+offset_bottom = 570.0
 
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
+
+[editable path="hub"]

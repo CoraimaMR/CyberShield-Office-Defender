@@ -1,10 +1,5 @@
 extends Node # MENU
 
-@onready var label_points = $points/point
-
-func _ready() -> void:
-	label_points.text = str(Autoload.current_points)
-
 # Button 1: RETRY
 func _on_button_pressed() -> void:
 	Autoload.reset_hub()
