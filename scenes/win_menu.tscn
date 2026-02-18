@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_jx1is"]
 [ext_resource type="Texture2D" uid="uid://osq38j7t6h36" path="res://assets/background/depositphotos_527863340-stock-video-binary-code-on-a-dark.jpg" id="2_jx1is"]
 [ext_resource type="AudioStream" uid="uid://dvs6w5jgwb6mg" path="res://sounds/you win.mp3" id="3_7shsi"]
+[ext_resource type="FontFile" uid="uid://yfchh8x4esx2" path="res://assets/pixel-operator-fuente/PixelOperator8-Bold.ttf" id="3_ah3fa"]
+[ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_1xbon"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
@@ -25,13 +27,14 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 359.0
-offset_top = 157.0
-offset_right = 787.0
-offset_bottom = 270.0
+offset_left = 233.0
+offset_top = 167.0
+offset_right = 920.0
+offset_bottom = 250.0
 theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("3_ah3fa")
 theme_override_font_sizes/font_size = 82
 text = "YOU WIN !!"
 
@@ -41,10 +44,10 @@ autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1273560605]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 417.0
-offset_right = 866.0
-offset_bottom = 508.0
+offset_left = 362.0
+offset_top = 418.0
+offset_right = 822.0
+offset_bottom = 509.0
 theme_override_constants/separation = 50
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1644944666]
@@ -52,6 +55,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("5_1xbon")
 theme_override_font_sizes/font_size = 60
 text = "DESKTOP"
 icon = SubResource("CompressedTexture2D_jx1is")
@@ -61,6 +65,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("5_1xbon")
 theme_override_font_sizes/font_size = 60
 text = "REPLAY"
 
