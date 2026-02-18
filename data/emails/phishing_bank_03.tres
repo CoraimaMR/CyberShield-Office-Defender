@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Steam Support"
 sender_email = "noreply@steampowered.com"
+subject = "Your Steam Guard Code"
 body_text = "Here is the Steam Guard code you need to login: 8XY2Z. Do not share this code with anyone."
 educational_tip = "This is a legitimate automated security email from a verified domain (steampowered.com)."
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"

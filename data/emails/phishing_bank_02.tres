@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "PayPal Security"
 sender_email = "service@pay-pal-help.com"
+subject = "Urgent: $500 Withdrawal Alert"
 body_text = "Someone tried to withdraw $500.00 from your account. If this was not you, click here to cancel the transaction: https://bit.ly"
 is_phishing = true
 educational_tip = "Scammers use hyphenated names like 'pay-pal' and link shorteners (bit.ly) to hide the real destination."

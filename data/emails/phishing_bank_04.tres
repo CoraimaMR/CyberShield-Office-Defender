@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Amazon Prime"
 sender_email = "orders@amazon-delivery-status.net"
+subject = "Problem with Your Order #405-2931"
 body_text = "Problem with your order #405-2931. We couldn't verify your shipping address. Click here to confirm: http://amazon-verify-address.com"
 is_phishing = true
 educational_tip = "Amazon uses .com or .es, not .net for official communications regarding your account."

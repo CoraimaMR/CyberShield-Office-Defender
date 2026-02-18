@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Airbnb"
 sender_email = "automated@airbnb.com"
+subject = "Trip Confirmed: London Next Friday"
 body_text = "Your reservation in London is confirmed for next Friday. See your itinerary here."
 educational_tip = "The domain airbnb.com is correct and the context matches a typical user action."
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"

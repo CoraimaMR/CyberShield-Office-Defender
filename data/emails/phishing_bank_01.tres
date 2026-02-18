@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Netflix Billing"
 sender_email = "info@mailer-netflix.com"
+subject = "Urgent: Payment Declined"
 body_text = "Your payment was declined. Update your credit card details within 24 hours to keep your subscription active: https://netflix-update.io"
 is_phishing = true
 educational_tip = "Official Netflix emails always come from @netflix.com. Beware of domains like 'mailer-netflix.com'."

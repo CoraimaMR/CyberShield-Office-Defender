@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "DHL Express"
 sender_email = "info@dhl-tracking-global.com"
+subject = "Shipment AW-823 Awaiting Customs Clearance"
 body_text = "Arrival notification: Shipment AW-823 is waiting for customs clearance. Pay $2.50 tax at: http://dhl-pay.xyz"
 is_phishing = true
 educational_tip = "Scammers use .xyz domains because they are cheap. DHL will not ask for payments on such domains."

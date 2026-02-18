@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Microsoft Account Team"
 sender_email = "account-security-noreply@accountprotection.microsoft.com"
+subject = "Microsoft Security Alert"
 body_text = "Your password was recently changed. If this was you, you can safely ignore this email."
 educational_tip = "The 'microsoft.com' domain is used here with a legitimate security subdomain."
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"

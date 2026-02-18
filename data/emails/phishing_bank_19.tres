@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Dropbox Team"
 sender_email = "no-reply@dropbox-mail.net"
+subject = "Notice About Dropbox Links"
 body_text = "A folder named 'Confidential_Invoices' has been shared with you. View the files here: http://dropbox-viewer.pro"
 is_phishing = true
 educational_tip = "Dropbox uses 'dropbox.com'. Be wary of generic folder names designed to pique curiosity."

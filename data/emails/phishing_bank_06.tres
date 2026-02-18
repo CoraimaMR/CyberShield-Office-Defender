@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "iCloud Support"
 sender_email = "support@icloud-security.uk"
+subject = "Your iCloud Storage Is Full"
 body_text = "Your iCloud storage is full. To prevent losing your photos, get 50GB free for 1 year by clicking here: http://get-icloud-storage.com"
 is_phishing = true
 educational_tip = "Apple doesn't give away free storage via random links. Check the sender address suffix (.uk instead of .com)."
