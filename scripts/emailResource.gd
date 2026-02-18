@@ -13,3 +13,4 @@ class_name EmailResource
 @export var is_phishing: bool = false
 @export var real_url_hint: String = "https://safe-login.com"
 @export_multiline var educational_tip: String = "This email is safe because the domain matches our official site."
+@export var difficulty: int = 1
