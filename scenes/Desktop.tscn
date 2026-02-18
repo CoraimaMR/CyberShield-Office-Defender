@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dnwxcf87fjqvd"]
 
+[ext_resource type="Script" uid="uid://dpxmjpjufa42r" path="res://scripts/desktop.gd" id="1_5mnb0"]
 [ext_resource type="Texture2D" uid="uid://cjkvg4a8s0v0" path="res://assets/background/escritorio.png" id="1_eysme"]
 [ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="2_a1iwr"]
-[ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/background/robot.png" id="3_5mnb0"]
-[ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="4_a1iwr"]
+[ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/robot/robot.png" id="3_5mnb0"]
+[ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
+[ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
 
 [node name="Node2D" type="Node2D" unique_id=237963605]
-metadata/_edit_horizontal_guides_ = [-61.0]
+script = ExtResource("1_5mnb0")
 
 [node name="Escritorio" type="Sprite2D" parent="." unique_id=1565639712]
 position = Vector2(576.5, 325)
@@ -24,13 +26,17 @@ texture = ExtResource("3_5mnb0")
 
 [node name="Label" type="Label" parent="." unique_id=1613811461]
 modulate = Color(0, 0, 0, 1)
-offset_left = 422.0
-offset_top = 333.0
-offset_right = 662.0
-offset_bottom = 356.0
+offset_left = 364.0
+offset_top = 326.0
+offset_right = 721.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("5_ra1mf")
 text = "Hola! Me llamo Roby"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=697344471]
-stream = ExtResource("4_a1iwr")
-volume_db = -10.0
-autoplay = true
+[node name="CyberShieldButton" type="TextureButton" parent="." unique_id=329390948]
+visible = false
+offset_left = 342.0
+offset_top = 69.0
+offset_right = 699.0
+offset_bottom = 399.0
+texture_normal = ExtResource("6_ra1mf")

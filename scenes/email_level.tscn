@@ -253,4 +253,4 @@ autoplay = true
 
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
-[connection signal="pressed" from="popup window/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="popup window/Button" to="." method="_on_close_button_pressed"]
