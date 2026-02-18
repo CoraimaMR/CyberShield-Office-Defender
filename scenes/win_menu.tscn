@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dvs6w5jgwb6mg" path="res://sounds/you win.mp3" id="3_7shsi"]
 [ext_resource type="FontFile" uid="uid://yfchh8x4esx2" path="res://assets/pixel-operator-fuente/PixelOperator8-Bold.ttf" id="3_ah3fa"]
 [ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_1xbon"]
+[ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_1xbon"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
@@ -27,10 +28,10 @@ texture = ExtResource("2_jx1is")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 233.0
-offset_top = 167.0
-offset_right = 920.0
-offset_bottom = 250.0
+offset_left = 237.0
+offset_top = 149.0
+offset_right = 924.0
+offset_bottom = 232.0
 theme_override_colors/font_outline_color = Color(0.3137255, 0.59607846, 0.8352941, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
@@ -42,15 +43,15 @@ text = "YOU WIN !!"
 stream = ExtResource("3_7shsi")
 autoplay = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1273560605]
+[node name="buttons" type="HBoxContainer" parent="." unique_id=1273560605]
 layout_mode = 0
-offset_left = 362.0
-offset_top = 418.0
-offset_right = 822.0
-offset_bottom = 509.0
+offset_left = 356.0
+offset_top = 409.0
+offset_right = 816.0
+offset_bottom = 500.0
 theme_override_constants/separation = 50
 
-[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1644944666]
+[node name="Button2" type="Button" parent="buttons" unique_id=1644944666]
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
@@ -60,7 +61,7 @@ theme_override_font_sizes/font_size = 60
 text = "DESKTOP"
 icon = SubResource("CompressedTexture2D_jx1is")
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=1784545782]
+[node name="Button" type="Button" parent="buttons" unique_id=1784545782]
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
@@ -69,5 +70,24 @@ theme_override_fonts/font = ExtResource("5_1xbon")
 theme_override_font_sizes/font_size = 60
 text = "REPLAY"
 
-[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="points" type="HBoxContainer" parent="." unique_id=173507556]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 300.0
+offset_right = 770.0
+offset_bottom = 351.0
+
+[node name="Label" type="Label" parent="points" unique_id=1760074410]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1xbon")
+theme_override_font_sizes/font_size = 50
+text = "Total points: "
+
+[node name="point" type="Label" parent="points" unique_id=1836970390]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1xbon")
+theme_override_font_sizes/font_size = 50
+text = "00"
+
+[connection signal="pressed" from="buttons/Button2" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
