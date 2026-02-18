@@ -10,4 +10,5 @@ subject = "Refund Notice — $1,250 Pending"
 body_text = "You are eligible for a tax refund of $1,250.00. Please complete the online form to receive your payment: http://irs-tax-refund.org"
 is_phishing = true
 educational_tip = "The IRS will never contact you by email about a tax refund. They use physical mail."
+difficulty = 2
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"
