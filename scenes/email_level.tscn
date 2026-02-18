@@ -25,6 +25,9 @@
 [ext_resource type="Resource" uid="uid://d2a" path="res://data/emails/phishing_bank_19.tres" id="22_ilc8a"]
 [ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="24_h6ctk"]
 [ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="25_havwd"]
+[ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="26_nywdl"]
+[ext_resource type="Texture2D" uid="uid://no44k8vrtupe" path="res://assets/window/yess.png" id="27_wpyyb"]
+[ext_resource type="Texture2D" uid="uid://dr88q7cs2wto3" path="res://assets/window/noo.png" id="28_j1tgi"]
 [ext_resource type="AudioStream" uid="uid://vqealbr34ldm" path="res://sounds/moodmode-commercial-fun-239161 (1).mp3" id="26_havwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
@@ -172,9 +175,80 @@ stream = ExtResource("24_h6ctk")
 [node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=1786726373]
 stream = ExtResource("25_havwd")
 
+[node name="popup window" type="TextureRect" parent="." unique_id=348960599]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 291.0
+offset_top = 163.0
+offset_right = -258.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_nywdl")
+stretch_mode = 2
+
+[node name="text correct" type="Label" parent="popup window" unique_id=1742898540]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 415.0
+offset_bottom = 66.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "CORRECT ANSWER"
+
+[node name="yes" type="TextureRect" parent="popup window/text correct" unique_id=1971961227]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 55.0
+offset_right = 76.0
+offset_bottom = 155.0
+texture = ExtResource("27_wpyyb")
+expand_mode = 1
+
+[node name="text incorrect" type="Label" parent="popup window" unique_id=1378440203]
+visible = false
+layout_mode = 0
+offset_left = 51.0
+offset_top = 24.0
+offset_right = 415.0
+offset_bottom = 66.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "INCORRECT ANSWER"
+
+[node name="no" type="TextureRect" parent="popup window/text incorrect" unique_id=760164870]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 53.0
+offset_right = 79.0
+offset_bottom = 158.0
+texture = ExtResource("28_j1tgi")
+expand_mode = 1
+
+[node name="description" type="Label" parent="popup window" unique_id=1559926661]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 87.0
+offset_right = 563.0
+offset_bottom = 281.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DESCRIPTION "
+autowrap_mode = 1
+
+[node name="Button" type="Button" parent="popup window" unique_id=1680920064]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 32.0
+offset_right = 570.0
+offset_bottom = 66.0
+flat = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=855124746]
 stream = ExtResource("26_havwd")
 autoplay = true
 
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="popup window/Button" to="." method="_on_button_pressed"]
