@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "LinkedIn"
 sender_email = "messages-noreply@linkedin.com"
+subject = "You Have 3 New Connection Requests"
 body_text = "You have 3 new connection requests from people you may know."
 educational_tip = "LinkedIn uses 'linkedin.com' for all its notification services."
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"

@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Discord Nitro"
 sender_email = "promo@discord-gift.com"
+subject = "Claim Your Free Month of Nitro"
 body_text = "You've been gifted 1 month of Discord Nitro! Claim it before it expires: https://discord-app.net"
 is_phishing = true
 educational_tip = "Real Discord gifts appear inside the app. Never trust an email link asking you to login to claim Nitro."

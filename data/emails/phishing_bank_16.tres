@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Zoom Video"
 sender_email = "meeting@zoom-invitation.us"
+subject = "You Missed a Scheduled Zoom Meeting"
 body_text = "You have missed a scheduled Zoom meeting. Click here to view the recorded session: http://zoom-recording.online"
 is_phishing = true
 educational_tip = "Check for weird top-level domains like '.online' or '.us' for global services like Zoom."

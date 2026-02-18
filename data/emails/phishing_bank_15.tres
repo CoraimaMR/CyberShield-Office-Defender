@@ -6,6 +6,7 @@
 script = ExtResource("1_1fq5u")
 sender_name = "Facebook Security"
 sender_email = "security@facebook-mail-support.com"
+subject = "Account Deletion Notice — Action Required"
 body_text = "Your account will be deleted for violating our Terms of Service. If you think this is a mistake, appeal here: http://fb-appeal.com"
 is_phishing = true
 educational_tip = "Scare tactics ('account will be deleted') are used to make you click without thinking."
