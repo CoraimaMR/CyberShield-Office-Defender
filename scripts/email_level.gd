@@ -11,6 +11,7 @@ var current_index: int = 0
 @onready var subject_label = %SubjectLabel
 @onready var body_label = %BodyLabel
 @onready var mail_list_container = %MailList
+
 @onready var incorrect_sound = $incorrect
 @onready var correct_sound = $correct
 @onready var tip_label = $"popup window/description"
@@ -96,7 +97,7 @@ func window(is_correct: bool):
 		incorrect_label.visible = true
 		correct_label.visible = false
 
-func _on_button_pressed() -> void:
+func _on_close_button_pressed() -> void:
 	popup_window.visible = false
 	%TrustButton.disabled = false
 	%ReportButton.disabled = false
