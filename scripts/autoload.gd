@@ -11,7 +11,7 @@ var previous_scene_path: String = ""
 
 # ----- SCENES -----
 
-func save_scene(_path: String):
+func save_scene():
 	previous_scene_path = get_tree().current_scene.scene_file_path
 
 func previous_scene():

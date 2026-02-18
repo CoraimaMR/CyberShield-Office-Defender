@@ -24,7 +24,7 @@ func _ready():
 
 func _process(_delta: float) -> void:
 	if Autoload.current_lifes == 0:
-		Autoload.save_scene("res://scripts/email_level.gd") # Save scene
+		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
 
 func setup_mail_list():
@@ -79,7 +79,7 @@ func validate_choice(user_said_phishing: bool):
 		await get_tree().create_timer(0.5).timeout
 		display_email()
 	else:
-		Autoload.save_scene("res://scripts/email_level.gd") # Save scene
+		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 		
 		
