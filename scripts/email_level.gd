@@ -23,6 +23,12 @@ func _ready():
 		body_label.text = "Error: No emails found in the list."
 
 func _process(_delta: float) -> void:
+	# PAUSE MENU
+	if Input.is_action_just_pressed("ui_cancel"):
+		Autoload.save_scene() # Save scene
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/pause_menu.tscn") # Go to the pause menu
+	
+	# GAME OVER MENU
 	if Autoload.current_lifes == 0:
 		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
@@ -79,6 +85,7 @@ func validate_choice(user_said_phishing: bool):
 		await get_tree().create_timer(0.5).timeout
 		display_email()
 	else:
+		# WIN MENU
 		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 		
