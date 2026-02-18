@@ -84,11 +84,6 @@ func validate_choice(user_said_phishing: bool):
 		Autoload.remove_lifes(1)
 		incorrect_sound.play()
 		window(false)
-	
-	if current_index > email_list.size():
-		# WIN MENU
-		Autoload.save_scene() # Save scene
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 
 func window(is_correct: bool):
 	popup_window.visible = true
@@ -107,8 +102,12 @@ func _on_button_pressed() -> void:
 	%ReportButton.disabled = false
 	# Move to the next email
 	current_index += 1
-	if current_index <= email_list.size():
+	if current_index < email_list.size():
 			display_email()
+	else:
+		# WIN MENU
+		Autoload.save_scene() # Save scene
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 
 func update_list_status(is_correct: bool):
 	# get the Label node located inside MailList at the current index/position
