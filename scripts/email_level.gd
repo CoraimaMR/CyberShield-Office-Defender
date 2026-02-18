@@ -10,10 +10,12 @@ var current_index: int = 0
 @onready var sender_label = %SenderLabel
 @onready var subject_label = %SubjectLabel
 @onready var body_label = %BodyLabel
+@onready var mail_list_container = %MailList
 @onready var incorrect_sound = $incorrect
 @onready var correct_sound = $correct
 
 func _ready():
+	setup_mail_list()
 	# Update the UI with the first email if the list is not empty
 	if email_list.size() > 0:
 		display_email()
@@ -24,6 +26,20 @@ func _process(_delta: float) -> void:
 	if Autoload.current_lifes == 0:
 		Autoload.save_scene("res://scripts/email_level.gd") # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
+
+func setup_mail_list():
+	# clean up any leftover test nodes
+	for child in mail_list_container.get_children():
+		child.queue_free()
+	
+	# create a Label in the blue column for each email in the array
+	for i in range(email_list.size()):
+		var label = Label.new()
+		label.text = "📩 " + email_list[i].subject
+		label.name = "EmailItem_" + str(i)
+		# add some padding so it's not touching the edge
+		label.add_theme_constant_override("margin_left", 10)
+		mail_list_container.add_child(label)
 
 func display_email():
 	var mail = email_list[current_index]
@@ -41,8 +57,11 @@ func _on_report_button_pressed():
 
 func validate_choice(user_said_phishing: bool):
 	var current_mail = email_list[current_index]
+	var success = (user_said_phishing == current_mail.is_phishing)
 	
-	if user_said_phishing == current_mail.is_phishing:
+	update_list_status(success)
+	# update the icon in the list before moving to the next one
+	if success:
 		print("Correct! +5 points")
 		Autoload.add_points(5)
 		correct_sound.play()
@@ -56,7 +75,21 @@ func validate_choice(user_said_phishing: bool):
 	current_index += 1
 	
 	if current_index < email_list.size():
+		# use a short timer so the player can see the icon before the email text changes
+		await get_tree().create_timer(0.5).timeout
 		display_email()
 	else:
 		Autoload.save_scene("res://scripts/email_level.gd") # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
+		
+		
+func update_list_status(is_correct: bool):
+	# get the Label node located inside MailList at the current index/position
+	var label = %MailList.get_child(current_index)
+	
+	if is_correct:
+		label.text = "✅ " + email_list[current_index].subject
+		label.add_theme_color_override("font_color", Color.GREEN)
+	else:
+		label.text = "❌ " + email_list[current_index].subject
+		label.add_theme_color_override("font_color", Color.RED)
