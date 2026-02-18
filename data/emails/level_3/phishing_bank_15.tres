@@ -10,4 +10,5 @@ subject = "Account Deletion Notice — Action Required"
 body_text = "Your account will be deleted for violating our Terms of Service. If you think this is a mistake, appeal here: http://fb-appeal.com"
 is_phishing = true
 educational_tip = "Scare tactics ('account will be deleted') are used to make you click without thinking."
+difficulty = 3
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"

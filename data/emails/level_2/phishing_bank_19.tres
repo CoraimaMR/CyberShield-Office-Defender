@@ -10,4 +10,5 @@ subject = "Notice About Dropbox Links"
 body_text = "A folder named 'Confidential_Invoices' has been shared with you. View the files here: http://dropbox-viewer.pro"
 is_phishing = true
 educational_tip = "Dropbox uses 'dropbox.com'. Be wary of generic folder names designed to pique curiosity."
+difficulty = 2
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"
