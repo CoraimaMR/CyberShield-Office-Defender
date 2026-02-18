@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://d2a" path="res://data/emails/phishing_bank_19.tres" id="22_ilc8a"]
 [ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="24_h6ctk"]
 [ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="25_havwd"]
+[ext_resource type="AudioStream" uid="uid://vqealbr34ldm" path="res://sounds/moodmode-commercial-fun-239161 (1).mp3" id="26_havwd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
 bg_color = Color(0, 0, 0.8235294, 1)
@@ -170,6 +171,10 @@ stream = ExtResource("24_h6ctk")
 
 [node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=1786726373]
 stream = ExtResource("25_havwd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=855124746]
+stream = ExtResource("26_havwd")
+autoplay = true
 
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
