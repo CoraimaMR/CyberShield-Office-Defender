@@ -85,23 +85,16 @@ func validate_choice(user_said_phishing: bool):
 		incorrect_sound.play()
 		window(false)
 	
-	# Move to the next email
-	current_index += 1
-	
-	if current_index < email_list.size():
-		# use a short timer so the player can see the icon before the email text changes
-		await get_tree().create_timer(0.5).timeout
-		display_email()
-	else:
+	if current_index > email_list.size():
 		# WIN MENU
 		Autoload.save_scene() # Save scene
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
 
-func window(correcto: bool):
+func window(is_correct: bool):
 	popup_window.visible = true
 	%TrustButton.disabled = true
 	%ReportButton.disabled = true
-	if correcto:
+	if is_correct:
 		correct_label.visible = true
 		incorrect_label.visible = false
 	else:
@@ -112,8 +105,11 @@ func _on_button_pressed() -> void:
 	popup_window.visible = false
 	%TrustButton.disabled = false
 	%ReportButton.disabled = false
-		
-		
+	# Move to the next email
+	current_index += 1
+	if current_index <= email_list.size():
+			display_email()
+
 func update_list_status(is_correct: bool):
 	# get the Label node located inside MailList at the current index/position
 	var label = %MailList.get_child(current_index)
