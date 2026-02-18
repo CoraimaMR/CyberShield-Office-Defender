@@ -35,7 +35,7 @@ text = "CyberShield: Office Defender"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=363988233]
+[node name="buttons" type="HBoxContainer" parent="." unique_id=363988233]
 layout_mode = 0
 offset_left = 677.0
 offset_top = 464.0
@@ -43,7 +43,7 @@ offset_right = 1131.0
 offset_bottom = 555.0
 theme_override_constants/separation = 30
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=1784545782]
+[node name="Button" type="Button" parent="buttons" unique_id=1784545782]
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
@@ -51,7 +51,7 @@ theme_override_constants/line_spacing = 20
 theme_override_font_sizes/font_size = 60
 text = "Continue"
 
-[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1245833563]
+[node name="Button2" type="Button" parent="buttons" unique_id=1245833563]
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
@@ -60,5 +60,5 @@ theme_override_font_sizes/font_size = 60
 text = "KEYS"
 icon = SubResource("CompressedTexture2D_m7x51")
 
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="buttons/Button2" to="." method="_on_button_2_pressed"]
