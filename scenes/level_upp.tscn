@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ve4l085fln1g"]
+
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_ar3np"]
+[ext_resource type="Texture2D" uid="uid://ir6djyvcml3r" path="res://assets/hub/levelup.webp" id="2_8h1u0"]
+[ext_resource type="AudioStream" uid="uid://cfa18yw8p7bb8" path="res://sounds/level upp.mp3" id="3_8h1u0"]
+
+[node name="LevelUpp" type="Node2D" unique_id=1350438379]
+script = ExtResource("1_ar3np")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=280628497]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_8h1u0")
+
+[node name="Button" type="Button" parent="." unique_id=629942690]
+offset_left = 452.0
+offset_top = 492.0
+offset_right = 703.0
+offset_bottom = 585.0
+flat = true
+
+[node name="LevelUpp" type="AudioStreamPlayer" parent="." unique_id=94370950]
+stream = ExtResource("3_8h1u0")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_cwb3k"]
 [ext_resource type="Texture2D" uid="uid://osq38j7t6h36" path="res://assets/background/depositphotos_527863340-stock-video-binary-code-on-a-dark.jpg" id="2_cwb3k"]
+[ext_resource type="FontFile" uid="uid://yfchh8x4esx2" path="res://assets/pixel-operator-fuente/PixelOperator8-Bold.ttf" id="3_7u104"]
 [ext_resource type="AudioStream" uid="uid://y2kml84ufdmi" path="res://sounds/gamer over.mp3" id="3_ccgoi"]
+[ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_mvr4g"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwb3k"]
 
@@ -25,13 +27,14 @@ texture = ExtResource("2_cwb3k")
 
 [node name="Label" type="Label" parent="." unique_id=2126765259]
 layout_mode = 0
-offset_left = 301.0
-offset_top = 124.0
-offset_right = 837.0
-offset_bottom = 237.0
+offset_left = 147.0
+offset_top = 136.0
+offset_right = 1018.0
+offset_bottom = 219.0
 theme_override_colors/font_outline_color = Color(0.5686275, 0.1764706, 0.24705882, 1)
 theme_override_constants/outline_size = 20
 theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("3_7u104")
 theme_override_font_sizes/font_size = 82
 text = "GAME OVER !!"
 
@@ -41,10 +44,10 @@ autoplay = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1339849198]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 420.0
-offset_right = 833.0
-offset_bottom = 511.0
+offset_left = 361.0
+offset_top = 413.0
+offset_right = 791.0
+offset_bottom = 504.0
 theme_override_constants/separation = 50
 
 [node name="Button2" type="Button" parent="HBoxContainer" unique_id=1454168133]
@@ -52,6 +55,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("5_mvr4g")
 theme_override_font_sizes/font_size = 60
 text = "DESKTOP"
 icon = SubResource("CompressedTexture2D_cwb3k")
@@ -61,6 +65,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("5_mvr4g")
 theme_override_font_sizes/font_size = 60
 text = "RETRY"
 
