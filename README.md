@@ -173,10 +173,10 @@ signal game_over(final_score: int)
 
 ## 👥 Development Team
 
--   Adrian\
--   Luis\
--   Sergio\
--   Coraima
+-   [Adrian](https://github.com/Adrian-0708)
+-   [Luis](https://github.com/luis05102002)
+-   [Sergio](https://github.com/seralcesc)
+-   [Coraima](https://github.com/CoraimaMR)
 
 ------------------------------------------------------------------------
 
