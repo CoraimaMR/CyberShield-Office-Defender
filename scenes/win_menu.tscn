@@ -6,7 +6,8 @@
 [ext_resource type="FontFile" uid="uid://yfchh8x4esx2" path="res://assets/pixel-operator-fuente/PixelOperator8-Bold.ttf" id="3_ah3fa"]
 [ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_1xbon"]
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_1xbon"]
-[ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="6_xtbbn"]
+[ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="6_w75pu"]
+[ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_a5eom"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
@@ -71,33 +72,66 @@ theme_override_fonts/font = ExtResource("5_1xbon")
 theme_override_font_sizes/font_size = 60
 text = "REPLAY"
 
-[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("6_xtbbn")]
+[node name="hub" type="CanvasLayer" parent="." unique_id=1269073093]
+script = ExtResource("6_w75pu")
 
-[node name="Button" parent="hub/Control" parent_id_path=PackedInt32Array(1269073093, 1617293582) index="0" unique_id=146697412]
-visible = false
+[node name="Control" type="Control" parent="hub" unique_id=1617293582]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="HBoxContainer" parent="hub/Control/points" parent_id_path=PackedInt32Array(1269073093, 693393509) index="0" unique_id=1334710591]
+[node name="points" type="Node2D" parent="hub/Control" unique_id=693393509]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="hub/Control/points" unique_id=1334710591]
 offset_left = 401.0
 offset_top = 279.0
 offset_right = 759.0
 offset_bottom = 330.0
 
-[node name="Label" parent="hub/Control/points/HBoxContainer" index="0" unique_id=234742598]
+[node name="Label" type="Label" parent="hub/Control/points/HBoxContainer" unique_id=234742598]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("6_1xbon")
 theme_override_font_sizes/font_size = 50
 text = "Total points: "
 
-[node name="counter_points" parent="hub/Control/points/HBoxContainer" index="1" unique_id=1826452555]
+[node name="counter_points" type="Label" parent="hub/Control/points/HBoxContainer" unique_id=1826452555]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("6_1xbon")
 theme_override_font_sizes/font_size = 50
+text = "00"
 
-[node name="counter_lifes" parent="hub/Control/lifes" parent_id_path=PackedInt32Array(1269073093, 73858096) index="0" unique_id=35609946]
+[node name="lifes" type="Node2D" parent="hub/Control" unique_id=73858096]
+
+[node name="counter_lifes" type="HBoxContainer" parent="hub/Control/lifes" unique_id=35609946]
 offset_left = 501.99997
 offset_top = 345.0
 offset_right = 1377.0002
 offset_bottom = 570.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/separation = 50
+
+[node name="life1" type="TextureRect" parent="hub/Control/lifes/counter_lifes" unique_id=1362858614]
+layout_mode = 2
+texture = ExtResource("8_a5eom")
+
+[node name="life2" type="TextureRect" parent="hub/Control/lifes/counter_lifes" unique_id=1140272294]
+layout_mode = 2
+texture = ExtResource("8_a5eom")
+
+[node name="life3" type="TextureRect" parent="hub/Control/lifes/counter_lifes" unique_id=1698728281]
+layout_mode = 2
+texture = ExtResource("8_a5eom")
 
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
-
-[editable path="hub"]
