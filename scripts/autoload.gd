@@ -7,6 +7,18 @@ signal lifes_updated(new_value)
 var current_points: int = 0
 var current_lifes: int = 3
 var max_lifes: int = 3
+var previous_scene_path: String = ""
+
+# ----- SCENES -----
+
+func save_scene(_path: String):
+	previous_scene_path = get_tree().current_scene.scene_file_path
+
+func previous_scene():
+	if previous_scene_path != "":
+		get_tree().change_scene_to_file(previous_scene_path)
+	else:
+		print("There is no saved previous scene")
 
 # ----- POINTS -----
 

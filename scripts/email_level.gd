@@ -21,7 +21,8 @@ func _ready():
 		body_label.text = "Error: No emails found in the list."
 
 func _process(_delta: float) -> void:
-	if Autoload.current_lifes == 0: 
+	if Autoload.current_lifes == 0:
+		Autoload.save_scene("res://scripts/email_level.gd")
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn") # Go to the game over menu
 
 func display_email():
@@ -57,4 +58,5 @@ func validate_choice(user_said_phishing: bool):
 	if current_index < email_list.size():
 		display_email()
 	else:
+		Autoload.save_scene("res://scripts/email_level.gd")
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn") # Go to the win menu
