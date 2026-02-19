@@ -2,7 +2,7 @@ extends CanvasLayer # HUB
 
 @onready var points_label = %counter_points 
 @onready var lifes_container = %counter_lifes
-@onready var time_bar = %TimeBar 
+@onready var time_bar = %hub/%TimeBar
 
 func _ready() -> void:
 	Autoload.points_updated.connect(_on_points_updated)
@@ -27,9 +27,9 @@ func update_time_bar(current_time: float, max_time: float) -> void:
 	if is_instance_valid(time_bar):
 		time_bar.value = (current_time * 100) / max_time
 
-func set_time_bar_visible(is_visible: bool) -> void:
+func set_time_bar_visible(visib: bool) -> void:
 	if is_instance_valid(time_bar):
-		time_bar.visible = is_visible
+		time_bar.visible = visib
 
 func _exit_tree():
 	if Autoload.points_updated.is_connected(_on_points_updated):

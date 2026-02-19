@@ -80,7 +80,6 @@ func reset_timer():
 
 func load_emails_from_folder():
 	email_list.clear() 
-	var current_lvl = Autoload.current_level
 	var folder_path = "res://data/emails/level_" + str(Autoload.current_level) + "/"
 	var dir = DirAccess.open(folder_path)
 	
