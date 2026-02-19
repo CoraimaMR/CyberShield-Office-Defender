@@ -21,6 +21,7 @@ flat = true
 
 [node name="LevelUpp" type="AudioStreamPlayer" parent="." unique_id=94370950]
 stream = ExtResource("3_8h1u0")
+volume_db = -20.0
 autoplay = true
 
-[connection signal="pressed" from="Button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_level_upp_button_pressed"]
