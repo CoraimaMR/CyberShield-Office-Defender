@@ -70,6 +70,7 @@ func time_exhausted():
 	window(false)
 
 func reset_timer():
+	time_limit = Autoload.get_time_for_level() # load in autoload.gd the time for each level
 	time_left = time_limit 
 	if Autoload.current_level >= 2:
 		timer_active = true
