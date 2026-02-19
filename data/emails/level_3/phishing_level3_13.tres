@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://djubrjx22mara"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_gxdab"]
+
+[resource]
+script = ExtResource("1_gxdab")
+sender_name = "CFO Office"
+sender_email = "<cfo@yourcompany.com>"
+subject = "Budget Approval: New Testing Devices"
+body_text = "I have reviewed your request for the new mobile testing devices. The budget is approved. Please coordinate the purchase with the procurement team."
+educational_tip = "Safe. Direct internal communication about a pending request."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

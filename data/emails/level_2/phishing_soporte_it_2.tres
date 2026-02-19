@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://daftpwqal7r0b"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_lbyc2"]
+
+[resource]
+script = ExtResource("1_lbyc2")
+sender_name = "Microsoft Team"
+sender_email = "<no-reply@msoffice-billing.com>"
+subject = "Notice: Your Subscription has Expired"
+body_text = "We were unable to process your last payment. To keep using Outlook and OneDrive, please update your billing information immediately."
+is_phishing = true
+educational_tip = "Microsoft always uses the microsoft.com domain for billing alerts."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

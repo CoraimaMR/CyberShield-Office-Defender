@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://cu0vmcyttlg1c"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_k6xca"]
+
+[resource]
+script = ExtResource("1_k6xca")
+sender_name = "Github"
+sender_email = "<noreply@github.com>"
+subject = "[Security] Dependabot alert for your repository"
+body_text = "We found a known security vulnerability in a package you are using. Please review the Pull Request created by Dependabot to update the library."
+educational_tip = "Safe. This is a standard GitHub feature for developers."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

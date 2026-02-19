@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://dic17hvwr8lfj"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_rdo5g"]
+
+[resource]
+script = ExtResource("1_rdo5g")
+sender_name = "System Admin"
+sender_email = "<noreply@yourcompany.com>"
+subject = "Success: Your computer backup is complete"
+body_text = "This is an automated message to confirm that your workstation backup was successfully completed on 2026-02-18."
+educational_tip = "Automated system notifications from a verified internal domain."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

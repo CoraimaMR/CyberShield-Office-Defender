@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://c6ibv1acopp2n"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_b3i0r"]
+
+[resource]
+script = ExtResource("1_b3i0r")
+sender_name = "Internal Security"
+sender_email = "<security@yourcompany.com>"
+subject = "Reminder: Lock your workstation"
+body_text = "This is a friendly reminder that several workstations were found unlocked during last night's sweep. Please remember to press Win+L when leaving your desk."
+educational_tip = "Safe. A typical internal security awareness message."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

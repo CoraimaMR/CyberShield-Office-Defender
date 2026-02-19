@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://do58b5huywr5t"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_fg0vg"]
+
+[resource]
+script = ExtResource("1_fg0vg")
+sender_name = "Google Workspace"
+sender_email = "<admin@google-security-notice.com>"
+subject = "Critical Security Alert"
+body_text = "Someone just used your password to try to sign in to your account from a new device. If this wasn't you, please secure your account here: https://google-recovery-access.com"
+is_phishing = true
+educational_tip = "Official security alerts from Google come from @google.com."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

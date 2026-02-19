@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://ct55ikivktxlh"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_i6jx0"]
+
+[resource]
+script = ExtResource("1_i6jx0")
+sender_name = "Cisco Support"
+sender_email = "<support@cisco-webex.cc>"
+subject = "Critical Patch for Webex Desktop App"
+body_text = "A critical vulnerability has been found in Webex. To protect your workstation, you must install the following patch immediately. [📎 Attachment: webex_patch_v4.msi]"
+is_phishing = true
+educational_tip = "Software patches should always come from official update managers, never as .msi attachments in an email."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

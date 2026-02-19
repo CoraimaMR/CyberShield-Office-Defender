@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://bmjuwhx05r82y"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_nx578"]
+
+[resource]
+script = ExtResource("1_nx578")
+sender_name = "Stack Overflow"
+sender_email = "<noreply@stackoverflow.com>"
+subject = "Your answer was accepted!"
+body_text = "Congratulations! Your answer to \"How to fix null pointer in Godot 4\" was accepted by the community. You earned +15 reputation."
+educational_tip = "Safe. A standard notification from a trusted developer site."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

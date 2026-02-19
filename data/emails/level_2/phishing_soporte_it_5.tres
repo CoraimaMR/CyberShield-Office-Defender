@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://coeg822ewgs8b"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_0jbnm"]
+
+[resource]
+script = ExtResource("1_0jbnm")
+sender_name = "The CEO"
+sender_email = "<ceo-office@company-internal.com>"
+subject = "Quick Request"
+body_text = "Are you at your desk? I need you to help me with a confidential task. Do not tell anyone yet. Please reply as soon as you get this."
+is_phishing = true
+educational_tip = "This is \"CEO Fraud.\" Attackers pretend to be executives to exploit authority."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

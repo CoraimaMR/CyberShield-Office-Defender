@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://c4xhaoqdh1mip"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_sw7ln"]
+
+[resource]
+script = ExtResource("1_sw7ln")
+sender_name = "Facility Manager"
+sender_email = "<facilities@yourcompany.com>"
+subject = "Fire Drill Tomorrow"
+body_text = "Please be advised that we will conduct a mandatory fire drill tomorrow at 11:00 AM. Please follow your floor marshal to the exit."
+educational_tip = "Essential safety information sent through internal official channels."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

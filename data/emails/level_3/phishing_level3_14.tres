@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://5trnqmocwqrw"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_suobc"]
+
+[resource]
+script = ExtResource("1_suobc")
+sender_name = "IT Asset Management"
+sender_email = "<inventory@yourcompany.com>"
+subject = "Hardware Inventory Audit"
+body_text = "Please reply with the serial number of your laptop and your monitor's model for our annual asset audit."
+educational_tip = "Safe. It asks for information you already have, not for passwords or link clicks."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
