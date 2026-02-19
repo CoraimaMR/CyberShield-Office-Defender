@@ -71,9 +71,10 @@ func upgrade_level():
 		current_rank = "Security Expert"
 	else:
 		current_rank = "The Boss"
-
-	level_up.emit(current_level, current_rank) # notify the game about the promotion
-	print("PROMOTION! Level:", current_level, " Rank:", current_rank)
+	
+	if current_lifes > 0:
+		level_up.emit(current_level, current_rank) # notify the game about the promotion
+		print("PROMOTION! Level:", current_level, " Rank:", current_rank)
 	
 # ----- LIFES -----
 
