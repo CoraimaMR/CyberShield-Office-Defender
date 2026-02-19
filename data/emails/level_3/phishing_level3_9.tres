@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://d3dt7j5afv3wk"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_2ieeq"]
+
+[resource]
+script = ExtResource("1_2ieeq")
+sender_name = "HR Department"
+sender_email = "<hr@yourcompany.com>"
+subject = "Annual Performance Review Schedule"
+body_text = "Please check your calendar. I have sent invites for our 1-on-1 meetings to discuss your performance goals for the year."
+educational_tip = "Safe. A standard internal process with no suspicious links or files."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
