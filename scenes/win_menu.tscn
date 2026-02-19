@@ -11,6 +11,12 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w75pu"]
+bg_color = Color(0.6, 0.27058825, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5eom"]
+bg_color = Color(1, 0.6, 0.03137255, 1)
+
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
 anchors_preset = 0
@@ -128,6 +134,19 @@ texture = ExtResource("8_a5eom")
 [node name="life3" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=1217470713]
 layout_mode = 2
 texture = ExtResource("8_a5eom")
+
+[node name="TimeBar" type="ProgressBar" parent="hub/Control/VBoxContainer" unique_id=803922718]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(855, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_w75pu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a5eom")
+value = 100.0
+show_percentage = false
 
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_desktop_button_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]
