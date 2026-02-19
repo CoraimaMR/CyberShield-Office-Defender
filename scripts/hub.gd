@@ -13,9 +13,23 @@ func _ready() -> void:
 	_on_lifes_updated(Autoload.current_lifes)
 
 func _on_points_updated(value: int) -> void:
-	points_label.text = str(value).pad_zeros(2)
+	if is_instance_valid(points_label): # verify that label is not null
+		points_label.text = str(value).pad_zeros(2)
 
 func _on_lifes_updated(value: int) -> void:
+	# if the lives container doesn't exist or isn't ready, do nothing
+	if not is_instance_valid(lifes_container):
+		return
+
 	for i in lifes_container.get_child_count():
-		var life_icon = lifes_container.get_child(i)
-		life_icon.visible = i < value
+		var heart = lifes_container.get_child(i)
+		if heart:
+			heart.visible = value > i
+
+func _exit_tree():
+	# Disconnect signals on exit to prevent the Autoload
+	# from trying to communicate with a HUD that no longer exists
+	if Autoload.points_updated.is_connected(_on_points_updated):
+		Autoload.points_updated.disconnect(_on_points_updated)
+	if Autoload.lifes_updated.is_connected(_on_lifes_updated):
+		Autoload.lifes_updated.disconnect(_on_lifes_updated)

@@ -31,10 +31,7 @@ func previous_scene():
 
 func add_points(points: int) -> void:
 	current_points += points
-	points_updated.emit(current_points) # Notify any active UI
-	# increment the email counter every time points are added for a correct answer/match
-	emails_solved_in_this_level += 1
-	check_level_up()
+	points_updated.emit(current_points)
 
 func remove_points(points: int) -> void:
 	current_points = current_points - points
@@ -42,9 +39,28 @@ func remove_points(points: int) -> void:
 
 # ----- LEVEL PROGRESS -----
 
-func check_level_up():
+func register_email_solved():
+	emails_solved_in_this_level += 1
+	print("Emails acertados en este nivel: ", emails_solved_in_this_level)
 	if emails_solved_in_this_level >= 10:
-		upgrade_level()
+		check_level_up()
+
+func check_level_up():
+	current_level += 1
+	emails_solved_in_this_level = 0
+	
+	if current_level == 2:
+		current_rank = "Junior Technician"
+	elif current_level == 3:
+		current_rank = "Security Expert"
+	else:
+		current_rank = "The Boss"
+
+	print("¡NEW LEVEL!: ", current_level, " Range: ", current_rank)
+	level_up.emit(current_level, current_rank)
+	
+	# reload to read the new directory level_X
+	get_tree().reload_current_scene()
 
 func upgrade_level():
 	current_level += 1

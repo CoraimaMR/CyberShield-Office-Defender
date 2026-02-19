@@ -19,7 +19,7 @@ var current_index: int = 0
 @onready var incorrect_label = $"popup window/text incorrect"
 
 # Usamos get_node_or_null para que no crashee si olvidas poner el nombre único
-@onready var time_bar = get_node_or_null("%TimeBar") 
+@onready var time_bar = get_node_or_null("hub/%TimeBar")
 
 var time_limit: float = 10.0      
 var time_left: float = 10.0       
@@ -30,10 +30,6 @@ func _ready():
 	
 	popup_window.visible = false
 	setup_mail_list()
-	
-	# Verificación de seguridad para la barra de tiempo
-	if time_bar == null:
-		push_warning("PRECAUCIÓN: No se ha encontrado el nodo '%TimeBar'. El temporizador no será visible.")
 	
 	if email_list.size() > 0:
 		display_email()
@@ -88,31 +84,25 @@ func reset_timer():
 
 func load_emails_from_folder():
 	email_list.clear() 
-	
+	var current_lvl = Autoload.current_level
 	var folder_path = "res://data/emails/level_" + str(Autoload.current_level) + "/"
 	var dir = DirAccess.open(folder_path)
 	
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
-		
 		while file_name != "":
-			if !dir.current_is_dir(): 
-				var final_filename = file_name.replace(".remap", "")
-				
-				if final_filename.ends_with(".tres"):
-					var full_path = folder_path + final_filename
-					if ResourceLoader.exists(full_path):
-						var email_res = load(full_path)
-						if email_res:
-							email_list.append(email_res)
-			
+			if !dir.current_is_dir():
+				var clean_name = file_name.replace(".remap", "")
+				if clean_name.ends_with(".tres"):
+					var res = load(folder_path + clean_name)
+					if res:
+						email_list.append(res)
 			file_name = dir.get_next()
-		
 		dir.list_dir_end()
 		email_list.shuffle()
 	else:
-		print("Critical error: Could not access the folder: ", folder_path)
+		push_error("No se pudo abrir la carpeta: " + folder_path)
 
 func setup_mail_list():
 	for child in mail_list_container.get_children():
@@ -153,12 +143,11 @@ func validate_choice(user_said_phishing: bool):
 	update_list_status(success)
 	
 	if success:
-		print("Correct! +5 points")
 		Autoload.add_points(5)
+		Autoload.register_email_solved() 
 		correct_sound.play()
 		window(true)
 	else:
-		print("Wrong! -10 points")
 		Autoload.remove_points(10)
 		Autoload.remove_lifes(1)
 		incorrect_sound.play()
