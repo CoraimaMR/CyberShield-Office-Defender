@@ -57,7 +57,9 @@ func _process(delta: float) -> void:
 			time_exhausted()
 
 func time_exhausted():
+	update_list_status(false)
 	Autoload.remove_lifes(1)
+	Autoload.remove_points(10)
 	incorrect_sound.play()
 	
 	current_index += 1
