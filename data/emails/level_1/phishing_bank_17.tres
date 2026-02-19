@@ -9,5 +9,4 @@ sender_email = "uber.uk@uber.com"
 subject = "Your Ride Receipt Is Ready"
 body_text = "Thanks for riding! Here is your receipt for your trip this morning."
 educational_tip = "Receipts from official domains containing correct personal trip data are safe."
-difficulty = 2
 metadata/_custom_type_script = "uid://djdvw2k2fnth1"
