@@ -1,5 +1,8 @@
 extends Control # EMAIL LEVEL
 
+var PUT_POINTS = 5
+var REMOVE_POINTS = 10
+
 # This array will hold your EmailResource files (.tres)
 @export var email_list: Array[Resource] = []
 
@@ -45,10 +48,10 @@ func _process(delta: float) -> void:
 		Autoload.save_scene() 
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn")
 	
+	# TIMER BAR
 	if Autoload.current_level >= 2 and timer_active:
 		time_left -= delta
 		
-		# Actualizamos la barra a través del hub
 		if hub_scene:
 			hub_scene.update_time_bar(time_left, time_limit)
 		
@@ -58,9 +61,8 @@ func _process(delta: float) -> void:
 
 func time_exhausted():
 	update_list_status(false)
-	Autoload.remove_points(10)
+	Autoload.remove_points(REMOVE_POINTS)
 	Autoload.remove_lifes(1)
-	Autoload.remove_points(10)
 	incorrect_sound.play()
 	window(false)
 
@@ -137,12 +139,12 @@ func validate_choice(user_said_phishing: bool):
 	update_list_status(success)
 	
 	if success:
-		Autoload.add_points(5)
+		Autoload.add_points(PUT_POINTS)
 		Autoload.register_email_solved() 
 		correct_sound.play()
 		window(true)
 	else:
-		Autoload.remove_points(10)
+		Autoload.remove_points(REMOVE_POINTS)
 		Autoload.remove_lifes(1)
 		incorrect_sound.play()
 		window(false)
