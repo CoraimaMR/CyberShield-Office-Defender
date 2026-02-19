@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	if Autoload.current_level >= 2 and timer_active:
 		time_left -= delta
 		
-		# Solo actualizamos la barra si existe
+		# only update the bar if it exists
 		if time_bar:
 			time_bar.value = (time_left * 100) / time_limit
 		
@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 			time_exhausted()
 
 func time_exhausted():
+	update_list_status(false)
 	Autoload.remove_lifes(1)
 	incorrect_sound.play()
 	
@@ -73,7 +74,7 @@ func reset_timer():
 	time_left = time_limit 
 	if Autoload.current_level >= 2:
 		timer_active = true
-		# SEGURIDAD: Solo accedemos a .visible si el nodo existe
+		# SAFETY: Only access .visible if the node exists
 		if time_bar:
 			time_bar.visible = true
 			time_bar.value = 100 
@@ -102,7 +103,7 @@ func load_emails_from_folder():
 		dir.list_dir_end()
 		email_list.shuffle()
 	else:
-		push_error("No se pudo abrir la carpeta: " + folder_path)
+		push_error("Could not open folder: " + folder_path)
 
 func setup_mail_list():
 	for child in mail_list_container.get_children():
