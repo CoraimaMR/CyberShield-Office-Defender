@@ -7,8 +7,15 @@
 [ext_resource type="FontFile" uid="uid://t73je13fsxfc" path="res://assets/pixel-operator-fuente/PixelOperator-Bold.ttf" id="5_mvr4g"]
 [ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="6_csn76"]
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_mvr4g"]
+[ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_k8pbw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwb3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8pbw"]
+bg_color = Color(0.6, 0.27058825, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nl4x"]
+bg_color = Color(1, 0.6, 0.03137255, 1)
 
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
@@ -71,24 +78,30 @@ theme_override_fonts/font = ExtResource("5_mvr4g")
 theme_override_font_sizes/font_size = 60
 text = "RETRY"
 
-[node name="hub" type="CanvasLayer" parent="." unique_id=1269073093]
+[node name="hub" type="CanvasLayer" parent="." unique_id=578929654]
 script = ExtResource("6_csn76")
 
-[node name="Control" type="Control" parent="hub" unique_id=1617293582]
+[node name="Control" type="Control" parent="hub" unique_id=188339921]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="points" type="Node2D" parent="hub/Control" unique_id=693393509]
+[node name="VBoxContainer" type="VBoxContainer" parent="hub/Control" unique_id=152820891]
+clip_contents = true
+layout_mode = 1
+offset_left = 392.0
+offset_top = 237.0
+offset_right = 1167.0
+offset_bottom = 573.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="hub/Control/points" unique_id=1334710591]
-offset_left = 401.0
-offset_top = 279.0
-offset_right = 759.0
-offset_bottom = 330.0
+[node name="HBoxContainer" type="HBoxContainer" parent="hub/Control/VBoxContainer" unique_id=454438278]
+layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="hub/Control/points/HBoxContainer" unique_id=234742598]
+[node name="Label" type="Label" parent="hub/Control/VBoxContainer/HBoxContainer" unique_id=1439648138]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 theme_override_constants/shadow_offset_x = 20
@@ -96,10 +109,11 @@ theme_override_constants/shadow_offset_y = 20
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("6_mvr4g")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 100
 text = "Total points: "
 
-[node name="counter_points" type="Label" parent="hub/Control/points/HBoxContainer" unique_id=1826452555]
+[node name="counter_points" type="Label" parent="hub/Control/VBoxContainer/HBoxContainer" unique_id=1905790883]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 theme_override_constants/shadow_offset_x = 20
@@ -107,8 +121,39 @@ theme_override_constants/shadow_offset_y = 20
 theme_override_constants/outline_size = 5
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("6_mvr4g")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 100
 text = "00"
 
-[connection signal="pressed" from="buttons/Button2" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
+[node name="counter_lifes" type="HBoxContainer" parent="hub/Control/VBoxContainer" unique_id=862664476]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="life1" type="TextureRect" parent="hub/Control/VBoxContainer/counter_lifes" unique_id=20675916]
+layout_mode = 2
+texture = ExtResource("8_k8pbw")
+
+[node name="life2" type="TextureRect" parent="hub/Control/VBoxContainer/counter_lifes" unique_id=1111655092]
+layout_mode = 2
+texture = ExtResource("8_k8pbw")
+
+[node name="life3" type="TextureRect" parent="hub/Control/VBoxContainer/counter_lifes" unique_id=1256059423]
+layout_mode = 2
+texture = ExtResource("8_k8pbw")
+
+[node name="TimeBar" type="ProgressBar" parent="hub/Control/VBoxContainer" unique_id=423480283]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(855, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_k8pbw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2nl4x")
+value = 100.0
+show_percentage = false
+
+[connection signal="pressed" from="buttons/Button2" to="." method="_on_desktop_button_3_pressed"]
+[connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]

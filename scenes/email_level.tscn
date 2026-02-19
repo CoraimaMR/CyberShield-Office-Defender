@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c8xusq6fq6vrt"]
 
 [ext_resource type="Script" uid="uid://bnt8xncjeyr3p" path="res://scripts/email_level.gd" id="1_0y5w7"]
-[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="2_ds2mx"]
 [ext_resource type="Resource" uid="uid://n1" path="res://data/emails/level_1/phishing_bank_01.tres" id="3_hcini"]
 [ext_resource type="Resource" uid="uid://c6kbwqbw71ehb" path="res://data/emails/level_1/phishing_bank_00.tres" id="3_r4fxs"]
 [ext_resource type="Resource" uid="uid://p2" path="res://data/emails/level_1/phishing_bank_02.tres" id="4_wyplp"]
@@ -48,7 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0y5w7")
-email_list = Array[ExtResource("2_ds2mx")]([ExtResource("3_r4fxs"), ExtResource("3_hcini"), ExtResource("4_wyplp"), ExtResource("5_x4jmi"), ExtResource("6_r4fxs"), ExtResource("7_fc73l"), ExtResource("8_vdrlr"), ExtResource("10_fc73l"), ExtResource("11_vdrlr"), ExtResource("12_n13x3"), ExtResource("13_vsuiw"), ExtResource("14_wgccn"), ExtResource("15_rq4yx"), ExtResource("16_h6ctk"), ExtResource("17_havwd"), ExtResource("18_cjspr"), ExtResource("19_nywdl"), ExtResource("20_wpyyb"), ExtResource("21_j1tgi"), ExtResource("22_ilc8a")])
+email_list = Array[Resource]([ExtResource("3_r4fxs"), ExtResource("3_hcini"), ExtResource("4_wyplp"), ExtResource("5_x4jmi"), ExtResource("6_r4fxs"), ExtResource("7_fc73l"), ExtResource("8_vdrlr"), ExtResource("10_fc73l"), ExtResource("11_vdrlr"), ExtResource("12_n13x3"), ExtResource("13_vsuiw"), ExtResource("14_wgccn"), ExtResource("15_rq4yx"), ExtResource("16_h6ctk"), ExtResource("17_havwd"), ExtResource("18_cjspr"), ExtResource("19_nywdl"), ExtResource("20_wpyyb"), ExtResource("21_j1tgi"), ExtResource("22_ilc8a")])
 
 [node name="Background" type="ColorRect" parent="." unique_id=1354162238]
 layout_mode = 1
@@ -92,8 +91,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="hub" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1269073093 instance=ExtResource("9_n13x3")]
-offset = Vector2(880, -50)
-transform = Transform2D(1, 0, 0, 1, 880, -50)
+offset = Vector2(885, 10)
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 885, 10)
 
 [node name="Body" type="HSplitContainer" parent="Background/MainLayout" unique_id=1661869193]
 layout_mode = 2
