@@ -85,6 +85,15 @@ func remove_lifes(lifes: int) -> void:
 	current_lifes = max(0, current_lifes - lifes)
 	lifes_updated.emit(current_lifes)
 
+# ----- TIME -----
+
+func get_time_for_level() -> float:
+	if current_level == 2:
+		return 20.0 # level 2
+	elif current_level >= 3:
+		return 12.0  # level 3
+	return 9999.0    # level 1
+
 # ----- RESET HUB -----
 
 func reset_hub():
