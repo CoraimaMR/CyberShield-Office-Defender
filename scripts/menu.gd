@@ -1,19 +1,16 @@
 extends Node # MENU
 
-# Button 1: RETRY
+# Button 1: PREVIUS SCENE + RESET HUB
 func _on_retry_button_pressed() -> void:
 	Autoload.reset_hub()
 	Autoload.previous_scene() # Go to previus scene
 
-# Button 2: KEYS
-func _on_keys_button_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/keys.tscn") # Go to the keyboard scene
-
-# Button 3: DESKTOP
+# Button 2: DESKTOP
 func _on_desktop_button_pressed() -> void:
 	Autoload.reset_hub()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Desktop.tscn") # Go to the desktop
 
-# Button 4: LEVEL UPP
+# Button 3: LEVEL UPP
 func _on_level_upp_button_pressed() -> void:
+	get_tree().paused = false
 	Autoload.previous_scene() # Go to previus scene

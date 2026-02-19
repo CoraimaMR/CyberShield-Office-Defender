@@ -90,12 +90,6 @@ text = "CyberShield Mail"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="hub" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1269073093 instance=ExtResource("9_n13x3")]
-unique_name_in_owner = true
-offset = Vector2(885, 10)
-scale = Vector2(0.3, 0.3)
-transform = Transform2D(0.3, 0, 0, 0.3, 885, 10)
-
 [node name="Body" type="HSplitContainer" parent="Background/MainLayout" unique_id=1661869193]
 layout_mode = 2
 size_flags_vertical = 3
@@ -240,6 +234,12 @@ offset_top = 32.0
 offset_right = 570.0
 offset_bottom = 66.0
 flat = true
+
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("9_n13x3")]
+unique_name_in_owner = true
+offset = Vector2(885, 10)
+scale = Vector2(0.3, 0.3)
+transform = Transform2D(0.3, 0, 0, 0.3, 885, 10)
 
 [node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1024679185]
 stream = ExtResource("24_h6ctk")

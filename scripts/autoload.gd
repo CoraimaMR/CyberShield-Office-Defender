@@ -19,13 +19,12 @@ var emails_solved_in_this_level: int = 0
 # ----- SCENES -----
 
 func save_scene():
-	previous_scene_path = get_tree().current_scene.scene_file_path
+	if get_tree().current_scene:
+		previous_scene_path = get_tree().current_scene.scene_file_path
 
 func previous_scene():
 	if previous_scene_path != "":
 		get_tree().change_scene_to_file(previous_scene_path)
-	else:
-		print("There is no saved previous scene")
 
 # ----- POINTS -----
 
