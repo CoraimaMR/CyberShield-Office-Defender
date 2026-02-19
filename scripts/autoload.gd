@@ -41,7 +41,6 @@ func remove_points(points: int) -> void:
 
 func register_email_solved():
 	emails_solved_in_this_level += 1
-	print("Emails acertados en este nivel: ", emails_solved_in_this_level)
 	if emails_solved_in_this_level >= 10:
 		check_level_up()
 
@@ -60,7 +59,8 @@ func check_level_up():
 	level_up.emit(current_level, current_rank)
 	
 	# reload to read the new directory level_X
-	get_tree().reload_current_scene()
+	Autoload.save_scene() 
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/level_upp.tscn")
 
 func upgrade_level():
 	current_level += 1
