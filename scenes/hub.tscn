@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://01i7r32w52s4"]
 
-[ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="1_d1od2"]
 [ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="1_w6xti"]
+[ext_resource type="FontFile" uid="uid://ytd5nf8bagh2" path="res://assets/pixel-operator-fuente/PixelOperatorSC-Bold.ttf" id="2_7wvbm"]
 [ext_resource type="FontFile" uid="uid://d33gjbcuit6s5" path="res://assets/pixel-operator-fuente/PixelOperatorHB.ttf" id="2_w6xti"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w6xti"]
+load_path = "res://.godot/imported/life.png-b0106c49d2e595819c707211afda9255.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7wvbm"]
+load_path = "res://.godot/imported/life.png-b0106c49d2e595819c707211afda9255.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bfqb0"]
+load_path = "res://.godot/imported/life.png-b0106c49d2e595819c707211afda9255.ctex"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1od2"]
-bg_color = Color(0.6, 0.27058825, 0.9411765, 1)
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6xti"]
-bg_color = Color(1, 0.6, 0.03137255, 1)
+bg_color = Color(1, 0.14901961, 0.03137255, 1)
 
 [node name="hub" type="CanvasLayer" unique_id=1269073093]
 script = ExtResource("1_w6xti")
@@ -16,77 +25,112 @@ script = ExtResource("1_w6xti")
 [node name="Control" type="Control" parent="." unique_id=1617293582]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 855.0
+offset_bottom = 461.0
 
-[node name="Button" type="Button" parent="Control" unique_id=146697412]
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1374010476]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 854.0
-offset_bottom = 325.0
-theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-disabled = true
-button_mask = 0
+offset_right = 855.0
+offset_bottom = 461.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=65751898]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=65751898]
 clip_contents = true
-layout_mode = 1
-offset_right = 854.0
-offset_bottom = 375.0
+layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1334710591]
+[node name="level" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=582466638]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/level" unique_id=1944651792]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0.14901961, 0.03137255, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("2_7wvbm")
+theme_override_font_sizes/font_size = 82
+text = " Level "
+
+[node name="counter_level" type="Label" parent="Control/PanelContainer/VBoxContainer/level" unique_id=1273653118]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0.14901961, 0.03137255, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("2_7wvbm")
+theme_override_font_sizes/font_size = 82
+text = "00. "
+
+[node name="level_label" type="Label" parent="Control/PanelContainer/VBoxContainer/level" unique_id=685667240]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(466, 1)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0.14901961, 0.03137255, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("2_7wvbm")
+theme_override_font_sizes/font_size = 70
+text = "Rank"
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="point" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=1334710591]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=234742598]
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/point" unique_id=234742598]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_colors/font_outline_color = Color(0.65851885, 0.65793604, 0, 1)
 theme_override_constants/shadow_offset_x = 20
 theme_override_constants/shadow_offset_y = 20
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("2_w6xti")
 theme_override_font_sizes/font_size = 82
 text = "Points: "
 
-[node name="counter_points" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=1826452555]
+[node name="counter_points" type="Label" parent="Control/PanelContainer/VBoxContainer/point" unique_id=1826452555]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_colors/font_outline_color = Color(0.65851885, 0.65793604, 0, 1)
 theme_override_constants/shadow_offset_x = 20
 theme_override_constants/shadow_offset_y = 20
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("2_w6xti")
 theme_override_font_sizes/font_size = 82
 text = "00"
 
-[node name="counter_lifes" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=35609946]
+[node name="counter_lifes" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=35609946]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 60
 alignment = 1
 
-[node name="life1" type="TextureRect" parent="Control/VBoxContainer/counter_lifes" unique_id=1362858614]
+[node name="life1" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/counter_lifes" unique_id=1362858614]
 layout_mode = 2
-texture = ExtResource("1_d1od2")
+texture = SubResource("CompressedTexture2D_w6xti")
 
-[node name="life2" type="TextureRect" parent="Control/VBoxContainer/counter_lifes" unique_id=1140272294]
+[node name="life2" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/counter_lifes" unique_id=1140272294]
 layout_mode = 2
-texture = ExtResource("1_d1od2")
+texture = SubResource("CompressedTexture2D_7wvbm")
 
-[node name="life3" type="TextureRect" parent="Control/VBoxContainer/counter_lifes" unique_id=1698728281]
+[node name="life3" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/counter_lifes" unique_id=1698728281]
 layout_mode = 2
-texture = ExtResource("1_d1od2")
+texture = SubResource("CompressedTexture2D_bfqb0")
 
-[node name="TimeBar" type="ProgressBar" parent="Control/VBoxContainer" unique_id=240626235]
+[node name="TimeBar" type="ProgressBar" parent="Control/PanelContainer/VBoxContainer" unique_id=240626235]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(855, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.9490196, 0.9490196, 1)
 theme_override_constants/outline_size = 10
 theme_override_styles/background = SubResource("StyleBoxFlat_d1od2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_w6xti")

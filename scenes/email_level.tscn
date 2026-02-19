@@ -237,9 +237,9 @@ flat = true
 
 [node name="hub" parent="." unique_id=1269073093 instance=ExtResource("9_n13x3")]
 unique_name_in_owner = true
-offset = Vector2(885, 10)
-scale = Vector2(0.3, 0.3)
-transform = Transform2D(0.3, 0, 0, 0.3, 885, 10)
+offset = Vector2(900, 8)
+scale = Vector2(0.28, 0.28)
+transform = Transform2D(0.28, 0, 0, 0.28, 900, 8)
 
 [node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1024679185]
 stream = ExtResource("24_h6ctk")
