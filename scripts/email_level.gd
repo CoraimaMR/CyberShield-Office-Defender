@@ -5,7 +5,6 @@ extends Control # EMAIL LEVEL
 
 var current_index: int = 0
 
-# Unique Name access using the '%' symbol
 @onready var sender_label = %SenderLabel
 @onready var subject_label = %SubjectLabel
 @onready var body_label = %BodyLabel
@@ -18,8 +17,7 @@ var current_index: int = 0
 @onready var correct_label = $"popup window/text correct"
 @onready var incorrect_label = $"popup window/text incorrect"
 
-# Usamos get_node_or_null para que no crashee si olvidas poner el nombre único
-@onready var time_bar = get_node_or_null("hub/%TimeBar")
+@onready var hub_scene = %hub
 
 var time_limit: float = 10.0      
 var time_left: float = 10.0       
@@ -50,16 +48,15 @@ func _process(delta: float) -> void:
 	if Autoload.current_level >= 2 and timer_active:
 		time_left -= delta
 		
-		# only update the bar if it exists
-		if time_bar:
-			time_bar.value = (time_left * 100) / time_limit
+		# Actualizamos la barra a través del hub
+		if hub_scene:
+			hub_scene.update_time_bar(time_left, time_limit)
 		
 		if time_left <= 0:
 			timer_active = false 
 			time_exhausted()
 
 func time_exhausted():
-	update_list_status(false)
 	Autoload.remove_lifes(1)
 	incorrect_sound.play()
 	
@@ -74,14 +71,13 @@ func reset_timer():
 	time_left = time_limit 
 	if Autoload.current_level >= 2:
 		timer_active = true
-		# SAFETY: Only access .visible if the node exists
-		if time_bar:
-			time_bar.visible = true
-			time_bar.value = 100 
+		if hub_scene:
+			hub_scene.set_time_bar_visible(true)
+			hub_scene.update_time_bar(time_left, time_limit)
 	else:
 		timer_active = false
-		if time_bar:
-			time_bar.visible = false
+		if hub_scene:
+			hub_scene.set_time_bar_visible(false)
 
 func load_emails_from_folder():
 	email_list.clear() 
@@ -103,7 +99,7 @@ func load_emails_from_folder():
 		dir.list_dir_end()
 		email_list.shuffle()
 	else:
-		push_error("Could not open folder: " + folder_path)
+		push_error("No se pudo abrir la carpeta: " + folder_path)
 
 func setup_mail_list():
 	for child in mail_list_container.get_children():
