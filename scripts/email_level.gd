@@ -40,8 +40,11 @@ func _ready():
 func _process(delta: float) -> void:
 	# PAUSE MENU
 	if Input.is_action_just_pressed("ui_cancel"):
-		Autoload.save_scene() 
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/pause_menu.tscn")
+		if not get_tree().paused: # evita doble pausa
+			var pause_scene = load("res://scenes/pause_menu.tscn").instantiate()
+			add_child(pause_scene)
+			hub_scene.visible = false
+			get_tree().paused = true
 	
 	# GAME OVER MENU
 	if Autoload.current_lifes == 0:
