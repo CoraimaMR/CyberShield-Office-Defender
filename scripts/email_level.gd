@@ -57,15 +57,11 @@ func _process(delta: float) -> void:
 			time_exhausted()
 
 func time_exhausted():
+	update_list_status(false)
+	Autoload.remove_points(10)
 	Autoload.remove_lifes(1)
 	incorrect_sound.play()
-	
-	current_index += 1
-	if current_index < email_list.size():
-		display_email()
-	else:
-		Autoload.save_scene()
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
+	window(false)
 
 func reset_timer():
 	time_left = time_limit 
