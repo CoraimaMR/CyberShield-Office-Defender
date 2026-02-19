@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://cq2dabagt67rm"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_6uhif"]
+
+[resource]
+script = ExtResource("1_6uhif")
+sender_name = "Internal Finance"
+sender_email = "<finance-audit@company-taxes.net>"
+subject = "Urgent: Missing Tax Documents"
+body_text = "Our records show that your W-2 tax forms are incomplete. Failure to submit them today may result in a fine. Please upload them here: https://tax-upload-portal.net"
+is_phishing = true
+educational_tip = "Phishers use the fear of legal trouble or fines to make you act without thinking."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

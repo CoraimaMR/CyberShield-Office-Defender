@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://depbglbdbvw4x"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_rjgrb"]
+
+[resource]
+script = ExtResource("1_rjgrb")
+sender_name = "LinkedIn"
+sender_email = "<notifications@linkedin-network.info>"
+subject = "You have 5 new pending messages"
+body_text = "People are looking for you on LinkedIn. View your new connection requests and messages here: http://linkedin-network.info/inbox"
+is_phishing = true
+educational_tip = "LinkedIn's official domain is linkedin.com, not .info."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
