@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://cmg5yefmwwqcu"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_py4ro"]
+
+[resource]
+script = ExtResource("1_py4ro")
+sender_name = "Internal Server"
+sender_email = "<no-reply@dev-ops-internal.io>"
+subject = "SSL Certificate Expiration Warning"
+body_text = "The SSL certificate for your local development environment expires in 24 hours. Please click below to renew the certificate and avoid service interruption: https://cert-renew.internal-dev.io/update"
+is_phishing = true
+educational_tip = "The .io domain looks technical, but hackers use it to trick developers into entering credentials."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

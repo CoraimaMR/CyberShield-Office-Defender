@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://lpe888cofwye"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_uedqx"]
+
+[resource]
+script = ExtResource("1_uedqx")
+sender_name = "System Administrator"
+sender_email = "<root@localhost-manager.com>"
+subject = "Database Connection Error"
+body_text = "The SQL database is rejecting your connection. Please verify your DB credentials on the management console to restore access: http://sql-manage.com/login"
+is_phishing = true
+educational_tip = "An \"Admin\" would never ask you to verify credentials on an external HTTP (not HTTPS) site."
+difficulty = 3
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
