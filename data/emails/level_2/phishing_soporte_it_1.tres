@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://cqofkwesuq83x"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_dd2ur"]
+
+[resource]
+script = ExtResource("1_dd2ur")
+sender_name = "IT Service Desk"
+sender_email = "<security@corp-update.net>"
+subject = "Action Required: Mandatory Password Sync"
+body_text = "Your account password will expire in 4 hours. To avoid being locked out of the company portal, please synchronize your credentials here: http://portal-auth.online/sync"
+is_phishing = true
+educational_tip = "The domain .online is a huge red flag for an internal corporate tool."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EmailResource" format=3 uid="uid://b44dwp64hlxji"]
+
+[ext_resource type="Script" uid="uid://djdvw2k2fnth1" path="res://scripts/emailResource.gd" id="1_0ejo8"]
+
+[resource]
+script = ExtResource("1_0ejo8")
+sender_name = "Internal IT"
+sender_email = "<support@yourcompany.com>"
+subject = "Planned Maintenance: Server Room"
+body_text = "This is a notice that the internal servers will be down for maintenance this Saturday from 10 PM to 2 AM. No action is required."
+educational_tip = "Informational emails from internal addresses that don't ask for clicks are usually safe."
+difficulty = 2
+metadata/_custom_type_script = "uid://djdvw2k2fnth1"
