@@ -23,4 +23,4 @@ flat = true
 stream = ExtResource("3_8h1u0")
 autoplay = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_retry_button_pressed"]
