@@ -9,8 +9,3 @@ func _on_retry_button_pressed() -> void:
 func _on_desktop_button_pressed() -> void:
 	Autoload.reset_hub()
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/Desktop.tscn") # Go to the desktop
-
-# Button 3: LEVEL UPP
-func _on_level_upp_button_pressed() -> void:
-	get_tree().paused = false
-	Autoload.previous_scene() # Go to previus scene
