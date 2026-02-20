@@ -48,12 +48,15 @@ func _ready():
 		step = 10 # Estado final sin robot
 	else:
 		step = 0  # Empezar tutorial desde el principio
+<<<<<<< Updated upstream
 =======
 
 	if Autoload.tutorial_done:
 		step = 10
 	else:
 		step = 0
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		
 	update_tutorial_state()
@@ -66,8 +69,12 @@ func _unhandled_input(event):
 
 func update_tutorial_state():
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	# Por defecto mostramos al robot (se ocultará en el step 10)
 =======
+>>>>>>> Stashed changes
+=======
+	# Por defecto mostramos al robot (se ocultará en el step 10)
 >>>>>>> Stashed changes
 	robot.show()
 	robot.scale = Vector2(1, 1)
@@ -86,7 +93,11 @@ func update_tutorial_state():
 			robot.texture = TEX_CROSSED
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			label.text = "Te voy a ayudar a entender qué es el 'Phishing'."
+=======
+			label.text = "I'm going to help you understand what 'Phishing' is."
+>>>>>>> Stashed changes
 =======
 			label.text = "I'm going to help you understand what 'Phishing' is."
 >>>>>>> Stashed changes
@@ -99,7 +110,13 @@ func update_tutorial_state():
 			robot.texture = TEX_CROSSED
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			label.text = "Para comprobar que lo has entendido, vamos a entrar en CyberShield."
+=======
+			label.text = "If you want to check that you have understood Phishing, you can enter CyberShield."
+			window.show()
+			label.show()
+>>>>>>> Stashed changes
 =======
 			label.text = "If you want to check that you have understood Phishing, you can enter CyberShield."
 			window.show()
@@ -122,6 +139,7 @@ func update_tutorial_state():
 			
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			if icon_btn:
 				icon_btn.show()
 				icon_btn.scale = Vector2(0.4, 0.4)
@@ -130,6 +148,8 @@ func update_tutorial_state():
 				icon_btn.position = robot.position + offset_dedo
 
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 			var punta_dedo_izq = robot.position + Vector2(-380, -290)
@@ -172,6 +192,9 @@ func update_tutorial_state():
 				info_btn.position = punta_dedo_der + Vector2(0, -60)
 				
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 			# --- GUARDAMOS QUE EL TUTORIAL SE HA COMPLETADO ---
 			Autoload.tutorial_done = true
 			
@@ -182,6 +205,7 @@ func update_tutorial_state():
 			label.hide()   # Ocultamos el texto
 			
 			# Calculamos internamente dónde estaba el robot para poner los botones en el mismo sitio
+<<<<<<< Updated upstream
 =======
 			Autoload.tutorial_done = true
 			
@@ -190,6 +214,8 @@ func update_tutorial_state():
 			window.hide()
 			label.hide()
 			
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 			robot.position.x = pos_inicial_robot.x - 280 
 			robot.position.y = pos_inicial_robot.y - 25 
@@ -206,6 +232,9 @@ func update_tutorial_state():
 				var punta_dedo_der = robot.position + Vector2(10, -290)
 				info_btn.position = punta_dedo_der + Vector2(0, -60)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
