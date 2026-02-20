@@ -12,7 +12,7 @@ content_margin_left = 30.0
 content_margin_top = 30.0
 content_margin_right = 30.0
 content_margin_bottom = 30.0
-bg_color = Color(0.6, 0.6, 0.6, 0.48235294)
+bg_color = Color(0.6, 0.6, 0.6, 0.7490196)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -22,54 +22,48 @@ corner_radius_top_left = 10
 corner_radius_bottom_right = 10
 corner_detail = 10
 
-[node name="LeaderBoard" type="Control" unique_id=538948895]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="LeaderBoard" type="CanvasLayer" unique_id=2103895034]
+layer = 2
 script = ExtResource("1_urc3l")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1517681766]
-layout_mode = 1
+visible = false
 offset_right = 225.0
 offset_bottom = 172.0
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=719445119]
-layout_mode = 0
-offset_left = -242.0
-offset_top = -196.0
-offset_right = -17.0
-offset_bottom = -23.0
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=501971343]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=719445119]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a3xie")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=574180283]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=574180283]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Header" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=672215746]
+[node name="Header" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=672215746]
 layout_mode = 2
 
-[node name="PosLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=206779004]
+[node name="PosLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=206779004]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
 text = "#"
 
-[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=708945646]
+[node name="NameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=708945646]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
 text = "NAME"
 
-[node name="RankLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=756237415]
+[node name="RankLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=756237415]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
@@ -77,24 +71,24 @@ theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
 text = "RANK"
 horizontal_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="PanelContainer/VBoxContainer/Header" unique_id=1518538715]
+[node name="ScoreLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=1518538715]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
 text = "SCORE"
 horizontal_alignment = 2
 
-[node name="ScoreList" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1709504950]
+[node name="ScoreList" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1709504950]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=452819898]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=452819898]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="BackButton" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1473702144]
+[node name="BackButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1473702144]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
@@ -103,7 +97,7 @@ texture_normal = ExtResource("5_2ufv5")
 texture_pressed = ExtResource("5_2ufv5")
 texture_hover = ExtResource("7_5jmfk")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/BackButton" unique_id=639322696]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" unique_id=639322696]
 layout_mode = 1
 offset_left = 10.5
 offset_top = 11.0
@@ -112,11 +106,11 @@ offset_bottom = 20.0
 theme_override_font_sizes/font_size = 6
 text = "BACK"
 
-[node name="Control" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1298353860]
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1298353860]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ResetButton" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1234665720]
+[node name="ResetButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1234665720]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -125,7 +119,7 @@ texture_normal = ExtResource("3_bwqve")
 texture_pressed = ExtResource("3_bpycg")
 texture_hover = ExtResource("4_uk6nl")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/ResetButton" unique_id=2013554861]
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" unique_id=2013554861]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,5 +135,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 7
 text = "RESET"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
