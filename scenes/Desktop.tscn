@@ -33,7 +33,7 @@ offset_top = 326.0
 offset_right = 721.0
 offset_bottom = 345.0
 theme_override_fonts/font = ExtResource("5_ra1mf")
-text = "Hola! Me llamo Roby"
+text = "Hi! My name is  Roby"
 
 [node name="CyberShieldButton" type="TextureButton" parent="." unique_id=329390948]
 visible = false
