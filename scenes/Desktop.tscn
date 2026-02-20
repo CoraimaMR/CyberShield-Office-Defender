@@ -7,8 +7,12 @@
 [ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
 [ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 [ext_resource type="Texture2D" uid="uid://cq0omjtma5yf5" path="res://assets/background/data_base_icon.png" id="7_qfcxt"]
+=======
+[ext_resource type="Texture2D" uid="uid://dyprjjian6kyi" path="res://assets/background/database_icon.png" id="7_qfcxt"]
+>>>>>>> Stashed changes
 [ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="8_qfcxt"]
 >>>>>>> Stashed changes
 
