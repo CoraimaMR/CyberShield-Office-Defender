@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dgsxytfueu8js"]
+
+[ext_resource type="Texture2D" uid="uid://dluog5hw0fkcr" path="res://assets/messages/istockphoto-185232989-612x612.jpg" id="1_cdqs3"]
+[ext_resource type="Texture2D" uid="uid://cd1i60r0ycc8o" path="res://assets/messages/pngtree-mobile-phone-frame-photo-png-image_14568670.png" id="1_cghfh"]
+[ext_resource type="Texture2D" uid="uid://vow7db0gm1qu" path="res://assets/messages/bubble01.png" id="2_1wot7"]
+[ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="3_2lhy8"]
+[ext_resource type="Texture2D" uid="uid://d6pxvck7gejb" path="res://assets/messages/bubble02.png" id="3_qi2mx"]
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="5_4oaqq"]
+
+[node name="Control" type="Control" unique_id=2116262464]
+layout_mode = 3
+anchor_left = -0.00086805556
+anchor_right = 1.0
+anchor_bottom = 1.0015432
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="TextureRect" parent="." unique_id=1805144811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cdqs3")
+
+[node name="background-mobile" type="ColorRect" parent="." unique_id=1058315189]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 19.0
+offset_right = 728.0
+offset_bottom = 629.0
+color = Color(0.74509805, 0.8784314, 0.99215686, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=797154428]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 130.0
+offset_right = 609.0
+offset_bottom = 212.0
+texture = ExtResource("2_1wot7")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=278656783]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 113.0
+offset_right = 295.0
+offset_bottom = 195.0
+texture = ExtResource("3_qi2mx")
+
+[node name="buttons" type="PanelContainer" parent="." unique_id=438912017]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 496.0
+offset_right = 730.0
+offset_bottom = 547.0
+
+[node name="MarginContainer" type="MarginContainer" parent="buttons" unique_id=1674083154]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="buttons/MarginContainer" unique_id=206055389]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Button" type="Button" parent="buttons/MarginContainer/HBoxContainer" unique_id=1006991964]
+layout_mode = 2
+text = "TRUST MESSAGE"
+
+[node name="Button2" type="Button" parent="buttons/MarginContainer/HBoxContainer" unique_id=1098026793]
+layout_mode = 2
+text = "REPORT PHISHING"
+
+[node name="mobile" type="TextureRect" parent="." unique_id=1579761238]
+layout_mode = 0
+offset_left = 401.0
+offset_top = -2.0
+offset_right = 593.2222
+offset_bottom = 358.55557
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_cghfh")
+expand_mode = 1
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1691968298]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 42.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+folded = true
+title = "MENU"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1047730149]
+visible = false
+layout_mode = 2
+script = ExtResource("5_4oaqq")
+
+[node name="Button" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=1611390725]
+layout_mode = 2
+text = "EXIT"
+
+[node name="Button2" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=997170021]
+layout_mode = 2
+text = "RETRY"
+
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("3_2lhy8")]
+offset = Vector2(780, 20)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 780, 20)
+follow_viewport_enabled = true
+
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button2" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]
