@@ -1,27 +1,53 @@
 [gd_scene format=3 uid="uid://bshh4bx36wpd6"]
 
+[ext_resource type="FontFile" uid="uid://cp2w5dekogyba" path="res://assets/fonts/Kenney Future Narrow.ttf" id="1_xhimg"]
+
 [node name="ScoreRow" type="HBoxContainer" unique_id=424667939]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.5
+offset_top = -9.0
+offset_right = 116.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
 
 [node name="PosLabel" type="Label" parent="." unique_id=1514033327]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_xhimg")
 text = "1"
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NameLabel" type="Label" parent="." unique_id=853780723]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+theme_override_fonts/font = ExtResource("1_xhimg")
 text = "Sergio"
-horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RankLabel" type="Label" parent="." unique_id=1059867512]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_xhimg")
 text = "The Boss"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1442465548]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("1_xhimg")
 text = "500"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
