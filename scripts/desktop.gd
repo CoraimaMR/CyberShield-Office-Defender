@@ -14,6 +14,7 @@ const MOUSE_CLICK = preload("res://assets/background/puntero-click.png")
 var step = 0
 var pos_inicial_robot : Vector2 
 var pos_inicial_label_y : float 
+var leaderboard_scene = preload("res://scenes/LeaderBoard.tscn") # hall of fame
 
 func _ready():
 	pos_inicial_robot = robot.position
@@ -170,4 +171,5 @@ func _on_info_btn_pressed():
 
 func _on_icon_ranking_pressed() -> void:
 	ScoreManager.last_player_name = ""
-	get_tree().change_scene_to_file("res://scenes/LeaderBoard.tscn")
+	var leaderboard = leaderboard_scene.instantiate()
+	add_child(leaderboard)
