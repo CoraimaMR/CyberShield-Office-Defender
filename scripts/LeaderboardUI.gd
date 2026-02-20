@@ -4,8 +4,8 @@ extends Control
 var row_scene = preload("res://scenes/ScoreRow.tscn")
 
 # 2. Referencias a los nodos de esta escena
-@onready var score_list = $VBoxContainer/ScoreList
-@onready var reset_button: TextureButton = $ResetButton
+@onready var score_list = %ScoreList
+@onready var reset_button: TextureButton = %ResetButton
 
 func _ready():
 	# Al abrir la pantalla, mostramos los datos
@@ -20,34 +20,36 @@ func _ready():
 		ScoreManager.last_player_name = ""
 
 func display_scores():
-	# A. Limpiamos la lista (por si acaso se llama varias veces)
+	# 1. Limpiamos la lista actual
 	for child in score_list.get_children():
 		child.queue_free()
 	
-	# B. Leemos los datos del Autoload 'ScoreManager'
-	var pos = 1
-	for entry in ScoreManager.high_scores:
+	# 2. Recorremos SIEMPRE 10 posiciones (del 0 al 9)
+	for i in range(10):
 		var row = row_scene.instantiate()
-		
-		# C. Rellenamos los datos de la fila
-		# Asegúrate de que los nombres de los nodos coincidan con los de tu ScoreRow.tscn
-		row.get_node("PosLabel").text = str(pos) + "."
-		row.get_node("NameLabel").text = entry["name"]
-		row.get_node("RankLabel").text = entry["rank"]
-		row.get_node("ScoreLabel").text = str(entry["score"])
-		
-		# --- RESALTADO ---
-		if entry["name"] == ScoreManager.last_player_name:
-			# Cambiamos el color de los textos a dorado o verde hacker
-			var highlight_color = Color(1, 0.84, 0) # Dorado
-			row.get_node("PosLabel").modulate = highlight_color
-			row.get_node("NameLabel").modulate = highlight_color
-			row.get_node("RankLabel").modulate = highlight_color
-			row.get_node("ScoreLabel").modulate = highlight_color
-		
-		# D. Añadimos la fila a la tabla visual
 		score_list.add_child(row)
-		pos += 1
+		
+		# Ponemos el número de posición (i + 1 para que empiece en 1)
+		row.get_node("PosLabel").text = str(i + 1) + "."
+		
+		# 3. Comprobamos si hay datos reales para esta posición
+		if i < ScoreManager.high_scores.size():
+			var entry = ScoreManager.high_scores[i]
+			row.get_node("NameLabel").text = entry["name"]
+			row.get_node("RankLabel").text = entry["rank"]
+			row.get_node("ScoreLabel").text = str(entry["score"])
+			
+			# Resaltado si es el último jugador
+			if entry["name"] == ScoreManager.last_player_name:
+				var highlight_color = Color(1, 0.84, 0) # Dorado
+				row.modulate = highlight_color
+		else:
+			# 4. Si NO hay datos, rellenamos con guiones o lo dejamos vacío
+			row.get_node("NameLabel").text = "---"
+			row.get_node("RankLabel").text = "---"
+			row.get_node("ScoreLabel").text = "0"
+			# Opcional: bajar la opacidad de las filas vacías para que se noten menos
+			row.modulate.a = 0.3
 
 # --- SEÑALES DE LOS BOTONES ---
 
