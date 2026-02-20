@@ -171,9 +171,6 @@ func _on_close_button_pressed() -> void:
 	current_index += 1
 	if current_index < email_list.size():
 			display_email()
-	else:
-		Autoload.save_scene() 
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func update_list_status(is_correct: bool):
 	var label = %MailList.get_child(current_index)

@@ -2,16 +2,13 @@ extends CanvasLayer # HUB
 
 @onready var points_label = %counter_points 
 @onready var lifes_container = %counter_lifes
+@onready var counnter_label = %counter_level
+@onready var level_label = %level_label
 
-var counnter_label
-var level_label
 var time_bar
-
 
 func _ready() -> void:
 	time_bar = get_node_or_null("%hub/%TimeBar")
-	counnter_label = get_node_or_null("%hub/%counter_level")
-	level_label = get_node_or_null("%hub/%level_label")
 	
 	Autoload.points_updated.connect(_on_points_updated)
 	Autoload.lifes_updated.connect(_on_lifes_updated)

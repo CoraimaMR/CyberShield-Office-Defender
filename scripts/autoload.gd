@@ -12,6 +12,7 @@ var previous_scene_path: String = ""
 
 # ----- PROGRESS -----
 
+var LEVEL_FINAL = 4
 var current_level: int = 1
 var current_rank: String = "Intern"
 var emails_solved_in_this_level: int = 0
@@ -58,8 +59,12 @@ func check_level_up():
 	level_up.emit(current_level, current_rank)
 	
 	# reload to read the new directory level_X
-	Autoload.save_scene() 
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/level_upp.tscn")
+	if current_level < LEVEL_FINAL:
+		Autoload.save_scene() 
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/level_upp.tscn")
+	else:
+		Autoload.save_scene() 
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func upgrade_level():
 	current_level += 1
