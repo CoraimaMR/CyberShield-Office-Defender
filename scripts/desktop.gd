@@ -167,3 +167,7 @@ func _on_cyber_shield_btn_pressed():
 func _on_info_btn_pressed():
 	Input.set_custom_mouse_cursor(null)
 	get_tree().change_scene_to_file("res://scenes/malware_gallery.tscn")
+
+func _on_icon_ranking_pressed() -> void:
+	ScoreManager.last_player_name = ""
+	get_tree().change_scene_to_file("res://scenes/LeaderBoard.tscn")
