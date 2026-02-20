@@ -9,8 +9,6 @@
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_mvr4g"]
 [ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_k8pbw"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwb3k"]
-
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
 anchors_preset = 0
@@ -47,10 +45,10 @@ autoplay = true
 
 [node name="buttons" type="HBoxContainer" parent="." unique_id=1339849198]
 layout_mode = 0
-offset_left = 362.0
-offset_top = 430.0
-offset_right = 792.0
-offset_bottom = 521.0
+offset_left = 365.0
+offset_top = 429.0
+offset_right = 795.0
+offset_bottom = 520.0
 theme_override_constants/separation = 50
 
 [node name="Button2" type="Button" parent="buttons" unique_id=1454168133]
@@ -61,7 +59,6 @@ theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("5_mvr4g")
 theme_override_font_sizes/font_size = 60
 text = "DESKTOP"
-icon = SubResource("CompressedTexture2D_cwb3k")
 
 [node name="Button" type="Button" parent="buttons" unique_id=1784545782]
 layout_mode = 2
@@ -72,23 +69,62 @@ theme_override_fonts/font = ExtResource("5_mvr4g")
 theme_override_font_sizes/font_size = 60
 text = "RETRY"
 
-[node name="hub" type="CanvasLayer" parent="." unique_id=1707750144]
+[node name="hub" type="CanvasLayer" parent="." unique_id=1405717253]
 script = ExtResource("6_csn76")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="hub" unique_id=1540928821]
+[node name="VBoxContainer" type="VBoxContainer" parent="hub" unique_id=16700609]
 clip_contents = true
-offset_left = 372.0
-offset_top = 238.0
-offset_right = 1227.0
-offset_bottom = 717.0
-scale = Vector2(0.5, 0.5)
+offset_left = 381.0
+offset_top = 222.0
+offset_right = 1401.0
+offset_bottom = 651.0
+scale = Vector2(0.4, 0.4)
 theme_override_constants/separation = 10
 
-[node name="point" type="HBoxContainer" parent="hub/VBoxContainer" unique_id=2114185647]
+[node name="level" type="HBoxContainer" parent="hub/VBoxContainer" unique_id=936424880]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="hub/VBoxContainer/point" unique_id=194351094]
+[node name="Label" type="Label" parent="hub/VBoxContainer/level" unique_id=1610761825]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("6_mvr4g")
+theme_override_font_sizes/font_size = 106
+text = " Level "
+
+[node name="counter_level" type="Label" parent="hub/VBoxContainer/level" unique_id=4604725]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("6_mvr4g")
+theme_override_font_sizes/font_size = 106
+text = " 00. "
+
+[node name="level_label" type="Label" parent="hub/VBoxContainer/level" unique_id=512808948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 1)
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/shadow_offset_y = 20
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("6_mvr4g")
+theme_override_font_sizes/font_size = 84
+text = "Rank"
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="point" type="HBoxContainer" parent="hub/VBoxContainer" unique_id=975440139]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="hub/VBoxContainer/point" unique_id=727835256]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.65851885, 0.65793604, 0, 1)
 theme_override_constants/shadow_offset_x = 20
@@ -99,7 +135,7 @@ theme_override_fonts/font = ExtResource("6_mvr4g")
 theme_override_font_sizes/font_size = 100
 text = "Total points: "
 
-[node name="counter_points" type="Label" parent="hub/VBoxContainer/point" unique_id=1804448393]
+[node name="counter_points" type="Label" parent="hub/VBoxContainer/point" unique_id=522386660]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.65851885, 0.65793604, 0, 1)
@@ -111,21 +147,21 @@ theme_override_fonts/font = ExtResource("6_mvr4g")
 theme_override_font_sizes/font_size = 100
 text = "00"
 
-[node name="counter_lifes" type="HBoxContainer" parent="hub/VBoxContainer" unique_id=902419312]
+[node name="counter_lifes" type="HBoxContainer" parent="hub/VBoxContainer" unique_id=1484221371]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="life1" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=1672496665]
+[node name="life1" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=781855452]
 layout_mode = 2
 texture = ExtResource("8_k8pbw")
 
-[node name="life2" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=1563750879]
+[node name="life2" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=1000373135]
 layout_mode = 2
 texture = ExtResource("8_k8pbw")
 
-[node name="life3" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=48209069]
+[node name="life3" type="TextureRect" parent="hub/VBoxContainer/counter_lifes" unique_id=1070364216]
 layout_mode = 2
 texture = ExtResource("8_k8pbw")
 
