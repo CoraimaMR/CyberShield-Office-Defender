@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bshh4bx36wpd6"]
+
+[node name="ScoreRow" type="HBoxContainer" unique_id=424667939]
+
+[node name="PosLabel" type="Label" parent="." unique_id=1514033327]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="." unique_id=853780723]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sergio"
+horizontal_alignment = 1
+
+[node name="RankLabel" type="Label" parent="." unique_id=1059867512]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "The Boss"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1442465548]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "500"
+horizontal_alignment = 1

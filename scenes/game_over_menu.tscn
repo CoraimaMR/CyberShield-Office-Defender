@@ -8,6 +8,30 @@
 [ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="6_csn76"]
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_mvr4g"]
 [ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_k8pbw"]
+[ext_resource type="Texture2D" uid="uid://flvlccq40qcs" path="res://assets/buttons/PNG/Yellow/Default/arrow_basic_e.png" id="9_bqmx0"]
+[ext_resource type="Texture2D" uid="uid://cbnypfh4vv7yw" path="res://assets/buttons/PNG/Yellow/Default/icon_outline_checkmark.png" id="10_w44qq"]
+[ext_resource type="Texture2D" uid="uid://cbdhtlc85n775" path="res://assets/buttons/PNG/Yellow/Default/arrow_decorative_e.png" id="11_o36v6"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cwb3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8pbw"]
+bg_color = Color(0.6, 0.27058825, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nl4x"]
+bg_color = Color(1, 0.6, 0.03137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfgkj"]
+content_margin_left = 15.0
+bg_color = Color(0.7853087, 0.52079916, 0.4935742, 0.3254902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 11
 
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
@@ -22,6 +46,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_cwb3k")
@@ -165,5 +190,47 @@ texture = ExtResource("8_k8pbw")
 layout_mode = 2
 texture = ExtResource("8_k8pbw")
 
+[node name="hub_Control_VBoxContainer#TimeBar" type="ProgressBar" parent="." unique_id=1071658149]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(855, 40)
+layout_mode = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 10
+theme_override_styles/background = SubResource("StyleBoxFlat_k8pbw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2nl4x")
+value = 100.0
+show_percentage = false
+
+[node name="NameInput" type="LineEdit" parent="." unique_id=1348358344]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 550.0
+offset_right = 963.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfgkj")
+placeholder_text = "Introduce tu nombre..."
+max_length = 24
+
+[node name="SaveButton" type="TextureButton" parent="NameInput" unique_id=679015643]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -16.0
+offset_right = -14.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("9_bqmx0")
+texture_pressed = ExtResource("10_w44qq")
+texture_hover = ExtResource("11_o36v6")
+
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_desktop_button_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="NameInput/SaveButton" to="." method="_on_save_button_pressed"]

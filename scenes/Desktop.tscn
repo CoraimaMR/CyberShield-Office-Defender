@@ -7,7 +7,11 @@
 [ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
 [ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
 [ext_resource type="Texture2D" uid="uid://djp6i08npavgb" path="res://assets/background/date_base_icon.png" id="7_gb5sv"]
+[ext_resource type="Texture2D" uid="uid://c00ln476400q5" path="res://assets/window/trophy.png" id="8_dye3h"]
 [ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="8_qfcxt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dye3h"]
+bg_color = Color(0.6117647, 0.6156863, 1, 0.41568628)
 
 [node name="Node2D" type="Node2D" unique_id=237963605]
 script = ExtResource("1_5mnb0")
@@ -51,7 +55,29 @@ offset_right = 699.0
 offset_bottom = 399.0
 texture_normal = ExtResource("7_gb5sv")
 
+[node name="IconRanking" type="TextureButton" parent="." unique_id=184449187]
+offset_left = 1035.0
+offset_top = 485.0
+offset_right = 1535.0
+offset_bottom = 985.0
+scale = Vector2(0.15, 0.15)
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_dye3h")
+
+[node name="Label" type="Label" parent="IconRanking" unique_id=1559561410]
+layout_mode = 0
+offset_left = -186.6666
+offset_top = 520.0
+offset_right = 602.9999
+offset_bottom = 686.66675
+theme_override_font_sizes/font_size = 120
+theme_override_styles/normal = SubResource("StyleBoxFlat_dye3h")
+text = "Hall of Fame"
+horizontal_alignment = 1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=938220466]
 stream = ExtResource("8_qfcxt")
 volume_db = -17.495
 autoplay = true
+
+[connection signal="pressed" from="IconRanking" to="." method="_on_icon_ranking_pressed"]
