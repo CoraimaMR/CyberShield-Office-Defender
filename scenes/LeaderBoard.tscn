@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ccio3ly6b05b0"]
 
 [ext_resource type="Script" uid="uid://3h70x50qy4kt" path="res://scripts/LeaderboardUI.gd" id="1_urc3l"]
+[ext_resource type="Texture2D" uid="uid://cbdry2l08vmgk" path="res://assets/buttons/PNG/Blue/arrow_basic_w.png" id="2_a3xie"]
 [ext_resource type="Texture2D" uid="uid://maghthaas72i" path="res://assets/buttons/PNG/Red/Default/check_square_color_checkmark.png" id="3_bpycg"]
 [ext_resource type="Texture2D" uid="uid://7ojc7gafdo8d" path="res://assets/buttons/PNG/Red/Default/check_square_color.png" id="3_bwqve"]
+[ext_resource type="Texture2D" uid="uid://b2a3xaslpsi1o" path="res://assets/buttons/PNG/Blue/arrow_decorative_w.png" id="3_uk6nl"]
 [ext_resource type="Texture2D" uid="uid://cs3ykcyqn0guw" path="res://assets/buttons/PNG/Red/Default/check_square_color_square.png" id="4_uk6nl"]
-[ext_resource type="Texture2D" uid="uid://csktjk1nr18ns" path="res://assets/buttons/Vector/Blue/arrow_basic_w.svg" id="5_2ufv5"]
-[ext_resource type="Texture2D" uid="uid://c0m3sulttiati" path="res://assets/buttons/Vector/Blue/arrow_decorative_w.svg" id="7_5jmfk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3xie"]
 content_margin_left = 30.0
@@ -93,9 +93,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture_normal = ExtResource("5_2ufv5")
-texture_pressed = ExtResource("5_2ufv5")
-texture_hover = ExtResource("7_5jmfk")
+texture_normal = ExtResource("2_a3xie")
+texture_pressed = ExtResource("2_a3xie")
+texture_hover = ExtResource("3_uk6nl")
 
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" unique_id=639322696]
 layout_mode = 1
