@@ -8,8 +8,24 @@
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_1xbon"]
 [ext_resource type="Script" uid="uid://cahvvaq0niidx" path="res://scripts/hub.gd" id="6_w75pu"]
 [ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_a5eom"]
+[ext_resource type="Texture2D" uid="uid://flvlccq40qcs" path="res://assets/buttons/PNG/Yellow/Default/arrow_basic_e.png" id="9_oi50r"]
+[ext_resource type="Texture2D" uid="uid://cbdhtlc85n775" path="res://assets/buttons/PNG/Yellow/Default/arrow_decorative_e.png" id="10_68ft6"]
+[ext_resource type="Texture2D" uid="uid://drycdx1vjlkmv" path="res://assets/buttons/PNG/Yellow/Default/check_square_color_checkmark.png" id="11_rf6yc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx1is"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi6v2"]
+content_margin_left = 15.0
+bg_color = Color(0.7853087, 0.52079916, 0.4935742, 0.3254902)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 11
 
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
@@ -168,5 +184,34 @@ texture = ExtResource("8_a5eom")
 layout_mode = 2
 texture = ExtResource("8_a5eom")
 
+[node name="NameInput" type="LineEdit" parent="." unique_id=494024741]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 550.0
+offset_right = 963.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_vi6v2")
+placeholder_text = "Introduce tu nombre..."
+max_length = 24
+
+[node name="SaveButton" type="TextureButton" parent="NameInput" unique_id=1923743107]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -16.0
+offset_right = -14.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("9_oi50r")
+texture_hover = ExtResource("10_68ft6")
+texture_disabled = ExtResource("11_rf6yc")
+
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_desktop_button_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="NameInput/SaveButton" to="." method="_on_save_button_pressed"]
