@@ -6,9 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/robot/robot.png" id="3_5mnb0"]
 [ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
 [ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
-[ext_resource type="Texture2D" uid="uid://djp6i08npavgb" path="res://assets/background/date_base_icon.png" id="7_gb5sv"]
+[ext_resource type="Texture2D" uid="uid://dofpk8va6kth3" path="res://assets/malware/antivirus-removebg-preview.png" id="7_dye3h"]
 [ext_resource type="Texture2D" uid="uid://c00ln476400q5" path="res://assets/window/trophy.png" id="8_dye3h"]
 [ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="8_qfcxt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik535"]
+bg_color = Color(0.6, 0.6, 0.6, 0.6117647)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dye3h"]
 bg_color = Color(0.6117647, 0.6156863, 1, 0.41568628)
@@ -21,7 +24,7 @@ position = Vector2(576.5, 325)
 scale = Vector2(0.89765626, 0.90756303)
 texture = ExtResource("1_eysme")
 
-[node name="Ventana" type="Sprite2D" parent="." unique_id=1820151467]
+[node name="Window" type="Sprite2D" parent="." unique_id=1820151467]
 position = Vector2(539.00006, 328.75)
 scale = Vector2(0.76865673, 0.59276736)
 texture = ExtResource("2_a1iwr")
@@ -48,12 +51,22 @@ offset_bottom = 399.0
 texture_normal = ExtResource("6_ra1mf")
 
 [node name="InfoButton" type="TextureButton" parent="." unique_id=634823115]
-visible = false
 offset_left = 342.0
 offset_top = 69.0
-offset_right = 699.0
-offset_bottom = 399.0
-texture_normal = ExtResource("7_gb5sv")
+offset_right = 470.0
+offset_bottom = 197.0
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("7_dye3h")
+
+[node name="Label" type="Label" parent="InfoButton" unique_id=1075061282]
+layout_mode = 0
+offset_left = -5.833374
+offset_top = 145.83333
+offset_right = 134.16663
+offset_bottom = 185.83333
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxFlat_ik535")
+text = "Data Base"
 
 [node name="IconRanking" type="TextureButton" parent="." unique_id=184449187]
 offset_left = 1035.0
