@@ -9,6 +9,7 @@ var current_points: int = 0
 var current_lifes: int = 3
 var max_lifes: int = 3
 var previous_scene_path: String = ""
+var tutorial_done: bool = false
 
 # ----- PROGRESS -----
 

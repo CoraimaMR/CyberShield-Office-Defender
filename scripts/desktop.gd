@@ -24,7 +24,6 @@ func _ready():
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.position.y = pos_inicial_label_y - 20
 	
-	
 	if icon_btn:
 		icon_btn.pivot_offset = icon_btn.size / 2
 		icon_btn.hide()
@@ -33,7 +32,6 @@ func _ready():
 		if not icon_btn.pressed.is_connected(_on_cyber_shield_btn_pressed):
 			icon_btn.pressed.connect(_on_cyber_shield_btn_pressed)
 			
-	
 	if info_btn:
 		info_btn.pivot_offset = info_btn.size / 2
 		info_btn.hide()
@@ -42,21 +40,29 @@ func _ready():
 		if not info_btn.pressed.is_connected(_on_info_btn_pressed):
 			info_btn.pressed.connect(_on_info_btn_pressed)
 	
+	# --- COMPROBAR SI EL TUTORIAL YA SE HA COMPLETADO ---
+	if Autoload.tutorial_done:
+		step = 10 # Estado final sin robot
+	else:
+		step = 0  # Empezar tutorial desde el principio
+		
 	update_tutorial_state()
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-		if step < 4:
+		if step < 6: 
 			step += 1
 			update_tutorial_state()
 
 func update_tutorial_state():
+	# Por defecto mostramos al robot (se ocultará en el step 10)
+	robot.show()
 	robot.scale = Vector2(1, 1)
 	robot.position = pos_inicial_robot
+	robot.flip_h = false 
 	label.position.y = pos_inicial_label_y - 20
 	
 	match step:
-		
 		0:
 			robot.texture = TEX_WAVE
 			label.text = "Hi! My name is Roby."
@@ -66,16 +72,15 @@ func update_tutorial_state():
 			if info_btn: info_btn.hide()
 		1:
 			robot.texture = TEX_CROSSED
-			# Se menciona que también hay una base de datos de ayuda
-			label.text = "I'm going to help you understand what 'Phishing' is. We also have a help database with more information."
+			label.text = "I'm going to help you understand what 'Phishing' is."
 		2:
 			label.text = "It is a deception where hackers pretend to be real companies to steal your data."
 		3:
 			robot.texture = TEX_CROSSED
-			# Mención de ambas opciones para comprobar lo aprendido
-			label.text = "To make sure you've understood, let's check CyberShield and our help database."
+			label.text = "If you want to check that you have understood Phishing, you can enter CyberShield."
+			window.show()
+			label.show()
 		4:
-			# Paso final donde se muestran los iconos
 			robot.texture = TEX_POINT
 			robot.scale = Vector2(0.22, 0.22)
 			
@@ -85,17 +90,69 @@ func update_tutorial_state():
 			window.hide()
 			label.hide()
 			
-			var punta_dedo = robot.position + Vector2(-380, -290)
+			var punta_dedo_izq = robot.position + Vector2(-380, -290)
 			
 			if icon_btn:
 				icon_btn.show()
 				icon_btn.scale = Vector2(0.4, 0.4)
-				icon_btn.position = punta_dedo + Vector2(0, -60)
+				icon_btn.position = punta_dedo_izq + Vector2(0, -60)
 				
+		5:
+			robot.texture = TEX_CROSSED
+			window.show()
+			label.show()
+			label.text = "You can also check our database for other existing malware."
+			
+			if icon_btn:
+				icon_btn.hide()
+			
+		6:
+			robot.texture = TEX_POINT
+			robot.scale = Vector2(0.22, 0.22)
+			robot.flip_h = true 
+			
+			robot.position.x = pos_inicial_robot.x - 280 
+			robot.position.y = pos_inicial_robot.y - 25 
+			
+			window.hide()
+			label.hide()
+			
+			var punta_dedo_izq = robot.position + Vector2(-380, -290)
+			if icon_btn:
+				icon_btn.show()
+				icon_btn.position = punta_dedo_izq + Vector2(0, -60)
+			
+			var punta_dedo_der = robot.position + Vector2(10, -290)
+			
 			if info_btn:
 				info_btn.show()
-				info_btn.scale = Vector2(0.4, 0.4)
-				info_btn.position = icon_btn.position + Vector2(0, 180)
+				info_btn.scale = Vector2(0.25, 0.25)
+				info_btn.position = punta_dedo_der + Vector2(0, -60)
+				
+			# --- GUARDAMOS QUE EL TUTORIAL SE HA COMPLETADO ---
+			Autoload.tutorial_done = true
+			
+		10:
+			# --- ESTADO CUANDO VOLVEMOS DE OTRA ESCENA ---
+			robot.hide()   # Ocultamos el robot
+			window.hide()  # Ocultamos el diálogo
+			label.hide()   # Ocultamos el texto
+			
+			# Calculamos internamente dónde estaba el robot para poner los botones en el mismo sitio
+			robot.position.x = pos_inicial_robot.x - 280 
+			robot.position.y = pos_inicial_robot.y - 25 
+			
+			if icon_btn:
+				icon_btn.show()
+				icon_btn.scale = Vector2(0.4, 0.4)
+				var punta_dedo_izq = robot.position + Vector2(-380, -290)
+				icon_btn.position = punta_dedo_izq + Vector2(0, -60)
+			
+			if info_btn:
+				info_btn.show()
+				info_btn.scale = Vector2(0.25, 0.25)
+				var punta_dedo_der = robot.position + Vector2(10, -290)
+				info_btn.position = punta_dedo_der + Vector2(0, -60)
 
 func _on_mouse_entered_btn():
 	Input.set_custom_mouse_cursor(MOUSE_CLICK, Input.CURSOR_ARROW, Vector2(0, 0))
