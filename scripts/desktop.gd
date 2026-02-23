@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var window = $Ventana
+@onready var window = $Window
 @onready var label = $Label
 @onready var robot = $Robot
 @onready var icon_btn = $CyberShieldButton 
@@ -14,6 +14,7 @@ const MOUSE_CLICK = preload("res://assets/background/puntero-click.png")
 var step = 0
 var pos_inicial_robot : Vector2 
 var pos_inicial_label_y : float 
+var leaderboard_scene = preload("res://scenes/LeaderBoard.tscn") # hall of fame
 
 func _ready():
 	pos_inicial_robot = robot.position
@@ -40,11 +41,11 @@ func _ready():
 		if not info_btn.pressed.is_connected(_on_info_btn_pressed):
 			info_btn.pressed.connect(_on_info_btn_pressed)
 	
-	# --- COMPROBAR SI EL TUTORIAL YA SE HA COMPLETADO ---
+	# --- CHECK IF THE TUTORIAL HAS ALREADY BEEN COMPLETED ---
 	if Autoload.tutorial_done:
-		step = 10 # Estado final sin robot
+		step = 10 # Final state without robot
 	else:
-		step = 0  # Empezar tutorial desde el principio
+		step = 0  # Start tutorial from the beginning
 		
 	update_tutorial_state()
 
@@ -55,7 +56,7 @@ func _unhandled_input(event):
 			update_tutorial_state()
 
 func update_tutorial_state():
-	# Por defecto mostramos al robot (se ocultará en el step 10)
+	# By default we show the robot (it will be hidden in step 10)
 	robot.show()
 	robot.scale = Vector2(1, 1)
 	robot.position = pos_inicial_robot
@@ -126,19 +127,19 @@ func update_tutorial_state():
 			
 			if info_btn:
 				info_btn.show()
-				info_btn.scale = Vector2(0.25, 0.25)
+				info_btn.scale = Vector2(0.7, 0.7)
 				info_btn.position = punta_dedo_der + Vector2(0, -60)
 				
-			# --- GUARDAMOS QUE EL TUTORIAL SE HA COMPLETADO ---
+			# --- SAVE THAT THE TUTORIAL HAS BEEN COMPLETED ---
 			Autoload.tutorial_done = true
 			
 		10:
-			# --- ESTADO CUANDO VOLVEMOS DE OTRA ESCENA ---
-			robot.hide()   # Ocultamos el robot
-			window.hide()  # Ocultamos el diálogo
-			label.hide()   # Ocultamos el texto
+			# --- STATE WHEN RETURNING FROM ANOTHER SCENE ---
+			robot.hide()   # Hide the robot
+			window.hide()  # Hide the dialog
+			label.hide()   # Hide the text
 			
-			# Calculamos internamente dónde estaba el robot para poner los botones en el mismo sitio
+			# Internally calculate where the robot was to place the buttons in the same spot
 			robot.position.x = pos_inicial_robot.x - 280 
 			robot.position.y = pos_inicial_robot.y - 25 
 			
@@ -167,3 +168,8 @@ func _on_cyber_shield_btn_pressed():
 func _on_info_btn_pressed():
 	Input.set_custom_mouse_cursor(null)
 	get_tree().change_scene_to_file("res://scenes/malware_gallery.tscn")
+
+func _on_icon_ranking_pressed() -> void:
+	ScoreManager.last_player_name = ""
+	var leaderboard = leaderboard_scene.instantiate()
+	add_child(leaderboard)

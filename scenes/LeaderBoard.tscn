@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://ccio3ly6b05b0"]
+
+[ext_resource type="Script" uid="uid://3h70x50qy4kt" path="res://scripts/LeaderboardUI.gd" id="1_urc3l"]
+[ext_resource type="Texture2D" uid="uid://cbdry2l08vmgk" path="res://assets/buttons/PNG/Blue/arrow_basic_w.png" id="2_a3xie"]
+[ext_resource type="Texture2D" uid="uid://maghthaas72i" path="res://assets/buttons/PNG/Red/Default/check_square_color_checkmark.png" id="3_bpycg"]
+[ext_resource type="Texture2D" uid="uid://7ojc7gafdo8d" path="res://assets/buttons/PNG/Red/Default/check_square_color.png" id="3_bwqve"]
+[ext_resource type="Texture2D" uid="uid://b2a3xaslpsi1o" path="res://assets/buttons/PNG/Blue/arrow_decorative_w.png" id="3_uk6nl"]
+[ext_resource type="Texture2D" uid="uid://cs3ykcyqn0guw" path="res://assets/buttons/PNG/Red/Default/check_square_color_square.png" id="4_uk6nl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3xie"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+bg_color = Color(0.6, 0.6, 0.6, 0.7490196)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.21568628, 1, 0.03137255, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_right = 10
+corner_detail = 10
+
+[node name="LeaderBoard" type="CanvasLayer" unique_id=2103895034]
+layer = 2
+script = ExtResource("1_urc3l")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1517681766]
+visible = false
+offset_right = 225.0
+offset_bottom = 172.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=501971343]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=719445119]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a3xie")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=574180283]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Header" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=672215746]
+layout_mode = 2
+
+[node name="PosLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=206779004]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+text = "#"
+
+[node name="NameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=708945646]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+text = "NAME"
+
+[node name="RankLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=756237415]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+text = "RANK"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=1518538715]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="ScoreList" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1709504950]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=452819898]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BackButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1473702144]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("2_a3xie")
+texture_pressed = ExtResource("2_a3xie")
+texture_hover = ExtResource("3_uk6nl")
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" unique_id=639322696]
+layout_mode = 1
+offset_left = 10.5
+offset_top = 11.0
+offset_right = 26.5
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 6
+text = "BACK"
+
+[node name="Control" type="Control" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1298353860]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResetButton" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1234665720]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("3_bwqve")
+texture_pressed = ExtResource("3_bpycg")
+texture_hover = ExtResource("4_uk6nl")
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" unique_id=2013554861]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -6.0
+offset_right = 10.5
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 7
+text = "RESET"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

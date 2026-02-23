@@ -18,6 +18,7 @@ config/icon="uid://b20wm7x8nguvj"
 [autoload]
 
 Autoload="*uid://dstfb352h875i"
+ScoreManager="*uid://ddlp2p4wwpyjn"
 
 [display]
 
