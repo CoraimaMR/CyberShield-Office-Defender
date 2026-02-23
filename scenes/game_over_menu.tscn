@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="6_mvr4g"]
 [ext_resource type="Texture2D" uid="uid://ct24jwysdejvf" path="res://assets/hub/life.png" id="8_k8pbw"]
 [ext_resource type="Texture2D" uid="uid://flvlccq40qcs" path="res://assets/buttons/PNG/Yellow/Default/arrow_basic_e.png" id="9_bqmx0"]
+[ext_resource type="Texture2D" uid="uid://drycdx1vjlkmv" path="res://assets/buttons/PNG/Yellow/Default/check_square_color_checkmark.png" id="10_bqmx0"]
 [ext_resource type="Texture2D" uid="uid://cbdhtlc85n775" path="res://assets/buttons/PNG/Yellow/Default/arrow_decorative_e.png" id="11_o36v6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8pbw"]
@@ -226,6 +227,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture_normal = ExtResource("9_bqmx0")
 texture_hover = ExtResource("11_o36v6")
+texture_disabled = ExtResource("10_bqmx0")
 
 [connection signal="pressed" from="buttons/Button2" to="." method="_on_desktop_button_pressed"]
 [connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]

@@ -51,12 +51,14 @@ offset_bottom = 399.0
 texture_normal = ExtResource("6_ra1mf")
 
 [node name="InfoButton" type="TextureButton" parent="." unique_id=634823115]
+custom_minimum_size = Vector2(64, 64)
 offset_left = 342.0
 offset_top = 69.0
 offset_right = 470.0
 offset_bottom = 197.0
 scale = Vector2(1.2, 1.2)
 texture_normal = ExtResource("7_dye3h")
+stretch_mode = 3
 
 [node name="Label" type="Label" parent="InfoButton" unique_id=1075061282]
 layout_mode = 0

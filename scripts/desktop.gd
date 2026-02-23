@@ -151,7 +151,7 @@ func update_tutorial_state():
 			
 			if info_btn:
 				info_btn.show()
-				info_btn.scale = Vector2(0.25, 0.25)
+				info_btn.scale = Vector2(0.7, 0.7)
 				var punta_dedo_der = robot.position + Vector2(10, -290)
 				info_btn.position = punta_dedo_der + Vector2(0, -60)
 

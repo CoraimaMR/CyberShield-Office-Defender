@@ -27,7 +27,7 @@ func display_scores():
 			var entry = ScoreManager.high_scores[i]
 			row.get_node("NameLabel").text = entry["name"]
 			row.get_node("RankLabel").text = entry["rank"]
-			row.get_node("ScoreLabel").text = str(entry["score"])
+			row.get_node("ScoreLabel").text = str(int(entry["score"]))
 			# highlighted if it is the last player
 			if entry["name"] == ScoreManager.last_player_name:
 				var highlight_color = Color(1, 0.84, 0) # Dorado
