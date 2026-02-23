@@ -16,7 +16,7 @@ var tutorial_done: bool = false
 var LEVEL_FINAL = 4
 var current_level: int = 1
 var current_rank: String = "Intern"
-var emails_solved_in_this_level: int = 0
+var solved_in_this_level: int = 0
 
 # ----- SCENES -----
 
@@ -40,14 +40,15 @@ func remove_points(points: int) -> void:
 
 # ----- LEVEL PROGRESS -----
 
-func register_email_solved():
-	emails_solved_in_this_level += 1
-	if emails_solved_in_this_level >= 10:
+func register_solved():
+	solved_in_this_level += 1
+	if solved_in_this_level >= 10:
 		check_level_up()
 
 func check_level_up():
 	current_level += 1
-	emails_solved_in_this_level = 0
+	solved_in_this_level = 0
+	current_lifes = 3
 	
 	if current_level == 2:
 		current_rank = "Junior Technician"
@@ -67,20 +68,6 @@ func check_level_up():
 		Autoload.save_scene() 
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
-func upgrade_level():
-	current_level += 1
-	emails_solved_in_this_level = 0
-	if current_level == 2:
-		current_rank = "Junior Technician"
-	elif current_level == 3:
-		current_rank = "Security Expert"
-	else:
-		current_rank = "The Boss"
-	
-	if current_lifes > 0:
-		level_up.emit(current_level, current_rank) # notify the game about the promotion
-		print("PROMOTION! Level:", current_level, " Rank:", current_rank)
-	
 # ----- LIFES -----
 
 func add_lifes(lifes: int) -> void:
@@ -107,4 +94,4 @@ func reset_hub():
 	current_lifes = 3
 	current_level = 1
 	current_rank = "Intern"
-	emails_solved_in_this_level = 0
+	solved_in_this_level = 0

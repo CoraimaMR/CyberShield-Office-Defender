@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Microsoft Outlook"
+description = "Unusual forwarding rules have been detected in your mailbox. Please review your security settings."
+date = "Yesterday 18:30"
+is_phishing = false
+educational_tip = "Safe: Advanced technical alert regarding account security."
+difficulty = 3

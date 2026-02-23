@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Total_Secure_Bank"
+description = "YOUR ACCOUNT HAS BEEN BLOCKED. Log in at http://bank-security-alert.net to unlock."
+date = "Yesterday 23:59"
+is_phishing = true
+educational_tip = "Phishing: Uses all-caps to create panic and links that don't belong to the official bank."
+difficulty = 1

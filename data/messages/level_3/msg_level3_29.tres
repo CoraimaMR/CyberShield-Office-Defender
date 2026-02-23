@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Software Update"
+description = "New version of 'WorkFlow Manager' available. The system will restart in 15 mins to apply patches."
+date = "Today 16:00"
+is_phishing = falsemsg_level3_29.tres
+educational_tip = "Safe: Automatic system administration process in corporate environments."
+difficulty = 3

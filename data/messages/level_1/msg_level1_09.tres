@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Vet Clinic"
+description = "Reminder: Buddy has his annual vaccination tomorrow at 10:00 AM. See you there!"
+date = "Today 11:00"
+is_phishing = false
+educational_tip = "Safe: Informative message from a service previously contracted."
+difficulty = 1

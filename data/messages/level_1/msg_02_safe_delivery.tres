@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3 uid="uid://jv7nuyt6sv8f"]
+
+[ext_resource type="Script" uid="uid://cgi7goueva05f" path="res://scripts/messagesResource.gd" id="1_xrf3g"]
+
+[resource]
+script = ExtResource("1_xrf3g")
+title = "Delivery App"
+description = "Your order has been delivered. Enjoy your meal! 🍔"
+date = "Today 12:02"
+educational_tip = "This message is safe because it contains neutral information and no request for personal data."

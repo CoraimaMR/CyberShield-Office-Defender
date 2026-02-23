@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Accounting - Invoice"
+description = "Hello, I'm sending the pending invoice INV-2024-09 you requested during our call. Regards."
+date = "Today 11:22"
+is_phishing = true
+educational_tip = "Phishing: Dangerous because it mimics a real workflow. The file could contain malware (macros)."
+difficulty = 3

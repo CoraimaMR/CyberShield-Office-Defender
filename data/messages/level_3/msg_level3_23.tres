@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "CEO - Urgent"
+description = "I'm in a meeting and need you to buy 5 Amazon gift cards for some clients. I'll pay you back later."
+date = "Today 14:05"
+is_phishing = true
+educational_tip = "Phishing (Whaling): Targeted attacks pretending to be bosses. Never buy gift cards for the company."
+difficulty = 3

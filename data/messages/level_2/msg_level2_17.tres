@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Animal Sanctuary"
+description = "Thank you for your $10 monthly donation. We've attached your tax certificate for your records."
+date = "Yesterday 12:00"
+is_phishing = false
+educational_tip = "Safe: Confirmation of a subscription or donation the user is already aware of."
+difficulty = 2

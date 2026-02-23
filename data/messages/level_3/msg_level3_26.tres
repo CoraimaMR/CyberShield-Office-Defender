@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Coworker (Luis)"
+description = "Hey, can you check this link? I think it's the bug you mentioned in yesterday's meeting."
+date = "Today 12:40"
+is_phishing = false
+educational_tip = "Safe: Very specific message regarding a real work context."
+difficulty = 3

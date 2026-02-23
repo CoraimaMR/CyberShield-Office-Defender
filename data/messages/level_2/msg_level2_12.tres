@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "HR Department"
+description = "Hello, I'm attaching the updated conduct manual for this year. Please review it before Friday."
+date = "Today 10:00"
+is_phishing = false
+educational_tip = "Safe: Standard internal corporate communication with no suspicious external links."
+difficulty = 2
