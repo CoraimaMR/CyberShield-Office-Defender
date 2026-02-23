@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="MessageResource" format=3]
-[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+[gd_resource type="Resource" script_class="MessageResource" format=3 uid="uid://b0hmoclxwoitm"]
+
+[ext_resource type="Script" uid="uid://cgi7goueva05f" path="res://scripts/messagesResource.gd" id="1_2xs1t"]
 
 [resource]
-script = ExtResource("1_0i5j4")
-title = "HR Department"
-description = "Hello, I'm attaching the updated conduct manual for this year. Please review it before Friday."
-date = "Today 10:00"
-is_phishing = false
-educational_tip = "Safe: Standard internal corporate communication with no suspicious external links."
+script = ExtResource("1_2xs1t")
+title = "School Portal"
+description = "Reminder: Homework submission closes tonight at 11:59 PM."
+date = "Today 16:40"
+educational_tip = "This message is safe because it contains no links and matches normal school communication."
 difficulty = 2
