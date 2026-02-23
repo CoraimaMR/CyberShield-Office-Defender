@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="26_nywdl"]
 [ext_resource type="Texture2D" uid="uid://no44k8vrtupe" path="res://assets/window/yess.png" id="27_wpyyb"]
 [ext_resource type="Texture2D" uid="uid://dr88q7cs2wto3" path="res://assets/window/noo.png" id="28_j1tgi"]
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="29_wpyyb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
 bg_color = Color(0, 0, 0.8235294, 1)
@@ -241,6 +242,30 @@ offset = Vector2(900, 8)
 scale = Vector2(0.28, 0.28)
 transform = Transform2D(0.28, 0, 0, 0.28, 900, 8)
 
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1830875913]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 10.0
+offset_right = 1137.0
+offset_bottom = 34.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+folded = true
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=59295045]
+visible = false
+layout_mode = 2
+script = ExtResource("29_wpyyb")
+
+[node name="Button" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=990177068]
+layout_mode = 2
+text = "EXIT"
+
+[node name="Button2" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=863716167]
+layout_mode = 2
+text = "RETRY"
+
 [node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1024679185]
 stream = ExtResource("24_h6ctk")
 
@@ -255,3 +280,5 @@ autoplay = true
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
 [connection signal="pressed" from="popup window/Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button2" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]

@@ -1,5 +1,9 @@
 extends Node # MENU
-@onready var name_input = $NameInput
+
+var name_input
+
+func _ready() -> void:
+	name_input = get_node_or_null("$NameInput")
 
 # Button 1: PREVIUS SCENE + RESET HUB
 func _on_retry_button_pressed() -> void:
