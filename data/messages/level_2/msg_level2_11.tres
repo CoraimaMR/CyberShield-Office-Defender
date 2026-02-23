@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="MessageResource" format=3]
-[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+[gd_resource type="Resource" script_class="MessageResource" format=3 uid="uid://co174libvuque"]
+
+[ext_resource type="Script" uid="uid://cgi7goueva05f" path="res://scripts/messagesResource.gd" id="1_1pga3"]
 
 [resource]
-script = ExtResource("1_0i5j4")
-title = "PayPal"
-description = "A payment of 499.99 USD to 'Electronics Corp' has been made. If you didn't do this, cancel here."
-date = "Today 09:15"
+script = ExtResource("1_1pga3")
+title = "SecureBank"
+description = "We detected unusual activity. Verify your account immediately: secure-bank-login.net"
+date = "Yesterday 18:20"
 is_phishing = true
-educational_tip = "Phishing: Uses financial fear to make you click a fake 'Cancel' button."
+educational_tip = "This is phishing because it creates urgency and uses a fake domain that mimics a real bank."
 difficulty = 2
