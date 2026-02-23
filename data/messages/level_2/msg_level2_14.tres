@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "LinkedIn"
+description = "You have a new job offer from 'Global Tech Solutions'. Salary: 120k/year. See details: http://link-id-jobs.co"
+date = "Today 13:00"
+is_phishing = true
+educational_tip = "Phishing: The domain 'link-id-jobs.co' is visually similar but fake. Beware of 'too good to be true' offers."
+difficulty = 2

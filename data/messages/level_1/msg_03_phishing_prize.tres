@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3 uid="uid://ccy60p7onrwq5"]
+
+[ext_resource type="Script" uid="uid://cgi7goueva05f" path="res://scripts/messagesResource.gd" id="1_cn77u"]
+
+[resource]
+script = ExtResource("1_cn77u")
+title = "Unknown Number"
+description = "Congratulations! You won a $500 gift card! Click here to claim now: bit.ly/win-now"
+date = "Today 13:55"
+is_phishing = true
+educational_tip = "This is phishing because it offers a reward and includes a suspicious shortened link."

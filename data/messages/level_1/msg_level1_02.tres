@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "LOTTERY_WIN"
+description = "YOU WON $1,000,000! CLICK HERE TO CLAIM YOUR PRIZE NOW: http://free-cash-prize.biz"
+date = "Today 04:12"
+is_phishing = true
+educational_tip = "Obvious phishing: Promises of excessive money and links with suspicious domains (.biz)."
+difficulty = 1

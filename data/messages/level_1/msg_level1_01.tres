@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Mom"
+description = "Hey sweetie! Don't forget to bring the dessert for tonight's dinner. Love you!"
+date = "Today 18:30"
+is_phishing = false
+educational_tip = "Safe message: It comes from a known contact and doesn't ask for sensitive data."
+difficulty = 1

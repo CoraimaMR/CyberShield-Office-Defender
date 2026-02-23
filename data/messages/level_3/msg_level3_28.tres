@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Bank Security"
+description = "Dear user, due to new PSD2 regulations, you must sync your signature key. Avoid account lockout."
+date = "Today 08:20"
+is_phishing = true
+educational_tip = "Phishing: Uses real technical terms (PSD2) to look legitimate. Banks never ask to sync keys via links."
+difficulty = 3

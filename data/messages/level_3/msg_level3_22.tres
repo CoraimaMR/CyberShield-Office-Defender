@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Tax Agency - Notice"
+description = "You have a pending traffic fine notification. Access the e-office with your digital certificate."
+date = "Today 09:45"
+is_phishing = false
+educational_tip = "Safe: Public administrations notify users but always require logging into the official website."
+difficulty = 3

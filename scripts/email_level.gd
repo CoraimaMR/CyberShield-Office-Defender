@@ -143,7 +143,7 @@ func validate_choice(user_said_phishing: bool):
 	
 	if success:
 		Autoload.add_points(PUT_POINTS)
-		Autoload.register_email_solved() 
+		Autoload.register_solved() 
 		correct_sound.play()
 		window(true)
 	else:
@@ -156,12 +156,9 @@ func window(is_correct: bool):
 	popup_window.visible = true
 	%TrustButton.disabled = true
 	%ReportButton.disabled = true
-	if is_correct:
-		correct_label.visible = true
-		incorrect_label.visible = false
-	else:
-		incorrect_label.visible = true
-		correct_label.visible = false
+	
+	correct_label.visible = is_correct
+	incorrect_label.visible = not is_correct
 
 func _on_close_button_pressed() -> void:
 	popup_window.visible = false

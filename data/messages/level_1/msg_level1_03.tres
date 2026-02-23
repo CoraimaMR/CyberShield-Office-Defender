@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Netflix"
+description = "Your subscription has expired. Please update your payment method to continue watching."
+date = "Yesterday 20:15"
+is_phishing = false
+educational_tip = "Safe: A standard service notification. Always verify the sender is official."
+difficulty = 1

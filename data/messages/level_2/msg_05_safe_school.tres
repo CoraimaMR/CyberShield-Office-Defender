@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3 uid="uid://b0hmoclxwoitm"]
+
+[ext_resource type="Script" uid="uid://cgi7goueva05f" path="res://scripts/messagesResource.gd" id="1_2xs1t"]
+
+[resource]
+script = ExtResource("1_2xs1t")
+title = "School Portal"
+description = "Reminder: Homework submission closes tonight at 11:59 PM."
+date = "Today 16:40"
+educational_tip = "This message is safe because it contains no links and matches normal school communication."
+difficulty = 2

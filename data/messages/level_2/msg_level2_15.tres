@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Energy Supply"
+description = "Dear customer, you have a pending refund of $45.50. Please verify your card to receive the credit."
+date = "Monday 14:00"
+is_phishing = true
+educational_tip = "Phishing: Utility companies don't usually ask for card details via message for refunds."
+difficulty = 2

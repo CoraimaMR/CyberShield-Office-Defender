@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "WhatsApp"
+description = "Your WhatsApp verification code is 445-122. If you didn't request this, ignore this message."
+date = "Today 03:00"
+is_phishing = false
+educational_tip = "Safe: Automatic system message. Only dangerous if someone asks you to tell them the code."
+difficulty = 2

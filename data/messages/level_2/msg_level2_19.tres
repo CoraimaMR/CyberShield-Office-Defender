@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Facebook"
+description = "Someone tried to change your password from an unusual location. Click to secure your account."
+date = "2 hours ago"
+is_phishing = true
+educational_tip = "Phishing: The link leads to a cloned page that steals your current credentials."
+difficulty = 2

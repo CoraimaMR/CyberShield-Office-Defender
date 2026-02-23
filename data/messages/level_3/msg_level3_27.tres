@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Zoom"
+description = "Meeting invitation: 'Q4 Strategic Planning'. Click to join the room."
+date = "Today 11:55"
+is_phishing = false
+educational_tip = "Safe: Routine invitation to work meetings."
+difficulty = 3

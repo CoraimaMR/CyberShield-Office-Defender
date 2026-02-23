@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Apple Support"
+description = "Your Apple ID was used to sign in to iCloud from Moscow. If this wasn't you, reset your password."
+date = "Yesterday 22:40"
+is_phishing = false
+educational_tip = "Safe: Real security notice. It doesn't ask for data, just informs of unusual activity."
+difficulty = 2

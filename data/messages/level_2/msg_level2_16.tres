@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "IT Admin"
+description = "Server maintenance scheduled for this Saturday at 02:00 AM. Email services will be down."
+date = "Today 17:00"
+is_phishing = false
+educational_tip = "Safe: Informative technical notice that requires no action from the user."
+difficulty = 2

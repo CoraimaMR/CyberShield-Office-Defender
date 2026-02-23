@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageResource" format=3]
+[ext_resource type="Script" path="res://scripts/messagesResource.gd" id="1_0i5j4"]
+
+[resource]
+script = ExtResource("1_0i5j4")
+title = "Purchase Receipt"
+description = "Thank you for your 'AppStore' purchase. If you don't recognize this $99.99 charge for 'Free Gems', report it here."
+date = "10 mins ago"
+is_phishing = true
+educational_tip = "Phishing: Plays on the shock of a fake charge to lure you into a phishing site to 'claim' it."
+difficulty = 3
