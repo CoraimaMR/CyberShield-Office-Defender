@@ -18,7 +18,7 @@ func _on_level_upp_button_pressed() -> void:
 	get_tree().paused = false
 	Autoload.previous_scene() # Go to previus scene
 
-# Button 4: SAVED
+# Button 4: SAVED GAMEOVER
 func _on_save_button_pressed():
 	if name_input == null or save_button == null:
 		# Si esto sale en consola, es que los nombres en el árbol no son NameInput o SaveButton
