@@ -14,6 +14,7 @@ var previous_scene_path: String = ""
 var tutorial_done: bool = false
 
 # --- PROGRESS VARIABLES ---
+var QUESTIONS_TO_SOLVE = 10
 var LEVEL_FINAL = 4
 var current_level: int = 1
 var current_rank: String = "Intern"
@@ -45,7 +46,7 @@ func remove_lifes(lifes: int) -> void:
 # Increments progress and triggers level-up check every 10 solves
 func register_solved():
 	solved_in_this_level += 1
-	if solved_in_this_level >= 10:
+	if solved_in_this_level >= QUESTIONS_TO_SOLVE:
 		check_level_up()
 
 # Handles level increments, rank updates, and scene transitions

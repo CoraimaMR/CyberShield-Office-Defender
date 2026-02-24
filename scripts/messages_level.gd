@@ -144,10 +144,10 @@ func window(is_correct: bool):
 	%ReportButton.disabled = true
 	
 	if is_correct:
-		title_solution.text = "Correct!"
+		title_solution.text = "✅ Correct!"
 		title_solution.modulate = Color.GREEN
 	else:
-		title_solution.text = "Incorrect!"
+		title_solution.text = "❌ Incorrect!"
 		title_solution.modulate = Color.RED
 
 func _on_trust_button_pressed():
