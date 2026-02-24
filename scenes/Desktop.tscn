@@ -38,35 +38,38 @@ theme_override_fonts/font = ExtResource("5_ra1mf")
 text = "Hi! My name is  Roby"
 
 [node name="CyberShieldButton" type="TextureButton" parent="." unique_id=329390948]
-visible = false
-offset_left = 342.0
-offset_top = 69.0
-offset_right = 699.0
-offset_bottom = 399.0
+offset_left = 734.0
+offset_top = 7.0
+offset_right = 1091.0
+offset_bottom = 337.0
+scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_ra1mf")
 
 [node name="DatabaseButton" type="TextureButton" parent="." unique_id=634823115]
 custom_minimum_size = Vector2(64, 64)
-offset_left = 342.0
-offset_top = 69.0
-offset_right = 470.0
-offset_bottom = 197.0
-scale = Vector2(1.2, 1.2)
+offset_left = 994.99994
+offset_top = 27.000004
+offset_right = 1561.0
+offset_bottom = 730.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("7_ik535")
 stretch_mode = 3
 
 [node name="IconRanking" type="TextureButton" parent="." unique_id=184449187]
 offset_left = 1035.0
 offset_top = 485.0
-offset_right = 1535.0
-offset_bottom = 985.0
+offset_right = 1711.0
+offset_bottom = 1163.0
 scale = Vector2(0.15, 0.15)
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_ik535")
 
 [node name="SmishingButton" type="TextureButton" parent="." unique_id=1927420958]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 870.00006
+offset_top = 20.0
+offset_right = 1534.0001
+offset_bottom = 759.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("9_ik535")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=938220466]
