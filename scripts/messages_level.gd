@@ -1,30 +1,34 @@
 extends Control # MESSAGES LEVEL
 
+# --- CONSTANTS ---
 const PUT_POINTS := 5
 const REMOVE_POINTS := 10
 
-@export var message_list: Array[Resource] = []
-
+# --- DATA & STATE ---
+@export var message_list: Array[Resource] = [] # Stores MessageResource (.tres) files
 var current_index: int = 0
 
-# UI
+# --- ONREADY NODES: UI ---
 @onready var title_label = %"Label-title"
 @onready var description_label = %"Label-description"
 @onready var date_label = %"Label-date"
 
+# --- ONREADY NODES: POPUP & FEEDBACK ---
 @onready var solution = %solution
 @onready var title_solution = %"Label-title-solution"
 @onready var tip_label = %"Label-tip"
-
 @onready var correct_sound = $correct
 @onready var incorrect_sound = $incorrect
+
+# --- NODES: EXTERNAL ---
 @onready var hub_scene = %hub
 
-# TIMER
+# --- TIMER VARIABLES ---
 var time_limit: float = 10.0
 var time_left: float = 10.0
 var timer_active: bool = false
 
+# --- INITIALIZATION ---
 func _ready():
 	Autoload.save_scene() 
 	load_messages_from_folder()
@@ -35,8 +39,9 @@ func _ready():
 	else:
 		description_label.text = "No messages found."
 
+# --- MAIN LOOP ---
 func _process(delta: float) -> void:
-	# PAUSE
+	# Handle Pause Input
 	if Input.is_action_just_pressed("ui_cancel"):
 		if not get_tree().paused:
 			var pause_scene = load("res://scenes/pause_menu.tscn").instantiate()
@@ -44,12 +49,12 @@ func _process(delta: float) -> void:
 			hub_scene.visible = false
 			get_tree().paused = true
 	
-	# GAME OVER
+	# Handle Game Over State
 	if Autoload.current_lifes == 0:
 		Autoload.save_scene()
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn")
 	
-	# TIMER
+	# Handle Countdown Timer Logic
 	if Autoload.current_level >= 2 and timer_active:
 		time_left -= delta
 		if hub_scene:
@@ -58,6 +63,40 @@ func _process(delta: float) -> void:
 			timer_active = false
 			time_exhausted()
 
+# --- FILE LOADING & UI SETUP ---
+# Loads message resources from the level-specific folder
+func load_messages_from_folder():
+	message_list.clear()
+	var folder_path = "res://data/messages/level_" + str(Autoload.current_level) + "/"
+	var dir = DirAccess.open(folder_path)
+	
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if !dir.current_is_dir():
+				var clean_name = file_name.replace(".remap", "")
+				if clean_name.ends_with(".tres"):
+					var res = load(folder_path + clean_name)
+					if res:
+						message_list.append(res)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+		message_list.shuffle()
+	else:
+		push_error("Could not open folder: " + folder_path)
+
+# Updates UI labels with the current message data
+func display_message():
+	reset_timer()
+	
+	var msg = message_list[current_index]
+	title_label.text = msg.title
+	description_label.text = msg.description
+	date_label.text = msg.date
+	tip_label.text = msg.educational_tip
+
+# --- TIMER MANAGEMENT ---
 func time_exhausted():
 	Autoload.remove_points(REMOVE_POINTS)
 	Autoload.remove_lifes(1)
@@ -78,42 +117,8 @@ func reset_timer():
 		if hub_scene:
 			hub_scene.set_time_bar_visible(false)
 
-func load_messages_from_folder():
-	message_list.clear()
-	var folder_path = "res://data/messages/level_" + str(Autoload.current_level) + "/"
-	var dir = DirAccess.open(folder_path)
-	
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if !dir.current_is_dir():
-				var clean_name = file_name.replace(".remap", "")
-				if clean_name.ends_with(".tres"):
-					var res = load(folder_path + clean_name)
-					if res:
-						message_list.append(res)
-			file_name = dir.get_next()
-		dir.list_dir_end()
-		message_list.shuffle()
-	else:
-		push_error("No se pudo abrir la carpeta: " + folder_path)
-
-func display_message():
-	reset_timer()
-	
-	var msg = message_list[current_index]
-	title_label.text = msg.title
-	description_label.text = msg.description
-	date_label.text = msg.date
-	tip_label.text = msg.educational_tip
-
-func _on_trust_button_pressed():
-	validate_choice(false)
-
-func _on_report_button_pressed():
-	validate_choice(true)
-
+# --- GAMEPLAY LOGIC ---
+# Validates player choice against the message's "is_phishing" property
 func validate_choice(user_said_phishing: bool):
 	timer_active = false
 	
@@ -131,6 +136,8 @@ func validate_choice(user_said_phishing: bool):
 		incorrect_sound.play()
 		window(false)
 
+# --- UI FEEDBACK & SIGNALS ---
+# Manages the visibility and content of the result window
 func window(is_correct: bool):
 	solution.visible = true
 	%TrustButton.disabled = true
@@ -142,6 +149,12 @@ func window(is_correct: bool):
 	else:
 		title_solution.text = "Incorrect!"
 		title_solution.modulate = Color.RED
+
+func _on_trust_button_pressed():
+	validate_choice(false)
+
+func _on_report_button_pressed():
+	validate_choice(true)
 
 func _on_close_button_pressed():
 	solution.visible = false

@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="7_j25u6"]
 [ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="8_tdjlk"]
 [ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="9_j25u6"]
+[ext_resource type="AudioStream" uid="uid://vqealbr34ldm" path="res://sounds/moodmode-commercial-fun-239161 (1).mp3" id="11_kxjaa"]
 
 [node name="Control" type="Control" unique_id=2116262464]
 layout_mode = 3
@@ -209,6 +210,11 @@ stream = ExtResource("8_tdjlk")
 
 [node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=423820262]
 stream = ExtResource("9_j25u6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1710609855]
+stream = ExtResource("11_kxjaa")
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="solution/Button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]

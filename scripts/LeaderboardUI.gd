@@ -1,48 +1,61 @@
-extends CanvasLayer
+extends CanvasLayer # LEADERBOARD UI
 
-# 1. load the row template (make sure the path is correct)
+# --- PRELOADS ---
+# Load the row template for individual score entries
 var row_scene = preload("res://scenes/ScoreRow.tscn")
 
+# --- ONREADY NODES ---
 @onready var score_list = %ScoreList
 @onready var back_button = %BackButton
 @onready var reset_button = %ResetButton
 
+# --- INITIALIZATION ---
 func _ready():
-	display_scores() # show dates
+	# Populate the list with data upon opening
+	display_scores()
 	reset_button.visible = true
 
+# --- SCORE DISPLAY LOGIC ---
+# Clears the container and populates exactly 10 rows with player data or placeholders
 func display_scores():
-	# clear the current list
+	# Clear existing children from the list container
 	for child in score_list.get_children():
 		child.queue_free()
 	
-	# iterate ALWAYS 10 positions
+	# Always iterate through 10 positions for a consistent UI
 	for i in range(10):
 		var row = row_scene.instantiate()
 		score_list.add_child(row)
-		# set the position number (i + 1 so it starts at 1)
+		
+		# Set the rank number (starting from 1)
 		row.get_node("PosLabel").text = str(i + 1) + "."
-		# check if there are actual data for this position
+		
+		# Check if there is actual data for this ranking position
 		if i < ScoreManager.high_scores.size():
 			var entry = ScoreManager.high_scores[i]
 			row.get_node("NameLabel").text = entry["name"]
 			row.get_node("RankLabel").text = entry["rank"]
 			row.get_node("ScoreLabel").text = str(int(entry["score"]))
-			# highlighted if it is the last player
+			
+			# Highlight the row if it belongs to the current player
 			if entry["name"] == ScoreManager.last_player_name:
-				var highlight_color = Color(1, 0.84, 0) # Dorado
+				var highlight_color = Color(1, 0.84, 0) # Gold
 				row.modulate = highlight_color
 		else:
-			# if there are NO data, we fill it with dashes or leave it empty
+			# Fill empty positions with dashes as placeholders
 			row.get_node("NameLabel").text = "---"
 			row.get_node("RankLabel").text = "---"
 			row.get_node("ScoreLabel").text = "0"
-			# lower the opacity of the empty rows so they are less noticeable
+			
+			# Dim the opacity of empty rows for better visual hierarchy
 			row.modulate.a = 0.3
 
+# --- SIGNAL CALLBACKS ---
+# Wipes all data from the ScoreManager and refreshes the display
 func _on_reset_button_pressed():
 	ScoreManager.reset_scores()
 	display_scores()
 
+# Removes the leaderboard overlay and returns to the previous menu
 func _on_back_button_pressed() -> void:
 	queue_free()
