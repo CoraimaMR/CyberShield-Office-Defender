@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dofpk8va6kth3"
-path="res://.godot/imported/antivirus-removebg-preview.png-24a98bc51128af9150f41c61943868cf.ctex"
+uid="uid://c020i5ia7sw34"
+path="res://.godot/imported/icono-trofeo.png-d69b9312df1d3c1d11e53c4a9a847f8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/malware/antivirus-removebg-preview.png"
-dest_files=["res://.godot/imported/antivirus-removebg-preview.png-24a98bc51128af9150f41c61943868cf.ctex"]
+source_file="res://assets/background/icono-trofeo.png"
+dest_files=["res://.godot/imported/icono-trofeo.png-d69b9312df1d3c1d11e53c4a9a847f8d.ctex"]
 
 [params]
 
