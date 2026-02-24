@@ -27,6 +27,7 @@ var time_left: float = 10.0
 var timer_active: bool = false    
 
 func _ready():
+	Autoload.save_scene()
 	load_emails_from_folder()
 	
 	popup_window.visible = false
@@ -40,7 +41,7 @@ func _ready():
 func _process(delta: float) -> void:
 	# PAUSE MENU
 	if Input.is_action_just_pressed("ui_cancel"):
-		if not get_tree().paused: # evita doble pausa
+		if not get_tree().paused:
 			var pause_scene = load("res://scenes/pause_menu.tscn").instantiate()
 			add_child(pause_scene)
 			hub_scene.visible = false

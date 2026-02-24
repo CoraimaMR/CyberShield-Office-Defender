@@ -26,6 +26,7 @@ var time_left: float = 10.0
 var timer_active: bool = false
 
 func _ready():
+	Autoload.save_scene() 
 	load_messages_from_folder()
 	solution.visible = false
 	
