@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c00ln476400q5"
-path="res://.godot/imported/trophy.png-bf4525ca3ef958fb6d85bf9132452f8e.ctex"
+uid="uid://dgb03ej1xpt1u"
+path="res://.godot/imported/icono-database.png-666b7af7846fcf3fe2f1be50071815da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/window/trophy.png"
-dest_files=["res://.godot/imported/trophy.png-bf4525ca3ef958fb6d85bf9132452f8e.ctex"]
+source_file="res://assets/background/icono-database.png"
+dest_files=["res://.godot/imported/icono-database.png-666b7af7846fcf3fe2f1be50071815da.ctex"]
 
 [params]
 

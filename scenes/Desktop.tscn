@@ -6,15 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/robot/robot.png" id="3_5mnb0"]
 [ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
 [ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
-[ext_resource type="Texture2D" uid="uid://dofpk8va6kth3" path="res://assets/malware/antivirus-removebg-preview.png" id="7_dye3h"]
-[ext_resource type="Texture2D" uid="uid://c00ln476400q5" path="res://assets/window/trophy.png" id="8_dye3h"]
+[ext_resource type="Texture2D" uid="uid://dgb03ej1xpt1u" path="res://assets/background/icono-database.png" id="7_ik535"]
+[ext_resource type="Texture2D" uid="uid://c020i5ia7sw34" path="res://assets/background/icono-trofeo.png" id="8_ik535"]
 [ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="8_qfcxt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik535"]
-bg_color = Color(0.6, 0.6, 0.6, 0.6117647)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dye3h"]
-bg_color = Color(0.6117647, 0.6156863, 1, 0.41568628)
+[ext_resource type="Texture2D" uid="uid://dyhr27qvw5ob3" path="res://assets/background/icono-mishing.png" id="9_ik535"]
 
 [node name="Node2D" type="Node2D" unique_id=237963605]
 script = ExtResource("1_5mnb0")
@@ -50,25 +45,15 @@ offset_right = 699.0
 offset_bottom = 399.0
 texture_normal = ExtResource("6_ra1mf")
 
-[node name="InfoButton" type="TextureButton" parent="." unique_id=634823115]
+[node name="DatabaseButton" type="TextureButton" parent="." unique_id=634823115]
 custom_minimum_size = Vector2(64, 64)
 offset_left = 342.0
 offset_top = 69.0
 offset_right = 470.0
 offset_bottom = 197.0
 scale = Vector2(1.2, 1.2)
-texture_normal = ExtResource("7_dye3h")
+texture_normal = ExtResource("7_ik535")
 stretch_mode = 3
-
-[node name="Label" type="Label" parent="InfoButton" unique_id=1075061282]
-layout_mode = 0
-offset_left = -5.833374
-offset_top = 145.83333
-offset_right = 134.16663
-offset_bottom = 185.83333
-theme_override_font_sizes/font_size = 29
-theme_override_styles/normal = SubResource("StyleBoxFlat_ik535")
-text = "Data Base"
 
 [node name="IconRanking" type="TextureButton" parent="." unique_id=184449187]
 offset_left = 1035.0
@@ -77,18 +62,12 @@ offset_right = 1535.0
 offset_bottom = 985.0
 scale = Vector2(0.15, 0.15)
 size_flags_horizontal = 4
-texture_normal = ExtResource("8_dye3h")
+texture_normal = ExtResource("8_ik535")
 
-[node name="Label" type="Label" parent="IconRanking" unique_id=1559561410]
-layout_mode = 0
-offset_left = -186.6666
-offset_top = 520.0
-offset_right = 602.9999
-offset_bottom = 686.66675
-theme_override_font_sizes/font_size = 120
-theme_override_styles/normal = SubResource("StyleBoxFlat_dye3h")
-text = "Hall of Fame"
-horizontal_alignment = 1
+[node name="SmishingButton" type="TextureButton" parent="." unique_id=1927420958]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("9_ik535")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=938220466]
 stream = ExtResource("8_qfcxt")
