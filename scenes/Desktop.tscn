@@ -1,66 +1,209 @@
 [gd_scene format=3 uid="uid://dnwxcf87fjqvd"]
 
-[ext_resource type="Script" uid="uid://dpxmjpjufa42r" path="res://scripts/desktop.gd" id="1_5mnb0"]
-[ext_resource type="Texture2D" uid="uid://cjkvg4a8s0v0" path="res://assets/background/escritorio.png" id="1_eysme"]
-[ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="2_a1iwr"]
-[ext_resource type="Texture2D" uid="uid://b20wm7x8nguvj" path="res://assets/robot/robot.png" id="3_5mnb0"]
-[ext_resource type="FontFile" uid="uid://bjlmkuhlwkxbu" path="res://assets/pixel-operator-fuente/PixelOperator8.ttf" id="5_ra1mf"]
-[ext_resource type="Texture2D" uid="uid://drdmbc3pmg2m1" path="res://assets/background/icono cybershield.png" id="6_ra1mf"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-[ext_resource type="Texture2D" uid="uid://cq0omjtma5yf5" path="res://assets/background/data_base_icon.png" id="7_qfcxt"]
-=======
-[ext_resource type="Texture2D" uid="uid://dyprjjian6kyi" path="res://assets/background/database_icon.png" id="7_qfcxt"]
->>>>>>> Stashed changes
-[ext_resource type="AudioStream" uid="uid://cyohdnpmu1m7e" path="res://sounds/chakong-corporative-tutorial-workshop-bussines-commercial-music-182536 (1).mp3" id="8_qfcxt"]
->>>>>>> Stashed changes
+[ext_resource type="Script" path="res://scripts/messages_level.gd" id="1_dye3h"]
+[ext_resource type="Texture2D" path="res://assets/messages/istockphoto-185232989-612x612.jpg" id="2_ik535"]
+[ext_resource type="Texture2D" path="res://assets/messages/bubble01.png" id="3_jj6sf"]
+[ext_resource type="Texture2D" path="res://assets/messages/bubble02.png" id="4_4x3xo"]
+[ext_resource type="Texture2D" path="res://assets/messages/pngtree-mobile-phone-frame-photo-png-image_14568670.png" id="5_06jtt"]
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="6_hee60"]
+[ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="7_ok5t1"]
+[ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="8_4tno1"]
+[ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="9_v8c1h"]
 
-[node name="Node2D" type="Node2D" unique_id=237963605]
-script = ExtResource("1_5mnb0")
+[node name="Control" type="Control" unique_id=2116262464]
+layout_mode = 3
+anchor_left = -0.00086805556
+anchor_right = 1.0
+anchor_bottom = 1.0015432
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dye3h")
+message_list = Array[Resource]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_edit_use_anchors_ = true
 
-[node name="Escritorio" type="Sprite2D" parent="." unique_id=1565639712]
-position = Vector2(576.5, 325)
-scale = Vector2(0.89765626, 0.90756303)
-texture = ExtResource("1_eysme")
+[node name="background" type="TextureRect" parent="." unique_id=1805144811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ik535")
 
-[node name="Ventana" type="Sprite2D" parent="." unique_id=1820151467]
-position = Vector2(539.00006, 328.75)
-scale = Vector2(0.76865673, 0.59276736)
-texture = ExtResource("2_a1iwr")
+[node name="background-mobile" type="ColorRect" parent="." unique_id=1058315189]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 17.0
+offset_right = 728.0
+offset_bottom = 629.0
+color = Color(0.74509805, 0.8784314, 0.99215686, 1)
 
-[node name="Robot" type="Sprite2D" parent="." unique_id=945214544]
-position = Vector2(888, 507)
-texture = ExtResource("3_5mnb0")
+[node name="chat" type="TextureRect" parent="." unique_id=797154428]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 138.0
+offset_right = 703.0
+offset_bottom = 396.0
+texture = ExtResource("3_jj6sf")
 
-[node name="Label" type="Label" parent="." unique_id=1613811461]
-modulate = Color(0, 0, 0, 1)
-offset_left = 364.0
-offset_top = 326.0
-offset_right = 721.0
-offset_bottom = 345.0
-theme_override_fonts/font = ExtResource("5_ra1mf")
-text = "Hola! Me llamo Roby"
+[node name="PanelContainer" type="PanelContainer" parent="chat" unique_id=811398622]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.06716418
+anchor_top = -0.2868217
+anchor_right = 0.9104478
+anchor_bottom = -0.24031007
+offset_right = 51.0
+offset_bottom = 28.0
+metadata/_edit_use_anchors_ = true
 
-[node name="CyberShieldButton" type="TextureButton" parent="." unique_id=329390948]
+[node name="Label-title" type="Label" parent="chat/PanelContainer" unique_id=371363162]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "TITLE"
+horizontal_alignment = 1
+
+[node name="Label-description" type="Label" parent="chat" unique_id=443949675]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 245.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "DESCRIPTION"
+autowrap_mode = 2
+
+[node name="Label-date" type="Label" parent="chat" unique_id=390052179]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 253.0
+offset_right = 253.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "DATE"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="solution" type="TextureRect" parent="." unique_id=278656783]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 190.0
+offset_right = 391.0
+offset_bottom = 437.0
+texture = ExtResource("4_4x3xo")
+
+[node name="Label-title-solution" type="Label" parent="solution" unique_id=1910727369]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 15.0
+offset_right = 284.0
+offset_bottom = 47.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 23
+text = "TITLE"
+
+[node name="Label-tip" type="Label" parent="solution" unique_id=832466556]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 316.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DESCRIPTION"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="solution" unique_id=727506229]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 194.0
+offset_right = 288.0
+offset_bottom = 226.0
+text = "OK"
+
+[node name="mobile" type="TextureRect" parent="." unique_id=1579761238]
+layout_mode = 0
+offset_left = 401.0
+offset_top = -2.0
+offset_right = 593.2222
+offset_bottom = 358.55557
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("5_06jtt")
+expand_mode = 1
+
+[node name="buttons" type="PanelContainer" parent="." unique_id=438912017]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0017346054
+anchor_top = -0.049306627
+anchor_right = 0.0017346054
+anchor_bottom = -0.049306627
+offset_left = 414.0
+offset_top = 500.0
+offset_right = 730.0
+offset_bottom = 616.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons" unique_id=873386995]
+layout_mode = 2
+alignment = 1
+
+[node name="TrustButton" type="Button" parent="buttons/VBoxContainer" unique_id=1006991964]
+unique_name_in_owner = true
+layout_mode = 2
+text = "TRUST MESSAGE"
+clip_text = true
+
+[node name="ReportButton" type="Button" parent="buttons/VBoxContainer" unique_id=1098026793]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REPORT PHISHING"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1691968298]
+layout_mode = 0
+offset_right = 98.0
+offset_bottom = 42.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+folded = true
+title = "MENU"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1047730149]
 visible = false
-offset_left = 342.0
-offset_top = 69.0
-offset_right = 699.0
-offset_bottom = 399.0
-texture_normal = ExtResource("6_ra1mf")
-<<<<<<< Updated upstream
-=======
+layout_mode = 2
+script = ExtResource("6_hee60")
 
-[node name="InfoButton" type="TextureButton" parent="." unique_id=634823115]
-offset_left = 342.0
-offset_top = 69.0
-offset_right = 699.0
-offset_bottom = 399.0
-texture_normal = ExtResource("7_qfcxt")
+[node name="Button" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=1611390725]
+layout_mode = 2
+text = "EXIT"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=938220466]
-stream = ExtResource("8_qfcxt")
-volume_db = -17.495
-autoplay = true
->>>>>>> Stashed changes
+[node name="Button2" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=997170021]
+layout_mode = 2
+text = "RETRY"
+
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("7_ok5t1")]
+unique_name_in_owner = true
+offset = Vector2(780, 20)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 780, 20)
+follow_viewport_enabled = true
+
+[node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1982599620]
+stream = ExtResource("8_4tno1")
+
+[node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=423820262]
+stream = ExtResource("9_v8c1h")
+
+[connection signal="pressed" from="solution/Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button2" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]

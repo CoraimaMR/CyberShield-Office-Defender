@@ -1,5 +1,8 @@
 extends Control # EMAIL LEVEL
 
+var PUT_POINTS = 5
+var REMOVE_POINTS = 10
+
 # This array will hold your EmailResource files (.tres)
 @export var email_list: Array[Resource] = []
 
@@ -37,18 +40,21 @@ func _ready():
 func _process(delta: float) -> void:
 	# PAUSE MENU
 	if Input.is_action_just_pressed("ui_cancel"):
-		Autoload.save_scene() 
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/pause_menu.tscn")
+		if not get_tree().paused: # evita doble pausa
+			var pause_scene = load("res://scenes/pause_menu.tscn").instantiate()
+			add_child(pause_scene)
+			hub_scene.visible = false
+			get_tree().paused = true
 	
 	# GAME OVER MENU
 	if Autoload.current_lifes == 0:
 		Autoload.save_scene() 
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over_menu.tscn")
 	
+	# TIMER BAR
 	if Autoload.current_level >= 2 and timer_active:
 		time_left -= delta
 		
-		# Actualizamos la barra a través del hub
 		if hub_scene:
 			hub_scene.update_time_bar(time_left, time_limit)
 		
@@ -58,12 +64,13 @@ func _process(delta: float) -> void:
 
 func time_exhausted():
 	update_list_status(false)
-	Autoload.remove_points(10)
+	Autoload.remove_points(REMOVE_POINTS)
 	Autoload.remove_lifes(1)
 	incorrect_sound.play()
 	window(false)
 
 func reset_timer():
+	time_limit = Autoload.get_time_for_level() # load in autoload.gd the time for each level
 	time_left = time_limit 
 	if Autoload.current_level >= 2:
 		timer_active = true
@@ -77,7 +84,6 @@ func reset_timer():
 
 func load_emails_from_folder():
 	email_list.clear() 
-	var current_lvl = Autoload.current_level
 	var folder_path = "res://data/emails/level_" + str(Autoload.current_level) + "/"
 	var dir = DirAccess.open(folder_path)
 	
@@ -136,12 +142,12 @@ func validate_choice(user_said_phishing: bool):
 	update_list_status(success)
 	
 	if success:
-		Autoload.add_points(5)
+		Autoload.add_points(PUT_POINTS)
 		Autoload.register_email_solved() 
 		correct_sound.play()
 		window(true)
 	else:
-		Autoload.remove_points(10)
+		Autoload.remove_points(REMOVE_POINTS)
 		Autoload.remove_lifes(1)
 		incorrect_sound.play()
 		window(false)
@@ -165,9 +171,6 @@ func _on_close_button_pressed() -> void:
 	current_index += 1
 	if current_index < email_list.size():
 			display_email()
-	else:
-		Autoload.save_scene() 
-		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func update_list_status(is_correct: bool):
 	var label = %MailList.get_child(current_index)

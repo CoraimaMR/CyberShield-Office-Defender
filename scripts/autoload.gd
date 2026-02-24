@@ -13,6 +13,7 @@ var tutorial_done: bool = false
 
 # ----- PROGRESS -----
 
+var LEVEL_FINAL = 4
 var current_level: int = 1
 var current_rank: String = "Intern"
 var emails_solved_in_this_level: int = 0
@@ -20,13 +21,12 @@ var emails_solved_in_this_level: int = 0
 # ----- SCENES -----
 
 func save_scene():
-	previous_scene_path = get_tree().current_scene.scene_file_path
+	if get_tree().current_scene:
+		previous_scene_path = get_tree().current_scene.scene_file_path
 
 func previous_scene():
 	if previous_scene_path != "":
 		get_tree().change_scene_to_file(previous_scene_path)
-	else:
-		print("There is no saved previous scene")
 
 # ----- POINTS -----
 
@@ -60,8 +60,12 @@ func check_level_up():
 	level_up.emit(current_level, current_rank)
 	
 	# reload to read the new directory level_X
-	Autoload.save_scene() 
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/level_upp.tscn")
+	if current_level < LEVEL_FINAL:
+		Autoload.save_scene() 
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/level_upp.tscn")
+	else:
+		Autoload.save_scene() 
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/win_menu.tscn")
 
 func upgrade_level():
 	current_level += 1
@@ -72,9 +76,10 @@ func upgrade_level():
 		current_rank = "Security Expert"
 	else:
 		current_rank = "The Boss"
-
-	level_up.emit(current_level, current_rank) # notify the game about the promotion
-	print("PROMOTION! Level:", current_level, " Rank:", current_rank)
+	
+	if current_lifes > 0:
+		level_up.emit(current_level, current_rank) # notify the game about the promotion
+		print("PROMOTION! Level:", current_level, " Rank:", current_rank)
 	
 # ----- LIFES -----
 
@@ -85,6 +90,15 @@ func add_lifes(lifes: int) -> void:
 func remove_lifes(lifes: int) -> void:
 	current_lifes = max(0, current_lifes - lifes)
 	lifes_updated.emit(current_lifes)
+
+# ----- TIME -----
+
+func get_time_for_level() -> float:
+	if current_level == 2:
+		return 20.0 # level 2
+	elif current_level >= 3:
+		return 12.0  # level 3
+	return 9999.0    # level 1
 
 # ----- RESET HUB -----
 

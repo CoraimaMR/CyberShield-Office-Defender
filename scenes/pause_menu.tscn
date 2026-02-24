@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dnlkb4lqe353n"]
 
-[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="1_myx47"]
+[ext_resource type="Script" uid="uid://cugqeh63cbntu" path="res://scripts/pause_menu.gd" id="1_myx47"]
 [ext_resource type="Texture2D" uid="uid://ca3jqmmis6iaw" path="res://assets/background/digital-padlock-with-hud-virtual-screen-on-blue-background-cyber-security-technology-and-privacy-data-network-protection-concept-vector.jpg" id="2_kukqi"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m7x51"]
 
 [node name="Control" type="Control" unique_id=154517804]
 layout_mode = 3
@@ -35,30 +33,16 @@ text = "CyberShield: Office Defender"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="buttons" type="HBoxContainer" parent="." unique_id=363988233]
+[node name="Button" type="Button" parent="." unique_id=1784545782]
 layout_mode = 0
-offset_left = 677.0
-offset_top = 464.0
-offset_right = 1131.0
-offset_bottom = 555.0
-theme_override_constants/separation = 30
-
-[node name="Button" type="Button" parent="buttons" unique_id=1784545782]
-layout_mode = 2
+offset_left = 763.0
+offset_top = 443.0
+offset_right = 1035.0
+offset_bottom = 534.0
 theme_override_constants/outline_size = 5
 theme_override_constants/align_to_largest_stylebox = 20
 theme_override_constants/line_spacing = 20
 theme_override_font_sizes/font_size = 60
 text = "Continue"
 
-[node name="Button2" type="Button" parent="buttons" unique_id=1245833563]
-layout_mode = 2
-theme_override_constants/outline_size = 5
-theme_override_constants/align_to_largest_stylebox = 20
-theme_override_constants/line_spacing = 20
-theme_override_font_sizes/font_size = 60
-text = "KEYS"
-icon = SubResource("CompressedTexture2D_m7x51")
-
-[connection signal="pressed" from="buttons/Button" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="buttons/Button2" to="." method="_on_keys_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_pause_button_pressed"]

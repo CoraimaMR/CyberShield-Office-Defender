@@ -1,257 +1,209 @@
 [gd_scene format=3 uid="uid://c8xusq6fq6vrt"]
 
-[ext_resource type="Script" uid="uid://bnt8xncjeyr3p" path="res://scripts/email_level.gd" id="1_0y5w7"]
-[ext_resource type="Resource" uid="uid://n1" path="res://data/emails/level_1/phishing_bank_01.tres" id="3_hcini"]
-[ext_resource type="Resource" uid="uid://c6kbwqbw71ehb" path="res://data/emails/level_1/phishing_bank_00.tres" id="3_r4fxs"]
-[ext_resource type="Resource" uid="uid://p2" path="res://data/emails/level_1/phishing_bank_02.tres" id="4_wyplp"]
-[ext_resource type="Resource" uid="uid://s3" path="res://data/emails/level_1/phishing_bank_03.tres" id="5_x4jmi"]
-[ext_resource type="Resource" uid="uid://4" path="res://data/emails/level_1/phishing_bank_04.tres" id="6_r4fxs"]
-[ext_resource type="Resource" uid="uid://m5" path="res://data/emails/level_1/phishing_bank_05.tres" id="7_fc73l"]
-[ext_resource type="Resource" uid="uid://i6" path="res://data/emails/level_1/phishing_bank_06.tres" id="8_vdrlr"]
+[ext_resource type="Script" path="res://scripts/messages_level.gd" id="1_0y5w7"]
+[ext_resource type="Texture2D" path="res://assets/messages/istockphoto-185232989-612x612.jpg" id="2_ds2mx"]
+[ext_resource type="Texture2D" path="res://assets/messages/bubble01.png" id="3_hcini"]
+[ext_resource type="Texture2D" path="res://assets/messages/bubble02.png" id="4_wyplp"]
+[ext_resource type="Texture2D" path="res://assets/messages/pngtree-mobile-phone-frame-photo-png-image_14568670.png" id="5_x4jmi"]
 [ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="9_n13x3"]
-[ext_resource type="Resource" uid="uid://f7" path="res://data/emails/level_1/phishing_bank_07.tres" id="10_fc73l"]
-[ext_resource type="Resource" uid="uid://o8" path="res://data/emails/level_1/phishing_bank_08.tres" id="11_vdrlr"]
-[ext_resource type="Resource" uid="uid://ca" path="res://data/emails/level_1/phishing_bank_09.tres" id="12_n13x3"]
-[ext_resource type="Resource" uid="uid://t10" path="res://data/emails/level_1/phishing_bank_10.tres" id="13_vsuiw"]
-[ext_resource type="Resource" uid="uid://l11" path="res://data/emails/level_1/phishing_bank_11.tres" id="14_wgccn"]
-[ext_resource type="Resource" uid="uid://d12" path="res://data/emails/level_1/phishing_bank_12.tres" id="15_rq4yx"]
-[ext_resource type="Resource" uid="uid://d13" path="res://data/emails/level_1/phishing_bank_13.tres" id="16_h6ctk"]
-[ext_resource type="Resource" uid="uid://14" path="res://data/emails/level_3/phishing_bank_14.tres" id="17_havwd"]
-[ext_resource type="Resource" uid="uid://f15" path="res://data/emails/level_3/phishing_bank_15.tres" id="18_cjspr"]
-[ext_resource type="Resource" uid="uid://016" path="res://data/emails/level_3/phishing_bank_16.tres" id="19_nywdl"]
-[ext_resource type="Resource" uid="uid://u17" path="res://data/emails/level_2/phishing_bank_17.tres" id="20_wpyyb"]
-[ext_resource type="Resource" uid="uid://r18" path="res://data/emails/level_2/phishing_bank_18.tres" id="21_j1tgi"]
-[ext_resource type="Resource" uid="uid://d2a" path="res://data/emails/level_2/phishing_bank_19.tres" id="22_ilc8a"]
 [ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="24_h6ctk"]
 [ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="25_havwd"]
-[ext_resource type="AudioStream" uid="uid://vqealbr34ldm" path="res://sounds/moodmode-commercial-fun-239161 (1).mp3" id="26_havwd"]
-[ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="26_nywdl"]
-[ext_resource type="Texture2D" uid="uid://no44k8vrtupe" path="res://assets/window/yess.png" id="27_wpyyb"]
-[ext_resource type="Texture2D" uid="uid://dr88q7cs2wto3" path="res://assets/window/noo.png" id="28_j1tgi"]
+[ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="29_wpyyb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elqb8"]
-bg_color = Color(0, 0, 0.8235294, 1)
-border_width_bottom = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-
-[node name="Control" type="Control" unique_id=844577808]
+[node name="Control" type="Control" unique_id=2116262464]
 layout_mode = 3
-anchors_preset = 15
+anchor_left = -0.00086805556
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.0015432
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0y5w7")
-email_list = Array[Resource]([ExtResource("3_r4fxs"), ExtResource("3_hcini"), ExtResource("4_wyplp"), ExtResource("5_x4jmi"), ExtResource("6_r4fxs"), ExtResource("7_fc73l"), ExtResource("8_vdrlr"), ExtResource("10_fc73l"), ExtResource("11_vdrlr"), ExtResource("12_n13x3"), ExtResource("13_vsuiw"), ExtResource("14_wgccn"), ExtResource("15_rq4yx"), ExtResource("16_h6ctk"), ExtResource("17_havwd"), ExtResource("18_cjspr"), ExtResource("19_nywdl"), ExtResource("20_wpyyb"), ExtResource("21_j1tgi"), ExtResource("22_ilc8a")])
+message_list = Array[Resource]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_edit_use_anchors_ = true
 
-[node name="Background" type="ColorRect" parent="." unique_id=1354162238]
+[node name="background" type="TextureRect" parent="." unique_id=1805144811]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0.5647059, 1)
+texture = ExtResource("2_ds2mx")
 
-[node name="MainLayout" type="VBoxContainer" parent="Background" unique_id=602356980]
+[node name="background-mobile" type="ColorRect" parent="." unique_id=1058315189]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 17.0
+offset_right = 728.0
+offset_bottom = 629.0
+color = Color(0.74509805, 0.8784314, 0.99215686, 1)
+
+[node name="chat" type="TextureRect" parent="." unique_id=797154428]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 138.0
+offset_right = 703.0
+offset_bottom = 396.0
+texture = ExtResource("3_hcini")
+
+[node name="PanelContainer" type="PanelContainer" parent="chat" unique_id=811398622]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
+anchors_preset = -1
+anchor_left = -0.06716418
+anchor_top = -0.2868217
+anchor_right = 0.9104478
+anchor_bottom = -0.24031007
+offset_right = 51.0
+offset_bottom = 28.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Header" type="PanelContainer" parent="Background/MainLayout" unique_id=428407387]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_elqb8")
-
-[node name="MarginContainer" type="MarginContainer" parent="Background/MainLayout/Header" unique_id=1880894519]
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/MainLayout/Header/MarginContainer" unique_id=2085865019]
-layout_mode = 2
-
-[node name="TitleLabel" type="Label" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1466756413]
-layout_mode = 2
-text = "CyberShield Mail"
-
-[node name="Spacer" type="Control" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=626293565]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="hub" parent="Background/MainLayout/Header/MarginContainer/HBoxContainer" unique_id=1269073093 instance=ExtResource("9_n13x3")]
-unique_name_in_owner = true
-offset = Vector2(885, 10)
-scale = Vector2(0.3, 0.3)
-transform = Transform2D(0.3, 0, 0, 0.3, 885, 10)
-
-[node name="Body" type="HSplitContainer" parent="Background/MainLayout" unique_id=1661869193]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MailList" type="VBoxContainer" parent="Background/MainLayout/Body" unique_id=1092208252]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="MailViewer" type="PanelContainer" parent="Background/MainLayout/Body" unique_id=19120048]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_sugp2")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/MainLayout/Body/MailViewer" unique_id=233681076]
-layout_mode = 2
-theme_override_constants/separation = 15
-
-[node name="SenderLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1792293955]
+[node name="Label-title" type="Label" parent="chat/PanelContainer" unique_id=371363162]
 unique_name_in_owner = true
 layout_mode = 2
-text = "From:\"From: support@bank.com"
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "TITLE"
+horizontal_alignment = 1
 
-[node name="SubjectLabel" type="Label" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=307479283]
+[node name="Label-description" type="Label" parent="chat" unique_id=443949675]
 unique_name_in_owner = true
-layout_mode = 2
-text = "Subject: Urgent!"
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 245.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "DESCRIPTION"
+autowrap_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1311974168]
-layout_mode = 2
-
-[node name="BodyLabel" type="RichTextLabel" parent="Background/MainLayout/Body/MailViewer/VBoxContainer" unique_id=1280129145]
+[node name="Label-date" type="Label" parent="chat" unique_id=390052179]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 253.0
+offset_right = 253.0
+offset_bottom = 270.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "DATE"
+horizontal_alignment = 2
+autowrap_mode = 2
 
-[node name="ActionButtons" type="PanelContainer" parent="Background" unique_id=838691889]
+[node name="solution" type="TextureRect" parent="." unique_id=278656783]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 50.0
+offset_top = 190.0
+offset_right = 391.0
+offset_bottom = 437.0
+texture = ExtResource("4_wyplp")
+
+[node name="Label-title-solution" type="Label" parent="solution" unique_id=1910727369]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 27.0
+offset_top = 15.0
+offset_right = 284.0
+offset_bottom = 47.0
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 23
+text = "TITLE"
+
+[node name="Label-tip" type="Label" parent="solution" unique_id=832466556]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 316.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DESCRIPTION"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="solution" unique_id=727506229]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 194.0
+offset_right = 288.0
+offset_bottom = 226.0
+text = "OK"
+
+[node name="mobile" type="TextureRect" parent="." unique_id=1579761238]
+layout_mode = 0
+offset_left = 401.0
+offset_top = -2.0
+offset_right = 593.2222
+offset_bottom = 358.55557
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("5_x4jmi")
+expand_mode = 1
+
+[node name="buttons" type="PanelContainer" parent="." unique_id=438912017]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -133.0
-offset_top = -40.0
-offset_right = 133.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = -1
+anchor_left = 0.0017346054
+anchor_top = -0.049306627
+anchor_right = 0.0017346054
+anchor_bottom = -0.049306627
+offset_left = 414.0
+offset_top = 500.0
+offset_right = 730.0
+offset_bottom = 616.0
+metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/ActionButtons" unique_id=1466268496]
-custom_minimum_size = Vector2(15, 15)
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons" unique_id=873386995]
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/ActionButtons/MarginContainer" unique_id=1966157182]
-layout_mode = 2
-theme_override_constants/separation = 20
 alignment = 1
 
-[node name="TrustButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=415925510]
+[node name="TrustButton" type="Button" parent="buttons/VBoxContainer" unique_id=1006991964]
 unique_name_in_owner = true
 layout_mode = 2
-text = "TRUST MAIL"
+text = "TRUST MESSAGE"
+clip_text = true
 
-[node name="ReportButton" type="Button" parent="Background/ActionButtons/MarginContainer/HBoxContainer" unique_id=1116577777]
+[node name="ReportButton" type="Button" parent="buttons/VBoxContainer" unique_id=1098026793]
 unique_name_in_owner = true
 layout_mode = 2
 text = "REPORT PHISHING"
 
-[node name="popup window" type="TextureRect" parent="." unique_id=348960599]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 291.0
-offset_top = 163.0
-offset_right = -258.0
-offset_bottom = -167.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("26_nywdl")
-stretch_mode = 2
-
-[node name="text correct" type="Label" parent="popup window" unique_id=1742898540]
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1691968298]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 24.0
-offset_right = 415.0
-offset_bottom = 66.0
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 30
-text = "CORRECT ANSWER"
+offset_right = 98.0
+offset_bottom = 42.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+folded = true
+title = "MENU"
 
-[node name="yes" type="TextureRect" parent="popup window/text correct" unique_id=1971961227]
-layout_mode = 0
-offset_left = -24.0
-offset_top = 55.0
-offset_right = 76.0
-offset_bottom = 155.0
-texture = ExtResource("27_wpyyb")
-expand_mode = 1
-
-[node name="text incorrect" type="Label" parent="popup window" unique_id=1378440203]
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1047730149]
 visible = false
-layout_mode = 0
-offset_left = 51.0
-offset_top = 24.0
-offset_right = 415.0
-offset_bottom = 66.0
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 30
-text = "INCORRECT ANSWER"
+layout_mode = 2
+script = ExtResource("29_wpyyb")
 
-[node name="no" type="TextureRect" parent="popup window/text incorrect" unique_id=760164870]
-layout_mode = 0
-offset_left = -26.0
-offset_top = 53.0
-offset_right = 79.0
-offset_bottom = 158.0
-texture = ExtResource("28_j1tgi")
-expand_mode = 1
+[node name="Button" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=1611390725]
+layout_mode = 2
+text = "EXIT"
 
-[node name="description" type="Label" parent="popup window" unique_id=1559926661]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 87.0
-offset_right = 563.0
-offset_bottom = 281.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "DESCRIPTION "
-autowrap_mode = 1
+[node name="Button2" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=997170021]
+layout_mode = 2
+text = "RETRY"
 
-[node name="Button" type="Button" parent="popup window" unique_id=1680920064]
-layout_mode = 0
-offset_left = 535.0
-offset_top = 32.0
-offset_right = 570.0
-offset_bottom = 66.0
-flat = true
+[node name="hub" parent="." unique_id=1269073093 instance=ExtResource("9_n13x3")]
+unique_name_in_owner = true
+offset = Vector2(780, 20)
+scale = Vector2(0.4, 0.4)
+transform = Transform2D(0.4, 0, 0, 0.4, 780, 20)
+follow_viewport_enabled = true
 
-[node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1024679185]
+[node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1982599620]
 stream = ExtResource("24_h6ctk")
 
-[node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=1786726373]
+[node name="incorrect" type="AudioStreamPlayer2D" parent="." unique_id=423820262]
 stream = ExtResource("25_havwd")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=855124746]
-stream = ExtResource("26_havwd")
-volume_db = -30.0
-autoplay = true
-
-[connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
-[connection signal="pressed" from="Background/ActionButtons/MarginContainer/HBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
-[connection signal="pressed" from="popup window/Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="solution/Button" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button2" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]
