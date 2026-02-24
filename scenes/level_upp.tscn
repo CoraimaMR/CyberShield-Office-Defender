@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ve4l085fln1g"]
 
-[ext_resource type="Script" uid="uid://ypoboglplvqn" path="res://scripts/level_upp.gd" id="1_8h1u0"]
+[ext_resource type="Script" path="res://scripts/level_upp.gd" id="1_8h1u0"]
 [ext_resource type="Texture2D" uid="uid://ir6djyvcml3r" path="res://assets/hub/levelup.webp" id="2_8h1u0"]
 [ext_resource type="AudioStream" uid="uid://cfa18yw8p7bb8" path="res://sounds/level upp.mp3" id="3_8h1u0"]
 [ext_resource type="Texture2D" uid="uid://0tq56mxrdd61" path="res://assets/background/ventana.png" id="4_vwo4b"]

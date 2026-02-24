@@ -1,9 +1,7 @@
 extends Node # MENU
 
-var name_input
-
-func _ready() -> void:
-	name_input = get_node_or_null("$NameInput")
+@onready var name_input = find_child("NameInput", true, false)
+@onready var save_button = find_child("SaveButton", true, false)
 
 # Button 1: PREVIUS SCENE + RESET HUB
 func _on_retry_button_pressed() -> void:
@@ -20,8 +18,12 @@ func _on_level_upp_button_pressed() -> void:
 	get_tree().paused = false
 	Autoload.previous_scene() # Go to previus scene
 
-# Burron 4: SAVE PUNTUATION
+# Button 4: SAVED GAMEOVER
 func _on_save_button_pressed():
+	if name_input == null or save_button == null:
+		# Si esto sale en consola, es que los nombres en el árbol no son NameInput o SaveButton
+		print("Error: No se encuentran los nodos.")
+		return
 	var player_name = name_input.text
 	
 	if player_name.strip_edges() == "":
@@ -29,7 +31,8 @@ func _on_save_button_pressed():
 	
 	# save dates dates to Autoload
 	ScoreManager.add_new_score(player_name, Autoload.current_points, Autoload.current_rank)
+	ScoreManager.save_scores()
 	# visual effect on pressed
-	$NameInput/SaveButton.disabled = true
-	$NameInput.editable = false
-	$NameInput/SaveButton.modulate = Color(0.5, 0.5, 0.5)
+	name_input.editable = false
+	save_button.disabled = true
+	save_button.modulate = Color(0.4, 0.4, 0.4)
