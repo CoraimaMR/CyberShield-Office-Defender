@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://01i7r32w52s4" path="res://scenes/hub.tscn" id="3_2lhy8"]
 [ext_resource type="Texture2D" uid="uid://d6pxvck7gejb" path="res://assets/messages/bubble02.png" id="3_qi2mx"]
 [ext_resource type="Script" uid="uid://b7187i5uit2ve" path="res://scripts/menu.gd" id="5_4oaqq"]
+[ext_resource type="FontFile" uid="uid://cws2sm4ux2eqh" path="res://assets/pixel-operator-fuente/PixelOperatorSC.ttf" id="7_j25u6"]
 [ext_resource type="AudioStream" uid="uid://dk13gl8ho5xvh" path="res://sounds/correct.mp3" id="8_tdjlk"]
 [ext_resource type="AudioStream" uid="uid://cl6xv2ohktw1o" path="res://sounds/incorrect.mp3" id="9_j25u6"]
 
@@ -167,34 +168,41 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "REPORT PHISHING"
 
-[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=1691968298]
-layout_mode = 0
-offset_right = 98.0
-offset_bottom = 42.0
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 24
-folded = true
-title = "MENU"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1047730149]
-visible = false
-layout_mode = 2
-script = ExtResource("5_4oaqq")
-
-[node name="Button" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=1611390725]
-layout_mode = 2
-text = "EXIT"
-
-[node name="Button2" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=997170021]
-layout_mode = 2
-text = "RETRY"
-
 [node name="hub" parent="." unique_id=1269073093 instance=ExtResource("3_2lhy8")]
 unique_name_in_owner = true
 offset = Vector2(780, 20)
 scale = Vector2(0.4, 0.4)
 transform = Transform2D(0.4, 0, 0, 0.4, 780, 20)
 follow_viewport_enabled = true
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=373842506]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 84.0
+offset_bottom = 43.0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_j25u6")
+theme_override_font_sizes/font_size = 24
+folded = true
+title = "MENU"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=1985894718]
+visible = false
+layout_mode = 2
+script = ExtResource("5_4oaqq")
+
+[node name="exit" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=1144504715]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_j25u6")
+text = "EXIT"
+
+[node name="retry" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=71951643]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_j25u6")
+text = "RETRY"
 
 [node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=1982599620]
 stream = ExtResource("8_tdjlk")
@@ -205,5 +213,5 @@ stream = ExtResource("9_j25u6")
 [connection signal="pressed" from="solution/Button" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/TrustButton" to="." method="_on_trust_button_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/ReportButton" to="." method="_on_report_button_pressed"]
-[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
-[connection signal="pressed" from="FoldableContainer/VBoxContainer/Button2" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/exit" to="FoldableContainer/VBoxContainer" method="_on_desktop_button_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/retry" to="FoldableContainer/VBoxContainer" method="_on_retry_button_pressed"]

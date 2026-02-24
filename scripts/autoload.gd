@@ -48,7 +48,6 @@ func register_solved():
 func check_level_up():
 	current_level += 1
 	solved_in_this_level = 0
-	current_lifes = 3
 	
 	if current_level == 2:
 		current_rank = "Junior Technician"
