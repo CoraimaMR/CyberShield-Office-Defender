@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3h70x50qy4kt" path="res://scripts/LeaderboardUI.gd" id="1_urc3l"]
 [ext_resource type="Texture2D" uid="uid://cbdry2l08vmgk" path="res://assets/buttons/PNG/Blue/arrow_basic_w.png" id="2_a3xie"]
+[ext_resource type="Texture2D" uid="uid://clmq83vylk8kt" path="res://assets/buttons/PNG/Yellow/Default/button_rectangle_border.png" id="2_bwqve"]
 [ext_resource type="Texture2D" uid="uid://maghthaas72i" path="res://assets/buttons/PNG/Red/Default/check_square_color_checkmark.png" id="3_bpycg"]
 [ext_resource type="Texture2D" uid="uid://7ojc7gafdo8d" path="res://assets/buttons/PNG/Red/Default/check_square_color.png" id="3_bwqve"]
 [ext_resource type="Texture2D" uid="uid://b2a3xaslpsi1o" path="res://assets/buttons/PNG/Blue/arrow_decorative_w.png" id="3_uk6nl"]
@@ -46,6 +47,59 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a3xie")
 layout_mode = 2
 theme_override_constants/separation = 15
 
+[node name="TabContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=173376033]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnEmail" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=681073096]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_bwqve")
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/BtnEmail" unique_id=1545186475]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -9.0
+offset_right = 31.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31925523, 0.31925526, 0.31925526, 1)
+theme_override_font_sizes/font_size = 13
+text = "CS E-MAIL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnMobile" type="TextureButton" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer" unique_id=444301415]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_bwqve")
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/TabContainer/BtnMobile" unique_id=2039076693]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.31764707, 0.31764707, 0.31764707, 1)
+theme_override_font_sizes/font_size = 13
+text = "CS MOBILE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Header" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=672215746]
 layout_mode = 2
 
@@ -54,6 +108,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+theme_override_font_sizes/font_size = 18
 text = "#"
 
 [node name="NameLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=708945646]
@@ -61,6 +116,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+theme_override_font_sizes/font_size = 17
 text = "NAME"
 
 [node name="RankLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer/Header" unique_id=756237415]
@@ -68,6 +124,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+theme_override_font_sizes/font_size = 18
 text = "RANK"
 horizontal_alignment = 1
 
@@ -75,6 +132,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(18.892157, 0, 16.286285, 1)
+theme_override_font_sizes/font_size = 18
 text = "SCORE"
 horizontal_alignment = 2
 
@@ -135,5 +193,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 7
 text = "RESET"
 
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/BtnEmail" to="." method="_on_btn_email_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/TabContainer/BtnMobile" to="." method="_on_btn_mobile_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

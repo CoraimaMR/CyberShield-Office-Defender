@@ -31,6 +31,7 @@ var timer_active: bool = false
 # --- INITIALIZATION ---
 func _ready():
 	Autoload.save_scene() 
+	Autoload.current_game_type = "mobile"
 	load_messages_from_folder()
 	solution.visible = false
 	

@@ -33,6 +33,7 @@ var timer_active: bool = false
 # --- INITIALIZATION ---
 func _ready():
 	Autoload.save_scene()
+	Autoload.current_game_type = "email"
 	load_emails_from_folder()
 	
 	popup_window.visible = false

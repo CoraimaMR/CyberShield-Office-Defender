@@ -12,6 +12,7 @@ var current_lifes: int = 3
 var max_lifes: int = 3
 var previous_scene_path: String = ""
 var tutorial_done: bool = false
+var current_game_type: String = "email"
 
 # --- PROGRESS VARIABLES ---
 var QUESTIONS_TO_SOLVE = 10
@@ -100,3 +101,4 @@ func reset_hub():
 	current_level = 1
 	current_rank = "Intern"
 	solved_in_this_level = 0
+	current_game_type = "email"

@@ -30,7 +30,7 @@ func _on_save_button_pressed():
 		player_name = "Unknown Player"
 	
 	# Send current session data to the ScoreManager
-	ScoreManager.add_new_score(player_name, Autoload.current_points, Autoload.current_rank)
+	ScoreManager.add_new_score(player_name, Autoload.current_points, Autoload.current_rank, Autoload.current_game_type)
 	ScoreManager.save_scores()
 	
 	# Visual feedback: Lock the input and dim the button after saving
