@@ -10,7 +10,7 @@ extends Node2D # DESKTOP
 # --- ASSETS ---
 const TEX_WAVE = preload("res://assets/robot/robot.png") 
 const TEX_CROSSED = preload("res://assets/robot/robot-cruzado.png")
-const TEX_POINT = preload("res://assets/Robot/robot-senala.png")
+const TEX_POINT = preload("res://assets/robot/robot-senala.png")
 const MOUSE_CLICK = preload("res://assets/background/puntero-click.png")
 
 # --- STATE & SETTINGS ---
